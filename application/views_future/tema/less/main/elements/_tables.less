@@ -1,0 +1,110 @@
+.aui div.table-responsive 
+{
+  margin-bottom:15px;
+  
+  width:100%;
+  
+    // La media query è stata commentata per fare in modo che eventuali tabelle contenenti immagini troppo larghe creino una barra di scorrimento orizzontale come in modalità responsive
+    
+    /*@media screen and (max-width:@screen-md) 
+    {*/
+      overflow-x:auto;
+      overflow-y:hidden;
+      //border:1px solid #ddd;
+    /*}*/
+  
+    > table 
+    {
+      background-color:@bianco;
+      margin-bottom:0;
+      width:100%;
+    }
+}
+
+.aui table.sisal-table
+{
+    th,
+    td 
+    {
+      border:1px solid @colore-bordi-tabella;
+      line-height:20px;
+      padding:8px;
+    }
+    
+    th
+    {
+      background:@colore-sfondo-intestazione_liv-1_tabella !important;
+      color:@colore-testo-intestazione_tabella;
+      font-family:@font-intestazioni-oggetti;
+      font-weight:bold;
+      font-size:17px;
+      text-align:center; 
+    }
+    
+    td
+    {
+      text-align:left;
+    }
+        
+    tr:not(:nth-of-type(1)) th
+    {
+      background:@colore-sfondo-intestazione_liv-2_tabella !important;
+      
+      text-shadow:0 -1px 0 @colore-ombra_testo_pulsanti_main-navigation;
+    }
+    
+    tr:nth-child(even)
+    {
+      background:@colore-sfondo-righe-pari_tabella;
+    }
+}
+
+/*.aui th:last-of-type,
+.aui td:last-of-type
+{
+  text-align:right;
+}*/
+
+
+.aui tr.info td
+{
+  font-weight:bold;
+  color:white;
+  font-size:14px;
+  
+  .sfondo_main-navigation;
+}
+
+.aui td.centra
+{
+  text-align:center !important;
+}
+
+.aui td.destra
+{
+  text-align:right !important;
+}
+
+/*
+.aui tr:last-of-type td
+{
+  background:@colore-sfondo-intestazione_tabella !important;
+  color:@colore-testo-intestazione_tabella;
+  font-weight:bold;
+  font-size:16px;
+}*/
+
+
+.aui table.invisible-grid-table
+{
+  width:100%;
+  
+    td 
+    {
+      border:none;
+      line-height:20px;
+      padding:5px;
+      text-align:left;
+    }
+}
+

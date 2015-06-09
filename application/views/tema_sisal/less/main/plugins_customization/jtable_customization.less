@@ -1,0 +1,167 @@
+#filters_container
+{
+  margin-bottom:10px;
+  
+    .block-group
+    {
+      width:100%;
+      margin-top:20px !important;
+      
+        .block
+        {
+          width:30%;
+        }
+    }
+}
+
+
+.jtable-sisal
+{
+    div.jtable-main-container
+    {
+      font-family:@font-principale;
+      font-size:13px;
+      
+        .jtable-busy-message
+        {
+          background:@grigio-chiaro url("/sisal-portal-responsive-theme/images/loading.gif") no-repeat;
+          background-size:32px 32px;
+          border:none;
+          padding:7px 7px 7px 32px;
+          margin:5px 10px;
+          color:@verde-scuro;
+          font-size:13px;
+          font-style:italic;
+          font-weight:bold;
+          
+          .rounded_corners(20px);
+          .animazione_colore-testo(@verde-scuro,@verde-chiaro);
+        }
+      
+        .table-responsive
+        {
+          clear:both;
+          margin-bottom:0;
+        }
+    
+        .jtable
+        {
+          th,
+          td 
+          {
+            border:1px solid @colore-bordi-tabella;
+            line-height:20px;
+            padding:8px;
+          }
+          
+          th
+          {
+            background:@colore-sfondo-intestazione_liv-1_tabella !important;
+            color:@colore-testo-intestazione_tabella;
+            font-family:@font-intestazioni-oggetti;
+            font-weight:bold;
+            font-size:17px;
+            text-align:center; 
+            width:auto !important;
+            
+              .jtable-column-header-container
+              {
+                height:auto !important;
+              }
+            
+              &.jtable-column-header-sortable .jtable-column-header-container
+              {
+                padding-right:18px !important;
+              }
+                   
+          }
+          
+          td
+          {
+            text-align:left;
+            
+              .file_extensions-icons
+              {
+                width:45px;
+              }
+              
+          }
+          
+          tr:nth-of-type(2) th
+          {
+            background:@colore-sfondo-intestazione_liv-2_tabella !important;
+          }
+          
+          tr:nth-child(even)
+          {
+            background:@colore-sfondo-righe-pari_tabella;
+          }
+        }
+
+        /*.aui tr.info td
+        {
+          font-weight:bold;
+          color:white;
+          font-size:14px;
+          
+          .sfondo_main-navigation;
+        }*/
+        
+        > div.jtable-bottom-panel
+        {
+          background:@colore-sfondo-intestazione_liv-1_tabella !important;
+          color:@colore-testo-intestazione_tabella;
+          font-family:@font-intestazioni-oggetti;
+          border-color:@colore-bordi-tabella;
+          padding:2px;
+          text-align:center;
+          
+            .jtable-page-list
+            {
+              font-size:15px;
+              
+                .jtable-page-number,
+                .jtable-page-number-space,
+                .jtable-page-number-first,
+                .jtable-page-number-last,
+                .jtable-page-number-previous,
+                .jtable-page-number-next,
+                .jtable-page-number-active
+                {
+                  cursor:pointer;
+                  padding:0 6px 2px;
+                  
+                  .rounded_corners(4px);
+                  .aspetto_pulsanti('verde-chiaro') !important;
+                }
+                
+                .jtable-page-number-active
+                {
+                  .aspetto_pulsanti('arancione') !important;
+                }
+                
+                .jtable-page-number-disabled
+                {
+                  color:@grigio-chiaro;
+                  cursor:default;
+                }
+            }
+            
+            select
+            {
+              width:55px;
+              height:auto;
+              padding:2px;
+            }
+            
+            .jtable-right-area
+            {
+              padding-top:3px;
+              position:static;
+            }
+            
+            
+        }
+    }  
+}
+

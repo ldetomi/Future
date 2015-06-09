@@ -1,0 +1,210 @@
+<?php
+
+/* GESTIONE INFO UTENTE v. 2.0
+
+UTILIZZO:
+========
+
+1) Nel costruttore del controller caricare il modello:
+
+   $this->load->model('info_user/info_user');
+
+2) Non ci sono headers da caricare nel controller
+
+3) Funzioni a disposizione:
+
+   browser_check()
+   ---------------
+     
+      Sintassi: $browser_ok=$this->info_user->browser_check(array('IE'=>7.0,'Firefox'=>3.0,'Chrome'=>4.0,'Safari'=>3.0,'Opera'=>9.80));
+
+      Cosa fa: verifica che il browser in uso sia compreso nella lista delle chiavi dell'array passato come argomento e sia una versione
+               maggiore o uguale a quella specificata nel corrispondente valore
+
+   get_info()
+   ----------
+
+      Sintassi: $info_browser=$this->info_user->get_info();
+
+      Cosa fa: popola e ritorna un array contenente le seguenti informazioni:
+
+               'ip_address', 'browser', 'version', 'platform', 'referrer', 'agent_string'
+
+   store_info()
+   ------------
+
+      Sintassi: $this->info_user->store_info();
+
+      Cosa fa: salva i dati in un db, accetta un parametro opzionale: se "true" salva i dati, se "false" non fa nulla (comodo per 
+               disabilitare il salvataggio dati direttamente da controller)
+
+4) Le variabili eventualmente popolate da browser_check() e get_info() possono essere passate a una view o a un dialog
+
+
+FILE CONFIGURAZIONE:
+===================
+
+   $config['info_user']=array('db_enabled'=>false,
+                              'db_group'=>'default',
+                              'db_table'=>'info_generali',
+                              'db_field'=>'remote_ip,user_agent,version,platform,referrer');
+
+   In cui:
+
+      'db_enabled' => (true|false) abilita/disabilita il salvataggio nel db
+      'db_group', 'db_table', 'db_field' => specificano i parametri di db per il salvataggio dei dati 
+         
+*/
+
+class Info_user extends CI_Model 
+{
+
+   function __construct()
+   {
+      // Call the Model constructor
+      parent::__construct();
+      $this->config->load('info_user/dati_info_user');
+      $this->load->library(array('input','user_agent'));
+
+   }
+
+   /*******************************************************************************/
+   /********* INIZIO DELLE LE FUNZIONI CHIAMABILI DA CONTROLLERS E MODELS *********/
+   /*******************************************************************************/
+
+   function browser_check($min_acceptable_release)
+   {
+      $info_user=$this->get_info();
+
+      $version=intval($info_user['version']);
+
+      if(isset($min_acceptable_release['IE']))
+         if($info_user['browser']=="Internet Explorer" && $version<$min_acceptable_release['IE'])
+            return(false);
+
+      if(isset($min_acceptable_release['Firefox']))
+         if($info_user['browser']=="Firefox" && $version<$min_acceptable_release['Firefox'])
+            return(false);
+            
+      if(isset($min_acceptable_release['Chrome']))
+         if($info_user['browser']=="Chrome" && $version<$min_acceptable_release['Chrome'])
+            return(false);
+
+      if(isset($min_acceptable_release['Safari']))
+         if($info_user['browser']=="Safari" && $version<$min_acceptable_release['Safari'])
+            return(false);
+            
+      if(isset($min_acceptable_release['Opera']))
+         if($info_user['browser']=="Opera" && $version<$min_acceptable_release['Opera'])
+            return(false);
+
+      return(true);
+   }
+
+   /* Verifica se il browser utilizzato e' uguale a quello passato come parametro. Se viene anche
+      passata la versione, verifica che sia almeno quella versione. Label ammissibili per i browser sono:
+      
+      IE, Firefox, Chrome, Safari, Opera
+      
+       */
+   function is_browser($which_browser,$op='>=',$which_version=0)
+   {
+      $info_user=$this->get_info();
+      $this_version=$info_user['version'];//intval($info_user['version']);
+      print("orig_this_version: ".$this_version."<br>orig_which_version: ".$which_version."<br>");
+      
+      
+      $which_version_arr=explode(".",$which_version);
+      $which_version=0;
+      for($i=0;$i<sizeof($which_version_arr);$i++)
+      {
+         $tmp_val="0.".$which_version_arr[$i];
+         $which_version+=$tmp_val*pow(10,1-$i);
+      }
+         
+      $this_version_arr=explode(".",$this_version);
+      $this_version=0;
+      for($i=0;$i<sizeof($this_version_arr);$i++)
+      {
+         $tmp_val="0.".$this_version_arr[$i];
+         $this_version+=$tmp_val*pow(10,1-$i);
+      }
+      
+      $eval_string="\$test_version=(".$this_version.$op.$which_version.");";
+      eval($eval_string);
+
+      if($info_user['browser']==$which_browser && $test_version)
+         return(true);
+      else
+         return(false);
+   }
+
+   function get_info()
+   {
+   
+      $info['ip_address']=$this->input->ip_address();
+      $info['browser']=$this->agent->browser();
+      $info['version']=$this->agent->version();
+      $info['platform']=$this->agent->platform();
+      $info['referrer']=$this->agent->referrer();
+      $info['agent_string']=$this->agent->agent_string();
+      return($info);
+   }
+   
+   function store_info($really_store=true)
+   {
+      if(!$really_store)
+         return;
+    
+      $data=$this->config->item("info_user");   
+
+      if(isset($data['db_enabled']) && !$data['db_enabled'])   
+         return;
+
+      $db_group=$data['db_group'];
+      $db_table=$data['db_table'];
+      $db_field=$data['db_field'];
+
+      $db=$this->load->database($db_group,TRUE);
+      
+      $query=$this->db->select($db_field)->from($db_table)->get()->result_array();            
+            
+      $add_to_db=true;
+      
+      $info=$this->get_info();      
+
+            print("query<br>");
+            var_dump($query);
+            print("<br>");
+            print("info<br>");
+            var_dump($info);
+      
+      if(is_array($query) && !empty($query))
+      { 
+	     /* verifica se le info ci sono gia', in tal caso non le salva */
+	     $required_info=split(",",$db_field);
+         foreach($query as $line)
+         {
+            if(strcmp($line[$required_info[0]],$info["ip_address"])==0 &&
+               strcmp($line[$required_info[1]],$info["browser"])==0 && 
+               strcmp($line[$required_info[2]],$info["version"])==0 &&
+               strcmp($line[$required_info[3]],$info["platform"])==0)
+            {
+               $add_to_db=false;
+            }
+         }
+      }
+      /*if($add_to_db===true)
+      {
+
+         $insert_data=array($db[$tabella_info][0]=>$info["ip_address"],
+                            $db[$tabella_info][1]=>$info["browser"],
+                            $db[$tabella_info][2]=>$info["version"],
+                            $db[$tabella_info][3]=>$info["platform"],
+                            $db[$tabella_info][4]=>$info["referrer"]);
+         $this->db->insert($tabella_info,$insert_data);          
+         $add_to_db=false; 
+      }*/
+   }
+}
+   

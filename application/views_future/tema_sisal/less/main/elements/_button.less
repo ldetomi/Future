@@ -1,0 +1,108 @@
+// I bottoni sono elementi che mantengono una loro coerenza formale su qualsiasi tipologia di template.
+
+.aui .btn
+{
+  font-family:@font-pulsanti;                             //Digital Guidelines -  pag. 38
+  text-transform:uppercase;                               //Digital Guidelines -  pag. 38
+  padding:5px 10px;                                       //Digital Guidelines -  pag. 38   ( = altezza fissa 32px)
+  font-size:14px;
+  
+  .rounded_corners(6px);                                  //Digital Guidelines -  pag. 38
+  
+    &[disabled]
+    {
+      opacity:1;
+    }
+    
+    &.btn-default
+    {
+      .aspetto_pulsanti('grigio');
+    }
+    
+    &.btn-primary
+    {     
+      .aspetto_pulsanti('verde-scuro');                   //Digital Guidelines -  pag. 38
+    }
+    
+    &.btn-success
+    {
+      .aspetto_pulsanti('verde-chiaro');                  //Digital Guidelines -  pag. 38
+    }
+    
+    &.btn-info
+    {
+      .aspetto_pulsanti('arancione');                     //Digital Guidelines -  pag. 38
+    }
+  
+    
+    &.btn-sm
+    {
+      line-height:1;
+      padding:6px 8px;                                   
+      font-size:13px;
+    }
+    
+    &.btn-lg
+    {
+      line-height:1.23;
+      padding:8px 14px;                                   //Digital Guidelines -  pag. 38   ( = altezza fissa 40px)
+      font-size:18px;
+    }
+}
+
+
+
+
+// MIXIN PRINCIPALE
+
+.aspetto_pulsanti(@colore, @degrees:270)
+{
+  @stop-1:~"@{colore}_SOPRA";                             //Digital Guidelines -  pag. 39
+  @stop-2:~"@{colore}_SOTTO";                             //Digital Guidelines -  pag. 39
+  
+  @colore-bordi_pulsanti:~"@{colore}_SOTTO";              //Digital Guidelines -  pag. 39
+  @colore-sfondo_pulsanti_hover:~"@{colore}_SOTTO";       //Digital Guidelines -  pag. 39
+
+  background: @@stop-2; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: -moz-linear-gradient(@degrees, @@stop-1 0%, @@stop-2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@@stop-1), color-stop(100%,@@stop-2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* IE10+ */
+  background: linear-gradient( (@degrees - 90deg), @@stop-1 0%, @@stop-2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@@stop-1', endColorstr='@@stop-2',GradientType=0 ); /* IE6-8 */
+  
+  border-color:@@colore-bordi_pulsanti !important;
+  
+  //Dati 2 valori possibili come colore del testo dei pulsanti, sceglie quello che crea maggior contrasto (tenendo conto della soglia espressa in %) con il colore di sfondo del pulsante attualmente visualizzato
+  @colore-testo_pulsanti:        contrast( @@stop-2, @colore-testo_pulsanti-scuro, @colore-testo_pulsanti-chiaro, 60%);
+  color:@colore-testo_pulsanti;
+  
+    &:not([disabled]):hover                                               //Digital Guidelines -  pag. 39 - (all'hover lo sfondo diventa a tinta unita)
+    {
+      background:@@colore-sfondo_pulsanti_hover;
+    }
+    
+    &:not([disabled]):active                                              //Digital Guidelines -  pag. 39 - (al click lo sfondo inverte la direzione del gradiente)
+    {
+      background: @@stop-1; /* Old browsers */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: -moz-linear-gradient(@degrees, @@stop-2 0%, @@stop-1 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@@stop-2), color-stop(100%,@@stop-1)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* IE10+ */
+      background: linear-gradient( (@degrees - 90deg), @@stop-2 0%, @@stop-1 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@@stop-2', endColorstr='@@stop-1',GradientType=0 ); /* IE6-8 */
+    }
+    
+    &[disabled]
+    {
+      color:fadeout(@colore-testo_pulsanti, 50%);         //Abbassa l'opacità del colore del testo al valore espresso in %
+    }
+    
+}
+
+
+

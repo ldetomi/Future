@@ -1,0 +1,52 @@
+.aui .sisal-accordion
+{
+  margin-bottom:20px;
+  
+    .ui-accordion-header
+    {
+      //background:@colore-sfondo-intestazione_accordion;
+      //color:@colore-testo-intestazione_accordion;
+      font-size:18px;
+      padding-right:35px;
+    }
+    
+    .ui-accordion-header-active
+    {
+      color:@colore-testo-intestazione-attiva_accordion;
+    }
+    
+    .ui-accordion-content
+    {
+      overflow-y:auto;    //Da verificare insieme alla riga sotto: inserito per ovviare allo scorrimento quando si mettono immagini in tabella che sbordano dalle dimensioni del contenitore
+      overflow-x:hidden;
+      
+        @media screen and (max-width: @screen-md)
+        {
+          padding-left:15px;
+          padding-right:15px;
+        } 
+    }
+    
+    .ui-state-default
+    {
+      color:@colore-testo-intestazione_accordion;
+    }
+    
+    .ui-state-hover
+    {
+      color:@colore-testo-intestazione-hover_accordion;
+    }
+    
+    .ui-accordion-icons
+    {
+      padding-left:0.7em !important;
+    }
+
+    .ui-icon 
+    {
+      left:auto !important;
+      right:10px;
+      
+      .scale(1.3);
+    }    
+}

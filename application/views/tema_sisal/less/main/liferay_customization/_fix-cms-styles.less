@@ -1,0 +1,92 @@
+
+.aui article
+{
+    // Classi di LifeRay
+    
+    pre,
+    [class*="portlet-msg-"]
+    {
+      .rounded_corners(5px);
+    }
+    
+    .portlet-msg-info
+    {
+      background:@verde-chiaro;
+      border-color:@verde-scuro;
+      color:@verde-scuro_SOTTO;
+    }
+
+    .portlet-msg-alert
+    {
+      background:@arancione_SOPRA;
+      border-color:@arancione_SOTTO;
+      color:@bianco;
+    } 
+    
+    .portlet-msg-enfasi // Classe Custom
+    {
+      border:solid 3px @verde-scuro;
+      margin-bottom:20px;
+      padding:8px 35px;
+    }
+
+    
+    // Classi di BootStrap (già personalizzati anche da Liferay)
+    
+    .muted 
+    {
+      color:@grigio-scuro;
+    }
+    
+    .text-warning 
+    {
+      color:@arancione_SOTTO;
+    }
+    
+    .text-info 
+    {
+      color:@verde-scuro;
+    }
+    
+    .text-success 
+    {
+      color:@verde-chiaro_SOTTO;
+    }
+    
+    blockquote
+    {
+      border-left-color:@verde-scuro;
+    }
+
+}
+
+.aui body:not(.homepage) .journal-content-article
+{
+    // Aggiunge un margine alle immagini inserite via CMS e allineate ai lati
+    [style*="float:left"],
+    [style*="float: left"] 
+    {
+        margin-right:20px !important;
+    }
+
+    [style*="float:right"],
+    [style*="float: right"] 
+    {
+        margin-left:20px !important;
+    }
+    
+    .img-responsive
+    {
+      margin:0 auto;
+    }
+    
+    .clear-in-responsive-mode
+    {
+      float:none !important;
+      margin:0 auto !important;
+    }
+    
+    
+}
+
+

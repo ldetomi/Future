@@ -1,0 +1,34 @@
+.aui ul 
+{
+  list-style-image:url("../images/list-image-square-green.png");  
+}
+
+.aui article
+{
+    ul:not([class*="ui-"]),
+    ol:not([class*="ui-"])
+    {
+      overflow:hidden; //Serve per affiancare una lista a un'immagine FLOAT:LEFT
+      margin-left:0;
+      
+        li
+        {
+          margin-left:35px;
+        } 
+    }
+    
+    ol li
+    {
+      font-family:@font-intestazioni-oggetti;
+      color:@verde-scuro;
+      font-size:18px;
+      
+        .ol-content
+        {
+          font-family:@font-principale;
+          color:@nero;
+          font-size:13px;
+          line-height:17px;
+        }
+    }
+}

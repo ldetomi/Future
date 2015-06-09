@@ -1,0 +1,88 @@
+.aui
+{
+    .owl-theme 
+    {
+      position:relative;
+      
+        .owl-item img
+        {
+          border:solid 1px @colore-bordi_owl-carousel;
+          
+          .rounded_corners();
+        }
+        
+        // SERVE PER EVITARE CHE LA PERSONALIZZAZIONE SI ESTENDA ALLE ICONE DI LIFERAY
+        .lfr-meta-actions img
+        {
+          display:inline;
+          width:auto;
+        }
+        
+      
+        .owl-controls .owl-nav 
+        {
+          position:absolute;
+          top:50%;
+          margin-top:-50px;
+          width:100%;
+          height:50px;
+          pointer-events:none;
+        
+            [class*="owl-"]
+            {
+              position:absolute;
+              width:50px;
+              height:50px;
+              padding:0;
+              pointer-events:initial;
+              
+              background:fade( @colore-carousel_buttons_dark, 40%);
+              color:@colore-carousel_buttons_light;
+              
+              .rounded_corners(50%);
+              .transizione_generica();
+              
+                &:hover
+                {
+                  background:fade( @colore-carousel_buttons_dark, 100%);
+                }
+              
+                [class*='icomoon-']
+                {
+                  font-size:25px;
+                  line-height:50px;
+                  font-weight:bold;
+                }
+            }
+            
+            .owl-prev
+            {
+              left:0;
+            }
+            
+            .owl-next
+            {
+              right:0;
+            }
+            
+        }
+        
+        .owl-dots
+        {
+            .owl-dot span
+            {
+              background:@colore-puntini_owl-carousel;
+            }
+            
+            .owl-dot.active span
+            {
+              background:@colore-puntino_hover_owl-carousel;
+            }
+            
+            .owl-dot:hover span
+            {
+              background:@colore-puntino_active_owl-carousel;
+            }
+        }
+    }
+}

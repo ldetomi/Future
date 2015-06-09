@@ -1,0 +1,160 @@
+
+
+// COCCARDA "Add to MY Homepage"
+
+#p_p_id_sisaladdhomepagefavorite_WAR_sisaladdhomepagefavoriteportlet_
+{
+  position:absolute;
+  top:-10px;
+  right:50px;
+  width:45px;
+  height:105px;
+  
+    @media screen and (max-width: @screen-md) 
+    {
+      right:10px;
+    }
+  
+    @media screen and (max-width: @screen-sm) 
+    {
+      top:0;
+      right:25px;
+    }
+    
+    @media screen and (max-width: @screen-xs) 
+    {
+      right:5px;
+    }
+  
+    .add-to-my-hp
+    {
+        a
+        {
+          display:block;
+          background:url("../images/my-homepage_label-off.svg") no-repeat top left;
+          width:45px;
+          height:105px;
+          text-indent:-9999px;
+          
+          //L'effetto non è gradevole!!!!
+          .transizione_generica(0.3s);
+              
+            &:hover
+            {
+              .scale(1.05);
+            }
+        }
+            
+        &.checked a
+        {
+          background-image:url("../images/my-homepage_label-on.svg");
+        }
+      
+        @media screen and (max-width: @screen-sm) 
+        {
+          .scale(0.8);
+        }
+    }
+
+    #add-to-my-hp-notification
+    {
+      width:315px;
+      position:absolute;
+      top:20px;
+      right:192px;
+      padding:10px;
+      z-index:100;
+      display:none;
+      border:solid 1px @colore-bordi_box-my-homepage;
+      
+      .rounded_corners();
+      .sfondo_navigazione-primo-livello(90deg);
+      
+        strong
+        {
+          font-family:@font-titoli;
+          font-size:20px;
+          font-weight:normal;
+          display:block;
+          margin-bottom:10px;
+          padding-right:25px;
+          color:@colore-titolo_box-my-homepage;
+        }
+        
+        p
+        {
+          text-align:left;
+          margin:0;
+        }
+        
+        button
+        {
+          position:absolute;
+          top:3px;
+          right:3px;
+          padding:0 5px;
+        }
+        
+        @media screen and (max-width: @screen-lg) 
+        {
+          right:154px;
+        }
+        
+        @media screen and (max-width: @screen-md) 
+        {
+          right:5px;
+          top:100px;
+        }
+        
+        @media screen and (max-width: @screen-xs) 
+        {
+          right:0px;
+          width:280px;
+        }
+    }
+}
+
+#p_p_id_sisalfavoritepage_WAR_sisalfavoritepageportlet_
+{
+  position:absolute;
+  top:25px;
+  right:120px;
+  width:40px;
+  height:40px;
+  
+    @media screen and (max-width: @screen-md) 
+    {
+      right:75px;
+    }
+    
+    @media screen and (max-width: @screen-xs) 
+    {
+      right:55px;
+    }
+  
+    .add-to-favourites
+    {
+      a
+      {
+        display:block;
+        background:url("../images/add-to-favourites_off.svg") no-repeat top left;
+        background-size:100% 100%;
+        width:40px;
+        height:40px;
+        text-indent:-9999px;
+        
+        .transizione_generica(0.3s);
+              
+          &:hover
+          {
+            .scale(1.1);
+          }
+      }
+          
+      &.checked a
+      {
+        background-image:url("../images/add-to-favourites_on.svg");
+      }
+    } 
+}
+

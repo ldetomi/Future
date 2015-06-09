@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html class='aui'>
+<head>
+  <META charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="css/alloy-bootstrap/bootstrap-2.3.2.min.css">
+  <link rel="stylesheet/less" href="less/style.less">
+  
+  <script>
+    less = {
+      env: "development",
+      async: false,
+      fileAsync: false,
+      poll: 1000,
+      functions: {},
+      dumpLineNumbers: "all"
+    };
+  </script>
+  
+  <script src="js/less.min.js" type="text/javascript"></script>
+  
+  <script>/* less.watch(); */ </script>
+  
+  
+  
+  
+  <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+  <script src="js/offcanvas.js"></script>
+  
+  <link rel="stylesheet" href="js/jquery-ui-1.11.1.custom/jquery-ui.min.css">
+  <script src="js/jquery-ui-1.11.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+  
+  <script src="js/mega-menu/booNavigation.js"></script>
+  <script>
+    $('.booNavigation').booNavigation({
+        slideSpeed: 600,
+        fadeSpeed: 400,
+        delay: 200
+    });
+  </script>
+  
+  <script src="js/owl-carousel/owl.carousel.js"></script>
+  <script src="js/background-check/background-check.js"></script>
+  <script>
+      $(document).ready(function() {
+        
+        $("#hp-pubblica_main_carousel").owlCarousel({
+          loop:true,
+          items:1,
+          margin:10,
+          nav:true,
+          navText:["<span class='icomoon-arrow-left' aria-hidden='true'></span>","<span class='icomoon-arrow-right' aria-hidden='true'></span>"],
+          onInitialized:background_Check,
+          onTranslated:BackgroundCheck.refresh
+        });
+        
+        $("#iniziative-e-novita").owlCarousel({
+          loop:true,
+          margin:30,
+          nav:true,
+          navText:["<span class='icomoon-arrow-left' aria-hidden='true'></span>","<span class='icomoon-arrow-right' aria-hidden='true'></span>"],
+          responsive:{
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            },
+            1200:{
+                items:4
+            }
+          }
+        });
+        
+      });
+  </script>
+
+  <script>
+      $(document).ready(function() {
+        $("#hp-privata_main_carousel").owlCarousel({
+          loop:true,
+          items:1,
+          margin:10,
+          responsiveRefreshRate:50,
+          nav:false,
+          dotData:true,
+          dotsData:true,
+          dotsContainer:"#links_laterali"
+        });
+        
+        $("#iniziative-e-novita").owlCarousel({
+          loop:true,
+          margin:30,
+          nav:true,
+          navText:["<span class='icomoon-arrow-left' aria-hidden='true'></span>","<span class='icomoon-arrow-right' aria-hidden='true'></span>"],
+          responsive:{
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            },
+            1200:{
+                items:4
+            }
+          }
+        });
+        
+      });
+  </script>
+  
+  <script src="js/sisal-functions.js" type="text/javascript"></script>
+ 
+  <title>Sisal Homepage</title>
+</head>
+<body>
+  <div class="main-container">
+    <div id="header-mobile_container">
+      <header>
+        <!-- HEADER -->
+        <div id='logo-login_container'>
+          <button type="button" id='toggle-nav' class="pull-left btn btn-primary btn-xs">
+            <span class="sr-only">Toggle Nav</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id='logo'>
+            <img src="logo.png" class="pull-left img-responsive" alt='logo'>
+          </div>
+          <div id='icona-utente' class="block-group booNavigation">
+            <a href='#' class='navItem block'>
+              <span class="icomoon-user" aria-hidden="true"></span>
+            </a>
+            <ul class="navContent">
+              <li>
+                <div class='users-name pull-left'>Mario Rossi</div>
+                <div class='number-messages pull-right'>3</div>
+              </li>
+            </ul>
+          </div>
+          <div id='login-box_container' class='pull-right'>
+            <div class='users-name pull-left'>Mario Rossi</div>
+            <div class='number-messages pull-right'>3</div>
+          </div>
+        </div>  
+        
+        <!-- PAGE TITLE -->
+        <div id='page-title' class='pull-left'>
+          <h1>Totocalcio</h1>
+        </div>
+          
+        <!-- MAIN NAVIGATION -->
+        <nav id='main-navigation_container' class="block-group booNavigation">
+          <ul id='main-navigation' class="block-group nav navbar-nav">
+            <li id='link-prodotti' class="navItem block main-link">
+              <a href="#">
+                <span class="icomoon-cabinet" aria-hidden="true"></span>
+                <span class='link-text'>Prodotti</span>
+              </a>
+              <ul class="navContent block-group">
+                <li class='block'>
+                  <h2>Giochi Numerici</h2>
+                  <ul>
+                    <li><a href="#" title="Superenalotto">Superenalotto</a></li>
+                    <li><a href="#" title="VinciCasa">VinciCasa</a></li>
+                    <li><a href="#" title="SiVinceTutto">SiVinceTutto</a></li>
+                    <li><a href="#" title="EuroJackpot">EuroJackpot</a></li>
+                    <li><a href="#" title="WinForLife Classico">WinForLife Classico</a></li>
+                    <li><a href="#" title="WinForLife Grattacieli">WinForLife Grattacieli</a></li>
+                    <li><a href="#" title="WinForLife Cassaforte">WinForLife Cassaforte</a></li>
+                  </ul>
+                  <h2>Convenzioni</h2>
+                  <h2>Bacheca Sisal</h2>
+                </li>
+                <li class='block'>
+                  <h2>Giochi Sportivi</h2>
+                  <ul>
+                    <li><a href="#" title="Totocalcio">Totocalcio</a></li>
+                    <li><a href="#" title="Totogol">Totogol</a></li>
+                    <li><a href="#" title="V7">V7</a></li>
+                    <li><a href="#" title="Big Match">Big Match</a></li>
+                  </ul>
+                  <h2>Scommesse Sportive Ippica e Virtual Race</h2>
+                  <ul>
+                    <li><a href="#" title="Scommesse Sportive">Scommesse Sportive</a></li>
+                    <li><a href="#" title="Ippica">Ippica</a></li>
+                    <li><a href="#" title="Virtual Race">Virtual Race</a></li>
+                  </ul>
+                </li>
+                <li class='block'>
+                  <h2>Apparecchi da Intrattenimento</h2>
+                  <ul>
+                    <li><a href="#" title="VLT">VLT</a></li>
+                    <li><a href="#" title="AWP">AWP</a></li>
+                  </ul>
+                  <h2>Food & Beverage</h2>
+                  <h2>Prodotti Content e Loyalty</h2>
+                </li>
+                <li class='block'>
+                  <h2>SisalPay</h2>
+                  <ul>
+                    <li><a href="#" title="Pagamenti">Pagamenti</a></li>
+                    <li><a href="#" title="Ricariche">Ricariche</a></li>
+                    <li><a href="#" title="Manuali e Allestimenti">Manuali e Allestimenti</a></li>
+                    <li><a href="#" title="Info Utili">Info Utili</a></li>
+                  </ul>
+                  <h2>Sisal.it</h2>
+                  <ul>
+                    <li><a href="#" title="Apertura e Ricarica Conti Gioco">Apertura e Ricarica Conti Gioco</a></li>
+                    <li><a href="#" title="Documenti e Allestimenti">Documenti e Allestimenti</a></li>
+                    <li><a href="#" title="Info Utili">Info Utili</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li id='link-gestione_pdv' class="navItem block main-link">
+              <a href="#">
+                <span class="icomoon-wrench" aria-hidden="true"></span>
+                <span class='link-text'>Gestione Punto di Vendita</span>
+              </a>
+              <ul class="navContent block-group">
+                <li class='block'>
+                  <h2>I Miei Dati</h2>
+                  <ul>
+                    <li><a href="#" title="Il mio punto vendita">Il mio punto vendita</a></li>
+                    <li><a href="#" title="Terminale">Terminale</a></li>
+                    <li><a href="#" title="Notifiche e Messaggi">Notifiche e Messaggi</a></li>
+                    <li><a href="#" title="Procedure Pratiche<">Procedure Pratiche</a></li>
+                  </ul>
+                </li>
+                <li class='block'>
+                  <h2>Iniziative Speciali</h2>
+                  <ul>
+                    <li><a href="#" title="Incentives">Incentives</a></li>
+                    <li><a href="#" title="Eventi">Eventi</a></li>
+                    <li><a href="#" title="Promo cross-prodotto">Promo cross-prodotto</a></li>
+                  </ul>
+                  <h2>Allestim. e Marketing</h2>
+                  <ul>
+                    <li><a href="#" title="Consigli ed esempi">Consigli ed esempi</a></li>
+                    <li><a href="#" title="Loghi e allestimenti">Loghi e allestimenti</a></li>
+                    <li><a href="#" title="Trade Marketing">Trade Marketing</a></li>
+                    <li><a href="#" title="Promozioni e concorsi">Promozioni e concorsi</a></li>
+                    <li><a href="#" title="Le mie locandine">Le mie locandine</a></li>
+                    <li><a href="#" title="Pianifica locandine">Pianifica locandine</a></li>
+                  </ul>
+                </li>
+                <li class='block'>
+                  <h2>Contabilità</h2>
+                  <ul>
+                    <li><a href="#" title="Periodo Contabile">Periodo Contabile</a></li>
+                    <li><a href="#" title="Estratto Conto">Estratto Conto</a></li>
+                    <li><a href="#" title="Scommesse a quota fissa">Scommesse a quota fissa</a></li>
+                    <li><a href="#" title="Aggi annuali">Aggi annuali</a></li>
+                    <li><a href="#" title="Fatture">Fatture</a></li>
+                    <li><a href="#" title="Sovvenzioni">Sovvenzioni</a></li>
+                    <li><a href="#" title="Situazione contabile">Situazione contabile</a></li>
+                    <li><a href="#" title="Foglio cassa web">Foglio cassa web</a></li>
+                  </ul>
+                </li>
+                <li class='block'>
+                  <h2>Stock Store</h2>
+                  <h2>Area Azionisti</h2>
+                  <h2>Documenti</h2>
+                  <h2>Formazione e manuali operativi</h2>
+                  <ul>
+                    <li><a href="#" title="Formazione">Formazione</a></li>
+                    <li><a href="#" title="Manuali Operativi">Manuali Operativi</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li id='link-search' class="navItem block main-link">
+              <a href="#">
+                <span class="icomoon-search" aria-hidden="true"></span>
+              </a>
+              <div class="input-append">
+                <input type='text' placeholder='Cerca nel sito'>
+                <button class="btn" type="button"><span class="icomoon-search2" aria-hidden="true"></span></button>
+              </div>
+              <ul class="navContent block-group">
+                <li class='block'>
+                  <h2>Cerca nel sito</h2>
+                  <div class="input-append">
+                    <input type='text' placeholder='Cerca nel sito'>
+                    <button class="btn" type="button"><span class="icomoon-search2" aria-hidden="true"></span></button>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li id='link-helpdesk' class="navItem block main-link">
+              <a href="#">
+                <span class="icomoon-unihelp" aria-hidden="true"></span>
+              </a>
+              <ul class="navContent block-group">
+                <li class='block'>
+                  <h2>Help Desk</h2>
+                </li>
+              </ul>
+            </li>
+            <li id='link-preferiti' class="navItem block main-link">
+              <a href="#">
+                <span class="icomoon-star" aria-hidden="true"></span>
+              </a>
+              <ul class="navContent block-group">
+                <li class='block'>
+                  <h2>Elenco dei preferiti</h2>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header> 
+
+      <!-- FIRST LEVEL NAVIGATION -->
+      <div id='first-level-navigation_container' class="block-group">
+        <nav id='first-level-navigation' class="block-group" role="navigation">
+          <div class="block mega-link active">
+            <a href="#">Gioco</a>
+          </div>
+          <div class="block mega-link">
+            <a href="#">Concorsi</a>
+          </div>
+          <div class="block mega-link">
+            <a href="#">Allestimento</a>
+          </div>
+          <div class="block mega-link">
+            <a href="#">Normative e regolamenti</a>
+          </div>
+        </nav>
+        <ul class="breadcrumb">
+          <li><a href="#">Home</a> <span class="divider">/</span></li>
+          <li><a href="#">Library</a> <span class="divider">/</span></li>
+          <li class="active">Data</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div id='main-content' class="block-group">
+      <!-- SECOND LEVEL NAVIGATION -->
+      <div id="multi-level-navigation_container" class="block-group">
+        <div id='second-level-navigation' class="block-group">
+          <nav>
+            <ul class="list-group">
+              <li>
+                <a href="#" class="list-group-item active">
+                  Novità
+                  <i class="icon-chevron-down pull-right icon-white"></i>
+                </a>
+                <ul class="list-group">
+                  <li><a href="#" class="list-group-item active">Supervincitore</a></li>
+                  <li><a href="#" class="list-group-item">App Superenalotto</a></li>
+                  <li><a href="#" class="list-group-item">Rigioco</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="list-group-item">Che cos'è</a></li>
+              <li><a href="#" class="list-group-item">Come si Gioca</a></li>
+              <li><a href="#" class="list-group-item">Le Vincite</a></li>
+              <li><a href="#" class="list-group-item">Verifica Vincite</a></li>
+            </ul>
+          </nav>
+          <div id='help-center-block'>
+            <strong>HELP CENTER</strong>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do?</p>
+            <strong>Hai un dubbio o una domanda?</strong>
+            <p>Entra nell'Help Center e inviaci la tua domanda.</p>
+            <textarea></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE CONTENT -->
+      <article class="block-group tre-colonne">
+        <div id='page-content' class="block-group">
+          <section>
+            <!--  <div style='height:1px; background:red; width:1000%; position:absolute; top:10px;'></div>  -->
+            <h1>Informazioni di settore</h1>
+            <img src="image_gallery.png" class="img-responsive">
+             <p>
+              <strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit</strong>
+              <br><br>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do?Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do?
+            </p>
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do?</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do? Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et do?</li>
+            </ul>
+            
+            
+            <br>
+            <p><a class="btn btn-primary" href="#" role="button">Link as Button</a></p>
+            <h3>Pulsanti nelle 2 dimensioni</h3>
+            <button type="button" class="btn btn-primary">Normale</button>
+            <button type="button" class="btn btn-primary btn-lg">Grande</button>
+            <br>
+            <h3>Stato Attivo/Disattivo dei vari colori</h3>
+            <button type="button" class="btn btn-primary">Attivo</button>
+            <button type="button" class="btn btn-primary" disabled="disabled">Disattivo</button>
+            <br><br>
+            <button type="button" class="btn btn-success">Attivo</button>
+            <button type="button" class="btn btn-success" disabled="disabled">Disattivo</button>
+            <br><br>
+            <button type="button" class="btn btn-info">Attivo</button>
+            <button type="button" class="btn btn-info" disabled="disabled">Disattivo</button>
+            <br><br>
+            <button type="button" class="btn btn-default">Attivo</button>
+            <button type="button" class="btn btn-default" disabled="disabled">Disattivo</button>
+           
+            <br><br><br><br> 
+            
+            <span class="icomoon-home aria-hidden="true"></span>
+            
+            <div class="sisal-accordion">
+              <h2>Seminario Giochi Numerici - 30 marzo - Milano</h2>
+              <div>
+                <h3>Contingentamento</h3>
+                  <p>
+                    <em>Decreto Prot. n. 2011/30011/giochi/UD del 27 luglio 2011</em>.
+                    Sono individuati i parametri numerico quantitativi per l'installazione degli apparecchi di cui all'articolo 110, comma 6 del TULPS all'interno delle singole ubicazioni.
+                    (<a href='#'>Scarica il documento in PDF</a>)
+                  </p>
+                  <p>
+                    <strong>Elenco dei soggetti che svolgono attività in materia di apparecchi da intrattenimento</strong>
+                    <em>Decreto Prot. n. 2011/11181/Giochi/ADI del 9 settembre 2011</em>.
+                    I concetti espressi dalla Mission sono diversi e tutti importanti.Decreto Prot. n. 2011/11181/Giochi/ADI del 9 settembre 2011 A decorrere dal 1 gennaio 2011 è instituito l'elenco unico a livello nazionale per i soggetti che svolgono le attività in materia di AWP e VLT. L'iscrizione all'elenco costituisce titolo abilitativo per operare nel settore.
+                    (<a href='#'>Scarica il documento in PDF</a>)
+                  </p>
+                  <h3>Provvedimenti AWP</h3>
+                  <p>
+                    <strong>Regole tecniche di produzione e verifica tecnica degli apparecchi e congegni da divertimento ed intrattenimento di cui all'art. 110, comma 6 del T.U.L.P.S</strong>.
+                    <em>Decreto Direttoriale 4 dicembre 2003</em>.
+                    Sono definite tutte le caratteristiche tecniche e le modalità di funzionamento degli apparecchi AWP nonché le funzionalità del protocollo di comunicazione per l'accesso ai dati, anche ai fini del successivo collegamento di rete. Gli esemplari di modelli degli apparecchi ed i congegni stessi devono essere sottoposti alla verifica tecnica di cui all'articolo 38, comma 3, della legge 23 dicembre 2000, n. 388, e successive modificazioni ed integrazioni, per consentirne la produzione o l'importazione.
+                    (<a href='#'>Scarica il documento in PDF</a>)
+                  </p>
+                  <h3>Provvedimenti VLT</h3>
+                  <p>
+                    <strong>Disciplina dei requisiti tecnici e di funzionamento dei sistemi di gioco VLT, di cui all'articolo 110, comma 6, lettera b) del T.U.L.P.S.</strong>
+                    <em>Decreto Direttoriale 22 gennaio 2010</em>.
+                    Sono definiti i requisiti minimi, le caratteristiche tecniche e la modalità di funzionamento dei sistemi di gioco, della rete telematica di collegamento del sistema di gioco e della rete telematica di collegamento tra il sistema di gioco e il sistema di controllo.
+                    (<a href='#'>Scarica il documento in PDF</a>)
+                  </p>
+              </div>
+              <h2>Evento Ricevitori Scommesse Sportive - 23 marzo - Torino</h2>
+              <div>
+                <p>
+                  Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                  purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                  velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                  suscipit faucibus urna.
+                </p>
+              </div>
+            </div>
+
+          </section><!--/span-->
+          
+          <br><br>
+          
+          <section>    
+            <h1>QUOTE</h1>
+            <div class="table-responsive">
+              <table class='sisal-table'>
+                <tr>
+                  <th>CATEGORIA</th>
+                  <th>VINCITORI</th>
+                  <th>QUOTE</th>
+                </tr>
+                <tr class='odd'>
+                  <td>6 numeri</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='even'>
+                  <td>5 numeri e il jolly</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='odd'>
+                  <td>5 numeri </td>
+                  <td>24</td>
+                  <td>17.989 &euro;</td>
+                </tr>
+                <tr class='even'>
+                  <td>4 numeri </td>
+                  <td>132</td>
+                  <td>2.009 &euro;</td>
+                </tr>
+                <tr class='odd'>
+                  <td>6 numeri</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='even'>
+                  <td>5 numeri e il jolly</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='odd'>
+                  <td>5 numeri </td>
+                  <td>24</td>
+                  <td>17.989 &euro;</td>
+                </tr>
+                <tr class='even'>
+                  <td>4 numeri </td>
+                  <td>132</td>
+                  <td>2.009 &euro;</td>
+                </tr>
+                <tr class='odd'>
+                  <td>6 numeri</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='even'>
+                  <td>5 numeri e il jolly</td>
+                  <td>nessuna</td>
+                  <td>-</td>
+                </tr>
+                <tr class='odd'>
+                  <td>5 numeri </td>
+                  <td>24</td>
+                  <td>17.989 &euro;</td>
+                </tr>
+                <tr class='even'>
+                  <td>4 numeri </td>
+                  <td>132</td>
+                  <td>2.009 &euro;</td>
+                </tr>
+              </table>
+            </div>
+          </section><!--/span-->
+          
+          <section>    
+            <h1>QUOTE</h1>
+            <div class="table-responsive">
+              <table class='sisal-table'>
+                <tr>
+                  <th>ID</th>
+                  <th>DATA APERTURA</th>
+                  <th>RICHIESTA</th>
+                  <th>STATO</th>
+                  <th>TEMPO RISOL. STIMATO</th>
+                  <th>AZIONI</th>
+                </tr>
+                <tr class='odd'>
+                  <td>12345</td>
+                  <td>23/07/2014</td>
+                  <td><strong>Malfunzionamento AVP</strong></td>
+                  <td>In lavorazione</td>
+                  <td>8 ore</td>
+                  <td>
+                    <button type="submit" class="btn btn-info">Contesta</button>
+                    <button type="submit" class="btn btn-default">Chiudi</button>
+                  </td>
+                </tr>
+                <tr class='even'>
+                  <td>12346</td>
+                  <td>24/07/2014</td>
+                  <td><strong>Malfunzionamento POS</strong></td>
+                  <td>In attesa</td>
+                  <td>4 ore</td>
+                  <td>
+                    <button type="submit" class="btn btn-info">Contesta</button>
+                    <button type="submit" class="btn btn-default">Chiudi</button>
+                  </td>
+                </tr>
+                <tr class='odd'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='even'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='odd'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='even'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='odd'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='even'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='odd'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class='even'>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+          </section><!--/span-->
+          
+          <section>
+            <form class="block-group form-horizontal">
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Denomin. / Insegna</label>
+                <div class="block fields">
+                  <p class="form-control-static">Punto Vendita "Lorem Ipsum"</p>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Tipologia Attività</label>
+                <div class="block fields">
+                  <select class='form-control'>
+                    <option>Bar Tabacchi</option>
+                  </select>
+                </div>
+              </div>
+              <br>
+              <h2>Informazioni sul Punto Vendita</h2>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Indirizzo</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Indirizzo" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">CAP</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="CAP" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Codice Punto di Vendita</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Codice Punto Vendita" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Password</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Password" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Provincia</label>
+                <div class="block fields">
+                  <select class='form-control'>
+                    <option>Milano</option>
+                  </select>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Comune</label>
+                <div class="block fields">
+                  <select class='form-control'>
+                    <option>Cinisello Balsamo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Telefono</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Telefono" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Fax</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Fax" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">E-mail</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="E-mail" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">MQ Dedicati</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="MQ Dedicati" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <label for="exampleInputEmail1" class="block control-label">Orari Apertura-Chiusura</label>
+                <div class="block fields">
+                  <input type="text" id="exampleInputEmail1" placeholder="Orari" class='form-control'>
+                </div>
+              </div>
+              <div class="block-group control-group">
+                <div class="block fields form-buttons_container">
+                  <button type="submit" class="btn btn-primary">Accedi</button>
+                  <button type="submit" class="btn btn-success btn-lg">Diventa retailer sisal</button>
+                  <button type="submit" class="btn btn-default btn-sm">Annulla</button>
+                </div>
+              </div>
+            </form>
+          </section>
+          
+          <section>
+            <h1>QUOTE</h1>
+            <div class="block-group gallery">
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid1.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid2.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid3.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid4.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid5.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="block">
+                <figure>
+                  <div><img src="gallery/search_result_grid6.png" class="img-responsive"></div>
+                  <figcaption>
+                    Ultima Estrazione
+                    <br>
+                    <strong>Concorso n.129 del 27/10/2012</strong>
+                    <br>
+                    Superenalotto
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <!-- PAGE CONTENT -->
+        <aside class="block-group">
+          <h1>Documenti</h1>
+          <img src="aside.png" class="center_block img-responsive" alt='aside'>
+          <div>
+            <div>Corporate</div>
+            <div>Milano, 09 giugno 2014 </div>
+            <h2>
+              <a title="Sisal Master Training: prossimi appuntamenti il 16 e 18 Giugno in 20 citta italiane" href="http://www.sisal.com/comunicato-stampa/sisal-master-training-prossimi-appuntamenti-16-18-giugno-in-20-citta">
+                Programma Evento
+              </a>
+            </h2>
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <br><br>
+              <p>
+                <strong>Sisal</strong>
+                <br>
+                via A. da Tocqueville 12
+                <br>
+                Milano
+              </p>
+            </div>
+          </div>
+        </aside>
+        
+      </article><!--/block-group-->
+    
+    </div>
+  
+  </div>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="block-group main-container">
+      <div class="block columns">
+        <h3>Gruppo</h3>
+        <ul>
+          <li><a href=''>Gruppo</a></li>
+          <li><a href=''>Struttura Organizzativa</a></li>
+          <li><a href=''>Storia</a></li>
+        </ul>
+      </div>
+      <div class="block columns">
+        <h3>Governance</h3>
+        <ul>
+          <li><a href=''>Governance</a></li>
+          <li><a href=''>Codice Etico</a></li>
+        </ul>
+      </div>
+      <div class="block columns">
+        <h3>Offerta</h3>
+        <ul>
+          <li><a href=''>Giochi numerici</a></li>
+          <li><a href=''>Giochi Online</a></li>
+          <li><a href=''>Scommesse</a></li>
+          <li><a href=''>Apparecchi da intrattenimento</a></li>
+        </ul>
+      </div>
+      <div class="block columns">
+        <h3>Sostenibilità</h3>
+        <ul>
+          <li><a href=''>Sostenibilità</a></li>
+          <li><a href=''>Gioco Responsabile</a></li>
+          <li><a href=''>La comunità</a></li>
+        </ul>
+      </div>
+  </footer>
+ 
+</body>
+</html>

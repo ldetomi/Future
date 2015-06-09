@@ -1,0 +1,296 @@
+*, *:before, *:after 
+{
+    box-sizing:border-box;
+    outline:none !important;
+}
+
+.aui .main-container 
+{
+  margin:0 auto;
+  
+    #multi-level-navigation_container,
+    article,
+    #page-content,
+    aside
+    {
+      padding:0 15px;
+      width:100%;
+    }
+    
+    @media screen and (max-width: @screen-xs) 
+    {
+      article
+      {
+        padding:0;
+      }
+    }
+    
+    @media screen and (max-width: @screen-md) 
+    {      
+      #page-content
+      {
+        padding-bottom:40px;
+      }
+      
+      aside
+      {
+        border-top:solid 1px @colore-bordo-separatore_aside;
+        padding-top:15px;
+      }
+    }
+    
+    @media screen and (min-width: @screen-sm) and (max-width: @screen-md) 
+    {
+      #multi-level-navigation_container,
+      article,
+      #page-content,
+      aside
+      {
+        padding:0 5px;
+      }
+    }
+     
+    @media screen and (min-width: @screen-sm) 
+    {
+      width:750px;
+      
+        #multi-level-navigation_container
+        {
+          width:25%;
+        }
+        
+        article:not(.una-colonna)
+        {
+          width:75%;
+        }
+    }
+    
+    @media screen and (min-width: @screen-md) 
+    {
+      width:970px;
+
+        article.tre-colonne
+        {
+            #page-content
+            {
+              width:75%;
+            }
+          
+            aside
+            {
+              width:25%;
+            } 
+        }
+    }
+    
+    @media screen and (min-width: @screen-lg) 
+    {
+      width:1170px;
+    }
+    
+    /*@media screen and (min-resolution: 2dppx) 
+    {
+    }*/
+}
+
+
+.aui #page-title
+{
+  margin-top:10px;
+  
+    h1
+    {
+      color:@colore-titoli;
+      font-size:25px;
+      margin:0;
+    }
+}
+
+.aui #main-content
+{
+  background:@colore-sfondo_main_content;
+  padding:15px 0;
+  position:relative;
+  
+  .rounded_corners();
+  
+  box-shadow: 0 -2px 10px 2px rgba(1, 1, 1, 0.2);
+  
+    .una-colonna,
+    .due-colonne
+    {
+        #p_p_id_sisalpagetitle_WAR_sisalpagetitleportlet_
+        {
+          margin-right:150px !important;
+          
+            @media screen and (max-width: @screen-md) 
+            {
+              margin-right:100px !important;
+            }
+        }
+    }
+    
+    .tre-colonne #p_p_id_sisalpagetitle_WAR_sisalpagetitleportlet_
+    {
+        @media screen and (max-width: @screen-md) 
+        {
+          margin-right:100px !important;
+        }
+    }
+    
+    .una-colonna,
+    .due-colonne,
+    .tre-colonne
+    {
+      #p_p_id_sisalpagetitle_WAR_sisalpagetitleportlet_
+      {
+          @media screen and (max-width: @screen-xs) 
+          {
+            margin-right:0 !important;
+            margin-top:70px !important;
+          }
+      }
+    }
+}
+
+html.aui
+{
+  //Consente di applicare un margi-top al BODY
+  background:white;
+}
+
+
+.aui body
+{
+  font-family:@font-principale;
+  font-size:13px;
+  text-align:justify;
+  overflow-x:hidden;
+  margin-top:40px;
+  position:relative;
+  
+  background-image:url('../images/look&feel_pagine-interne_sisal.png');
+  background-repeat:no-repeat;
+  background-position:top right;
+  background-size:370px auto;
+  
+    &.look-and-feel_sisal
+    {
+      background-image:url('../images/look&feel_pagine-interne_sisal.png');
+    }
+    
+    &.look-and-feel_matchpoint
+    {
+      background-image:url('../images/look&feel_pagine-interne_matchpoint.png');
+    }
+    
+    &.look-and-feel_wincity
+    {
+      background-image:url('../images/look&feel_pagine-interne_wincity.png');
+    }
+    
+    &.look-and-feel_nobrand
+    {
+      background-image:url('../images/look&feel_pagine-interne_nobrand.png');
+    }
+   
+    @media screen and (max-width: @screen-lg)
+    {
+      background-size:290px auto;
+    }
+    
+    @media screen and (max-width: @screen-md)
+    {
+      background-size:250px auto;
+    }
+    
+    @media screen and (max-width: @screen-sm)
+    {
+      background:none !important;
+    }    
+}
+
+.aui body#hp-privata
+{
+  background-image:url('../images/look&feel_hp-privata_sisal.png');
+  background-repeat:no-repeat;
+  background-position:center -85px;
+  
+    &.look-and-feel_sisal
+    {
+      background-image:url('../images/look&feel_hp-privata_sisal.png');
+    }
+    
+    &.look-and-feel_matchpoint
+    {
+      background-image:url('../images/look&feel_hp-privata_matchpoint.png');
+    }
+    
+    &.look-and-feel_wincity
+    {
+      background-image:url('../images/look&feel_hp-privata_wincity.png');
+    }
+    
+    &.look-and-feel_nobrand
+    {
+      background-image:url('../images/look&feel_hp-privata_nobrand.png');
+    }
+  
+    @media screen and (max-width: @screen-lg) 
+    {
+      background-size:@screen-lg auto;
+      background-position:center 65px;
+    }
+    
+    @media screen and (max-width: @screen-md) 
+    {
+      background-size:@screen-md auto;
+      background-position:center 75px;
+    }
+}
+
+
+.aui .bg-overlay
+{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  //border:solid 1px red;
+  background:rgba(255,255,255,0.6);
+  z-index:100;
+    
+    img
+    {
+      position:absolute;
+      left:50%;
+      top:50%;
+      margin-left:-40px;
+      margin-top:-40px;
+      max-width:auto;
+      max-height:80px;
+    }  
+}
+
+
+
+.aui .center_block
+{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.aui .maggiori_indicazioni
+{
+  font-weight:bold;
+  font-size:15px;
+}
+
+.aui .img-responsive 
+{
+  display:block;
+  height:auto;
+  max-width:100%;
+}
+

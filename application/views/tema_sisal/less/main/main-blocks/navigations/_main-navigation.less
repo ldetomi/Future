@@ -1,0 +1,422 @@
+/* --- MAIN NAVIGATION --- */
+
+// Dimensionamento degli oggetti
+.aui #main-navigation_container
+{
+  float:right;
+  
+    #link-helpdesk,
+    #link-preferiti
+    {
+      width:8%;
+    }
+    
+    #link-prodotti
+    {
+      width:16%;
+    }
+    
+    #link-gestione_punto_di_vendita,
+    #link-search
+    {
+      width:34%;
+    }
+        
+    @media screen and (max-width: @screen-sm) 
+    {
+      width:170px;
+      position:absolute;
+      top:10px;
+      right:65px;
+      
+        #main-navigation
+        {
+          .rounded_corners(6px 0 0 6px) !important;
+        }
+      
+        .main-link
+        {
+          width:20% !important;
+          height:34px !important;
+          padding:0 !important;
+          
+            &:last-of-type
+            {
+              .rounded_corners(0) !important;
+            }
+          
+            .link-text    //Mostro solo le icone
+            {
+              display:none;
+            }
+            
+            [class*='icomoon-']
+            {
+              line-height:31px !important;
+            }
+        }
+    }
+    
+    @media screen and (max-width: @screen-xs) 
+    {
+      width:150px;
+      right:33px;
+      
+        .main-link
+        {
+          height:32px !important;
+        }
+    }
+    
+    @media screen and (min-width: @screen-sm) 
+    {
+      width:70%;
+      margin-top:15px;
+      
+        #link-gestione_punto_di_vendita [class*='icomoon-'],
+        #link-prodotti [class*='icomoon-']
+        {
+          display:none;
+        }
+    }
+    
+    @media screen and (min-width: @screen-md) 
+    {
+        #link-search 
+        {
+            [class*='icomoon-']
+            {
+              font-size:14px !important;
+            }
+           
+            a [class*='icomoon-']
+            {
+              display:none;
+            }
+            
+            .input-append
+            {
+              padding-right:0;
+            } 
+        }
+    }
+    
+    @media screen and (max-width: @screen-md) 
+    {
+        #link-prodotti
+        {
+          width:22%;
+        }
+        
+        #link-gestione_punto_di_vendita
+        {
+          width:48%;
+        }
+        
+        #link-helpdesk,
+        #link-preferiti,
+        #link-search
+        {
+          width:10%;
+        }
+        
+        #link-search 
+        {
+            > input
+            {
+              display:none;
+            }
+            
+            .btn
+            {
+              display:inline-block;
+              
+                [class*='icomoon-']
+                {
+                  line-height:21px !important;
+                }
+            }
+        }    
+    }
+}
+
+//Aspetto della barra (colore, fonts, bordi, sfondo, ecc.)
+.aui #main-navigation_container
+{
+    #main-navigation
+    {
+      width:100%;
+      overflow:hidden;
+      
+      .rounded_corners(6px);
+      .ombra_main-navigation();
+      
+        .main-link
+        {
+          border:1px solid @colore-bordi_main-navigation;
+          height:38px;
+          text-align:center;
+          text-transform:uppercase;
+          padding:0;
+          
+          .sfondo_main-navigation();
+          .ombra_interna_pulsanti_main-navigation();
+            
+            &#link-search
+            {
+              padding:0 15px;
+            }
+            
+            &:last-of-type
+            {
+              .rounded_corners(0 6px 6px 0);
+            }
+            
+            > a
+            {
+              padding:0;
+              
+                &:hover,
+                &:focus
+                {
+                  background-color:transparent;
+                }
+            }
+            
+            > a
+            {
+              color:@colore-testo_main-navigation;
+              text-shadow:0 -1px 0 @colore-ombra_testo_pulsanti_main-navigation;
+              line-height:35px;
+              
+                &:hover
+                {
+                  color:@colore-testo-hover_main-navigation;
+                }
+            }
+            
+            [class*='icomoon-']
+            {
+              font-size:20px;
+              line-height:35px;
+            }
+            
+            //pulsantino "SEARCH" a fianco della barra di ricerca
+            .input-append
+            {
+              width:100%;
+              
+                input[type='text'],
+                button
+                {
+                  height:23px;
+                  max-width:235px;
+                  margin-top:7px;
+                  padding-top:0;
+                  padding-bottom:0;
+                }
+                
+                input[type='text']
+                {
+                  width:80%;
+                }
+                
+                
+                button
+                {
+                    [class*='icomoon-']
+                    {
+                      line-height:21px;
+                      color:@colore-testo-hover_main-navigation !important;
+                    }
+                }
+            }
+
+            &.open,
+            &.active-category
+            {
+              background:@colore-sfondo-link-attivo_main-navigation !important;
+              border:1px solid @colore-bordi-link-attivo_main-navigation;
+
+                > a,
+                > a:hover,
+                > a:focus
+                {
+                  background-color:transparent;
+                  color:@colore-testo_main-navigation;
+                }
+            }          
+        }
+    }
+}
+
+
+//Megamenu a cascata
+.aui .booNavigation 
+{
+  position:relative;
+  
+    .navContent
+    {
+      border:solid 1px @colore-bordi_megamenu;
+      background:@colore-sfondo_megamenu;
+      position:absolute;
+      left:0;
+      top:38px;
+      width:100%;
+      max-height:500px;
+      overflow-x:hidden;
+      overflow-y:auto;
+      z-index:999;
+      padding:0 5px 15px;
+      text-align:left;
+      box-shadow:0 -2px 10px 2px rgba(1, 1, 1, 0.2);
+      
+      .rounded_corners(0 0 4px 4px);
+      
+        @media screen and (max-width: @screen-sm) 
+        {
+          width:300px;
+          left:auto;
+          top:34px;
+          right:0;
+          max-height:300px;
+        }
+        
+        @media screen and (max-width: @screen-xs) 
+        {
+          width:270px;
+          top:32px;
+        }
+
+        ul
+        {
+          margin:0;
+        }
+        
+        .block
+        {
+          width:25%;
+          padding:0 10px;
+          border-left:solid 1px @colore-bordi-interni-separatori_megamenu;
+          border-right:solid 1px @colore-bordi-interni-separatori_megamenu;
+          margin:20px 0 15px -1px; // il -1px serve a far sovrapporre i bordi tra i 2 blocchi adiacenti
+                  
+            &:first-of-type
+            {
+              border-left:none;
+            }
+            
+            &:last-of-type
+            {
+              border-right:none;
+            }
+          
+            /*@media screen and (min-width: @screen-md) and (max-width: @screen-lg) 
+            {
+              width:33%;
+              
+                &:nth-child(n)
+                {
+                  clear:none;
+                }
+                
+                &:nth-child(3n + 1)
+                {
+                  clear:left;
+                  border-left:none;
+                }
+                
+                &:nth-child(3n)
+                {
+                  border-right:none;
+                }
+            }*/
+            
+            @media screen and (max-width: @screen-md) 
+            {
+              width:50%;
+              
+                &:nth-child(n)
+                {
+                  clear:none;
+                }
+                
+                &:nth-child(2n + 1)
+                {
+                  clear:left;
+                  border-left:none;
+                }
+                
+                &:nth-child(2n)
+                {
+                  border-right:none;
+                }
+            }
+            
+            @media screen and (max-width: @screen-sm) 
+            {
+              width:100%;
+              border:none;
+            }
+
+            
+        }
+        
+        h2
+        {
+          font-size:14px;
+          
+            &:first-of-type
+            {
+              margin-top:0;
+            }
+        } 
+        
+        ul
+        {
+          list-style:none;
+          
+            li
+            {
+              background:url("../images/list-image-square-green_small.png") 0 8px no-repeat;
+              padding-left:10px;
+            }
+          
+            a
+            {
+              font-family:@font-principale;
+              font-size:14px;
+              text-transform:none;
+              color:@colore-links_megamenu;
+              
+              .transizione_generica(0.4s ease);
+              
+              &:hover 
+              {
+                padding-left:7px;
+                color:black;
+              }
+            } 
+        } 
+    }
+    
+    //Il menu dropdown dei preferiti ha un livello gerarchico in più, per evitare la suddivisione in colonne, presente negli altri dropdown
+    
+    #link-preferiti
+    {
+        .navContent > li.block
+        {
+          width:100%;
+          
+            .block
+            {
+              margin-top:0 !important;
+              margin-bottom:0 !important;
+              border:none !important;
+            }  
+        }
+    }
+}
+
+

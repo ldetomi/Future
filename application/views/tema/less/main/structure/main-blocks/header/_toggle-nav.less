@@ -1,0 +1,45 @@
+.aui #toggle-nav
+{
+  margin-bottom:5px;
+  margin-right:5px;
+  margin-top:0;
+  padding:9px 10px;
+  position:relative;
+  background:none;
+  border:none;
+  
+    .sr-only 
+    {
+      border: 0 none;
+      clip: rect(0px, 0px, 0px, 0px);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  
+    .icon-bar
+    {
+      display:block;
+      height:4px;
+      width:22px;
+      background-color:@colore-sfondo-toggle_nav;
+      
+        + .icon-bar 
+        {
+          margin-top:4px;
+        }
+    }
+    
+    @media screen and (min-width: @screen-sm)
+    {
+      display:none;
+    }   
+}
+
+.aui .homepage #toggle-nav
+{
+  visibility:hidden;
+}

@@ -1,0 +1,40 @@
+// =======================================================================================================================================
+// --- TESTO COLORATO IN BASE AI VARI CONTESTI -------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+@text_className:text;
+[class*=@{text_className}]
+{
+
+}
+
+.@{text_className}
+{
+  &-primary { .aspetto_text(@type-primary); }
+  &-success { .aspetto_text(@type-success); }
+  &-info    { .aspetto_text(@type-info); }
+  &-default { .aspetto_text(@type-default); }
+  &-warning { .aspetto_text(@type-warning); }
+  &-danger  { .aspetto_text(@type-danger); }
+}
+
+
+//MIXIN PRINCIPALE
+.aspetto_text(@colore)
+{
+  @stop-1:~"@{colore}_SOPRA";
+  @stop-2:~"@{colore}_SOTTO";
+
+  &:not(.outline)
+  {
+    color:@@stop-2;
+  }
+  
+  &.outline
+  {
+    border:solid 1px @@stop-2;
+    
+    .rounded_corners(2px);
+  } 
+}
+

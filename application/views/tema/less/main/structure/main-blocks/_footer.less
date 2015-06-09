@@ -1,0 +1,204 @@
+// =======================================================================================================================================
+// --- FOOTER ----------------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+footer
+{
+  background:@colore-sfondo_footer;
+  color:@colore-links_footer;
+  text-align:left;
+  
+    .columns
+    {
+      width:50%;
+      padding-left:15px;
+      padding-right:15px;
+      border-left:solid 1px @colore-bordi-interni-separatori_footer;
+      border-right:solid 1px @colore-bordi-interni-separatori_footer;
+      margin:20px 0 15px -1px; // il -1px serve a far sovrapporre i bordi tra i 2 blocchi adiacenti
+      
+        &:first-of-type
+        {
+          border-left:none;
+        }
+        
+        &:last-of-type
+        {
+          border-right:none;
+        }
+    
+        &:nth-child(2n + 1)
+        {
+          clear:left;
+        }
+        
+        @media screen and (min-width: @screen-md) 
+        {
+          width:25%;
+          
+            &:nth-child(n)
+            {
+              clear:none;
+            }
+            
+            &:nth-child(4n + 1)
+            {
+              clear:left;
+            }
+        }
+        
+        @media screen and (max-width: @screen-md) 
+        {
+            &:nth-child(2n)
+            {
+              border-right:none;
+            }
+            
+            &:nth-child(2n + 1)
+            {
+              border-left:none;
+            }
+        }
+    }   
+  
+    h3
+    {
+      color:@colore-titoli_footer;
+      font-size:18px;
+      margin-top:0;
+    }
+    
+    ul
+    {
+      margin:0;
+      padding:0;
+      list-style-image:none;
+      
+        li
+        {
+          list-style-type:none;
+          padding:2px 0;
+        
+            a
+            {
+              color:@colore-links_footer !important;
+              
+              .transizione_generica;
+              
+                &:hover
+                {
+                  color:@colore-links_hover_footer !important;
+                }
+            }
+        }
+    }
+}
+
+
+// ---------------------------------------------------------------
+
+// FOOTER SOCIAL
+
+.aui #footer-social
+{
+  padding:20px 0;
+  
+    >div
+    {      
+        h2
+        {
+          margin:0;
+          font-size:31px;
+          line-height:45px;
+          
+            @media screen and (max-width: @screen-lg) 
+            {
+              font-size:28px;
+              line-height:35px;
+            }
+        }  
+    }
+     
+    #social-icons
+    {     
+        .box
+        {
+          float:right;
+          padding:0 20px;
+          
+          border-left:solid 1px @colore-bordi-separatori_footer-social;
+          
+            &:first-of-type
+            {
+              padding-right:0;
+            }
+            
+            &:last-of-type
+            {
+              border:none;
+              padding-left:0;
+            }
+          
+            img
+            {
+              display:block;
+              height:45px;
+              margin:0 0 0 auto;
+              
+                @media screen and (max-width: @screen-lg) 
+                {
+                  height:35px;
+                }
+                
+                @media screen and (max-width: @screen-sm) 
+                {
+                  height:30px;
+                }
+            }       
+        }  
+    }
+
+    @media screen and (min-width: @screen-md) 
+    {
+        >div,
+        #social-icons
+        {
+          width:50%;
+        }
+    }  
+
+    @media screen and (max-width: @screen-md) 
+    {
+        >div h2
+        {
+          text-align:center;
+        }
+        
+        #social-icons
+        {
+          width:420px;
+          float:none;
+          overflow:hidden;
+          margin:0 auto;
+          padding-top:20px;
+        }        
+    } 
+
+    @media screen and (max-width: @screen-sm) 
+    {
+        >div h2
+        {
+          font-size:20px;
+        }
+        
+        #social-icons
+        {
+          width:290px;
+          
+            .box
+            {
+              padding:0 10px;
+            }
+        }        
+    }     
+}

@@ -1,0 +1,180 @@
+.aui table.sisal-table.tema-totocalcio
+{
+    th
+    {
+      background:#0f7756 !important;
+    }
+    
+    tr:nth-of-type(2) th
+    {
+      background:#81cfb6 !important;
+      text-shadow:none;
+    }
+}
+
+.aui table.sisal-table.tema-totogol
+{
+    th
+    {
+      background:#00549a !important;
+    }
+    
+    tr:nth-of-type(2) th
+    {
+      background:#d2ebff !important;
+      color:@nero;
+      text-shadow:none;
+    }
+}
+
+.aui table.sisal-table.tema-bigmatch
+{
+    th
+    {
+      background:#ffe001 !important;
+      color:#c50009 !important
+    }
+    
+    tr:nth-of-type(2) th,
+    th.secondaria
+    {
+      background:#c50009 !important;
+      color:@bianco !important;
+    }   
+}
+
+.aui table.sisal-table.tema-eurojackpot
+{
+    th
+    {
+      background:#2b547e !important;
+    }
+    
+    tr:nth-of-type(2) th
+    {
+      background:#f7e397 !important;
+      color:#c40109 !important;
+    }
+}
+
+
+.aui table.sisal-table.tema-vincicasa
+{
+    th
+    {
+      background:#02aac4 !important;
+    }
+    
+    tr:nth-of-type(2) th
+    {
+      background:#f7e397 !important;
+      color:#c40109 !important;
+    }
+}
+
+.aui table.sisal-table.tema-tris
+{
+    th
+    {
+      background:#006fb9 !important;
+    }
+    
+    &.vincente
+    {
+        tr:first-of-type th
+        {
+          background:@rosso !important;
+        }
+    }
+    
+    &.accoppiata
+    {
+        tr:first-of-type th
+        {
+          background:@verde-scuro !important;
+        }
+    }
+}
+
+
+.mezza-schermata
+{
+    > .block
+    {
+      padding:20px 5%;
+      
+        @media screen and (min-width:@screen-md) 
+        {
+          width:50%;
+        }
+    }
+}
+
+.box-estrazione
+{
+    .etichetta-enfatizzata_1
+    {
+        @media screen and (min-width:@screen-xs) 
+        {
+          font-size:24px;
+        }
+    }
+}
+
+.aui .tabelle-quote td
+{
+  text-align:center !important;
+  
+    &:last-of-type
+    {
+      text-align:right !important;
+    }  
+}
+
+.stampe-table_container
+{
+  overflow:hidden;
+  border:solid 1px @grigio-intermedio;
+  
+  .rounded_corners(5px);
+  
+    .stampe-table
+    {
+      float:right;
+      width:100%;
+      table-layout:fixed;
+
+        tr
+        {
+          background:@colore-sfondo-righe-pari_tabella;
+        }
+        
+        th,
+        td 
+        {
+          font-family:@font-intestazioni-oggetti;
+          line-height:20px;
+          padding-bottom:2px;
+          text-align:center;
+        }
+        
+        th
+        {
+          background:@grigio-intermedio;
+          color:@colore-testo-intestazione_tabella;
+          font-weight:bold;
+          font-size:17px;
+          padding:0;
+        }
+        
+        td:not(:last-of-type)
+        {
+          border-right:1px solid @colore-bordi-tabella;
+        }
+        
+    }
+}
+
+
+
+

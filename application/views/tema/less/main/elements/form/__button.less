@@ -1,0 +1,151 @@
+// =======================================================================================================================================
+// --- BOTTONI, PULSANTI E LINKS CON ASPETTO DI PULSANTI ---------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+// I bottoni sono elementi che mantengono una loro coerenza formale su qualsiasi tipologia di template.
+
+@btn_className:btn;
+[class*=@{btn_className}]
+{
+  display: inline-block;
+  font-family:@font-pulsanti !important;
+  text-transform:uppercase;
+  padding:5px 10px;                                       //( = altezza fissa 32px)
+  font-size:@font-size-base !important;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  border:solid 1px transparent !important;
+  box-shadow+: 0px 1px 0px rgba(255, 255, 255, 0.2) inset;
+  box-shadow+: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  
+  .rounded_corners(8px);
+  .transizione_pulsanti();
+  
+    &[disabled]
+    {
+      opacity:1;
+    } 
+    
+    &.sm
+    {
+      line-height:1.25;
+      padding:3px 7px;                                   
+      font-size:13px !important;
+    
+      .rounded_corners(6px);
+    } 
+    
+    &.lg
+    {
+      line-height:1.3;
+      padding:8px 14px;                                   //( = altezza fissa 40px)
+      font-size:@font-size-lg !important;
+      
+      .rounded_corners(12px); 
+    }
+}
+
+.@{btn_className}
+{
+  &-primary { .aspetto_pulsanti(@type-primary); }
+  &-success { .aspetto_pulsanti(@type-success); }
+  &-info    { .aspetto_pulsanti(@type-info); }
+  &-default { .aspetto_pulsanti(@type-default); }
+  &-warning { .aspetto_pulsanti(@type-warning); }
+  &-danger  { .aspetto_pulsanti(@type-danger); }
+}
+
+
+// MIXIN PRINCIPALE
+
+.aspetto_pulsanti(@colore, @degrees:270)
+{
+  @stop-1:~"@{colore}_SOPRA";
+  @stop-2:~"@{colore}_SOTTO";
+    
+  border-color:@@stop-2 !important;
+  
+  &:not(.outline)
+  {
+    background: @@stop-1; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: -moz-linear-gradient(@degrees, @@stop-1 0%, @@stop-2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@@stop-1), color-stop(100%,@@stop-2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(@degrees, @@stop-1 0%,@@stop-2 100%); /* IE10+ */
+    background: linear-gradient( (@degrees - 90deg), @@stop-1 0%, @@stop-2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@@stop-1', endColorstr='@@stop-2',GradientType=0 ); /* IE6-8 */
+    
+    //Dati 2 valori possibili come colore del testo dei pulsanti, sceglie quello che crea maggior contrasto (tenendo conto della soglia espressa in %) con il colore di sfondo del pulsante attualmente visualizzato
+    @colore-testo_pulsanti:        contrast( @@stop-2, @colore-testo_pulsanti-scuro, @colore-testo_pulsanti-chiaro, 50%);
+    
+    color:@colore-testo_pulsanti !important;
+  
+    & when (@colore-testo_pulsanti = @colore-testo_pulsanti-chiaro) 
+    {
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    }
+  
+    & when (@colore-testo_pulsanti = @colore-testo_pulsanti-scuro) 
+    {
+      text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.75);
+    } 
+  
+    &:not([disabled]):hover                                               //(all'hover lo sfondo diventa a tinta unita)
+    {     
+      box-shadow: 0px 0px 30px @@stop-2 inset;
+    }
+    
+    &:not([disabled]):active                                              //(al click lo sfondo inverte la direzione del gradiente)
+    {
+      background: @@stop-1; /* Old browsers */
+      /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+      background: -moz-linear-gradient(@degrees, @@stop-2 0%, @@stop-1 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@@stop-2), color-stop(100%,@@stop-1)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(@degrees, @@stop-2 0%,@@stop-1 100%); /* IE10+ */
+      background: linear-gradient( (@degrees - 90deg), @@stop-2 0%, @@stop-1 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@@stop-2', endColorstr='@@stop-1',GradientType=0 ); /* IE6-8 */
+    }
+    
+    &[disabled]
+    {    
+      color:fade(@colore-testo_pulsanti, 60%) !important;         //Imposta l'opacità del colore del testo al valore espresso in %
+      .opacity(0.7);
+    }
+  }
+  
+  &.outline
+  {
+    background:@bianco;
+    
+    //Dati 2 valori possibili come colore del testo dei pulsanti, sceglie quello che crea maggior contrasto (tenendo conto della soglia espressa in %) con il colore di sfondo del pulsante attualmente visualizzato
+    @colore-testo_pulsanti:        contrast( @bianco, @colore-testo_pulsanti-scuro, @@stop-2, 1%);  //Da sistemare per il colore grigio
+    
+    color:@@stop-2 !important;
+    
+    .transizione_generica();
+    
+      &:not([disabled]):hover
+      {
+        box-shadow: 0px 0px 5px @@stop-2 inset;
+      }
+    
+      &[disabled]
+      {    
+        .opacity(0.5);
+      }
+  }
+  
+  &[disabled]
+  {    
+    cursor:default;
+  }
+    
+}
+
+
+

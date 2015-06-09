@@ -1,0 +1,58 @@
+// =======================================================================================================================================
+// --- ANIMAZIONI ------------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.animazione_colore-testo (@colore, @durata:750ms)
+{
+  @stop-1:~"@{colore}_SOPRA";
+  @stop-2:~"@{colore}_SOTTO";
+  
+  @nome-animazione: ~"blink-@{colore}";
+  
+  .steps()
+  {
+      0% { color:@@stop-1; }
+    100% { color:@@stop-2; }
+  }
+  
+  @valore:@nome-animazione @durata ease-in-out infinite alternate;
+  
+  .INIZIALIZZA_keyframes();
+  .CALL_animation();
+}
+
+.animazione_zoom (@ratio, @durata:750ms)
+{  
+  @fattore-zoom:round(@ratio*100);
+  @nome-animazione: ~"zoom-@{fattore-zoom}";
+  
+  .steps()
+  {
+      0% { .scale(1.0); }
+    100% { .scale(@ratio); }
+  }
+
+  @valore:@nome-animazione @durata ease-in-out infinite alternate;
+  
+  .INIZIALIZZA_keyframes();
+  .CALL_animation();
+}
+
+//MIXIN COMUNI
+.INIZIALIZZA_keyframes()
+{
+  @-webkit-keyframes @nome-animazione { .steps(); }
+     @-moz-keyframes @nome-animazione { .steps(); }
+      @-ms-keyframes @nome-animazione { .steps(); }
+       @-o-keyframes @nome-animazione { .steps(); }
+          @keyframes @nome-animazione { .steps(); }
+}
+
+.CALL_animation()
+{
+  -webkit-animation+:@valore;
+     -moz-animation+:@valore;
+      -ms-animation+:@valore;
+       -o-animation+:@valore;
+          animation+:@valore;
+}

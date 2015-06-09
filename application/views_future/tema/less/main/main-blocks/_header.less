@@ -1,0 +1,219 @@
+//.container {
+//	@media screen and (min-width: @screen-sm) {
+//	}
+//	@media screen and (min-width: @screen-md) {
+//	}
+//	@media screen and (min-width: @screen-lg) {
+//	}
+//	@media screen and (min-resolution: 2dppx) {
+//	}
+//}
+
+@import "header/_toggle-nav.less";
+@import "header/_NOT-logged.less";
+@import "header/_barra-rete-sisal.less";
+@import "header/_centro-messaggi.less";
+@import "header/_utente-dropdown.less";
+
+.aui header
+{
+  margin-bottom:10px;
+  
+    &:after
+    {
+      display:table;
+      content:"";
+      clear: both;
+    }
+   
+    #logo-login_container
+    {
+      overflow:hidden;
+            
+        #logo
+        {
+          margin-top:25px;
+          
+          @media screen and (max-width: @screen-sm)
+          {
+            margin-top:0;
+            
+              img
+              {
+                height:40px;
+                width:auto;
+              }
+          }
+          
+          @media screen and (max-width: @screen-xs)
+          {      
+              img
+              {
+                height:35px;
+                margin-top:5px;
+              }
+          }
+        }
+      
+        #login-box_container 
+        { 
+          width:265px;
+          margin-top:13px;
+          padding:0 3px 0 10px;
+          border:solid 1px @colore-bordi_navigazione-primo-livello;
+          color:@colore-testo_navigazione-primo-livello;    
+          font-family:@font-pulsanti;
+          font-size:14px;
+          text-align:left;
+              
+          .rounded_corners(5px);
+          .sfondo_navigazione-primo-livello; 
+          
+            div
+            {
+              padding-top:5px;
+              padding-bottom:5px;
+            }
+            
+            .logout-link
+            {
+              font-size:17px;
+              line-height:17px;
+              border-left:solid 1px @colore-bordi_navigazione-primo-livello;
+              padding:3px 0 0 7px;
+              
+                div
+                {
+                  font-size:8px;
+                  line-height:7px;
+                  padding:0;
+                  padding-bottom:2px;
+                }
+            }       
+            
+            .number-messages
+            {
+              display:block;
+              min-width:18px;
+              height:18px;
+              line-height:15px;
+              background:@colore-sfondo_numero-messaggi;
+              color:@bianco;
+              border:solid 1px @bianco;
+              box-shadow:0 0 0 1px @colore-sfondo_numero-messaggi;
+              text-align:center;
+              margin:5px 7px 5px 0;
+              
+              .rounded_corners(50%);
+              .transizione_generica(0.3s);
+              
+                &:hover
+                {
+                  .scale(1.1);
+                }
+                
+            }
+            
+            a
+            {
+              text-decoration:none;
+            }
+            
+        }
+        
+        #icona-utente
+        {
+          display:none;
+        }
+        
+        @media screen and (max-width: @screen-sm)
+        {
+          #icona-utente
+          {
+            display:block;
+            height:34px;
+            width:32px;
+            position:absolute;
+            top:10px;
+            right:33px;
+            text-align:center;
+            
+            border:solid 1px @verde-scuro;
+            
+            .rounded_corners(0 6px 6px 0);
+            .sfondo_navigazione-primo-livello;
+            
+              [class*='icomoon-']
+              {
+                font-size:20px;
+                line-height:31px !important;
+              }
+              
+              > a:hover,
+              > a:focus
+              {
+                text-decoration:none;
+              }
+              
+          }
+          
+          #login-box_container
+          {
+            display:none;
+          }
+        }
+        
+        @media screen and (max-width: @screen-xs) 
+        {
+          #icona-utente
+          {
+            right:3px;
+          }
+        }
+    } 
+}
+
+.aui .signed-out #logo-login_container
+{
+    #icona-utente
+    {
+      .rounded_corners(6px);
+    }
+}
+
+.aui #header-mobile_container
+{
+    @media screen and (max-width: @screen-sm) 
+    {
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:@colore-sfondo_header;
+      
+      box-shadow:0 2px 10px 2px rgba(1, 1, 1, 0.2);
+  
+        header
+        {
+          height:50px;
+          padding-top:5px;          
+          
+            h1
+            {
+              display:none;
+            }
+        }  
+    }
+}
+
+@media screen and (max-width: @screen-sm) 
+{
+    .aui #first-level-navigation_container
+    {
+      margin-top:0 !important;
+    } 
+}
+
+
+ 

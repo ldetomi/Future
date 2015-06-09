@@ -1,0 +1,47 @@
+.ui-widget,
+.ui-helper-reset
+{
+  font-family:@font-principale !important;
+  font-size:13px !important;
+  line-height:20px !important;
+}
+
+.ui-widget-header
+{
+  font-family:@font-titoli !important;
+}
+
+.ui-widget-content
+{
+  background:@bianco !important;
+  
+    a:not(.btn)
+    {
+      color:@colore-links !important;
+      
+        &:hover,
+        &:focus
+        {
+          color:@colore-links_hover !important;
+        }
+    }
+    
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-state-focus,
+{
+  border-color:@colore-bordi-intestazione_accordion !important;
+}
+
+.ui-state-hover
+{
+  border-color:@colore-bordi_hover-intestazione_accordion !important;
+  
+  .transizione_generica();
+}
+
+
+

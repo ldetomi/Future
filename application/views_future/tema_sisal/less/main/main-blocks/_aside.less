@@ -1,0 +1,156 @@
+//.container {
+//	@media screen and (min-width: @screen-sm) {
+//	}
+//	@media screen and (min-width: @screen-md) {
+//	}
+//	@media screen and (min-width: @screen-lg) {
+//	}
+//	@media screen and (min-resolution: 2dppx) {
+//	}
+//}
+
+.aui aside
+{
+  font-size:11px;
+  text-align:left;
+  
+  .sillabazione-testo(auto);
+  
+    @media screen and (max-width: @screen-md) 
+    {
+      font-size:13px;
+    }
+
+    @media screen and (min-width: @screen-md) 
+    {
+      padding:90px 0 0 0 !important;
+    }    
+
+    h1
+    {
+      font-size:20px;
+      text-align:center;
+      margin-top:0;
+      margin-bottom:10px;
+      line-height:25px;
+    }
+    
+    h2
+    {
+      font-size:18px;
+    }
+    
+    ul
+    {
+      list-style:none;
+      
+        li
+        {
+          padding-left:37px;
+          padding-bottom:10px;
+          margin-left:10px !important;
+          margin-bottom:5px;
+          min-height:50px;
+          font-family:@font-links_secondari;
+          font-size:12px;
+          border-bottom:solid 1px @colore-bordo-separatore_aside;
+          
+          background-size:35px 35px !important;
+          background-position:left 5px;
+          background-repeat:no-repeat;
+          
+            // Le icone sono state prese da "http://www.iconarchive.com/show/file-type-icons-by-treetog.html"
+          
+            &.link-doc
+            {
+              background-image:url("../images/file_extensions-icons/docx-win-icon.png");
+            }
+            
+            &.link-pdf
+            {
+              background-image:url("../images/file_extensions-icons/pdf-icon.png");
+            }
+            
+            &.link-ppt
+            {
+              background-image:url("../images/file_extensions-icons/pptx-win-icon.png");
+            }
+            
+            &.link-xls
+            {
+              background-image:url("../images/file_extensions-icons/xlsx-win-icon.png");
+            }
+            
+            &.link-jpeg,
+            &.link-gif,
+            &.link-png
+            {
+              background-image:url("../images/file_extensions-icons/jpeg-icon.png");
+            }
+            
+            &.link-zip
+            {
+              background-image:url("../images/file_extensions-icons/zip-icon.png");
+            }
+            
+            &.link-other
+            {
+              background-image:url("../images/file_extensions-icons/text-icon.png");
+            }
+        }
+    }
+    
+    .jtable-main-container
+    {
+      font-family:@font-principale;
+      font-size:11px;
+      font-weight:normal;
+      line-height:20px;
+    }
+       
+    #historyDocumentList .jtable,
+    #alfrescoTableDocumentByFolderView .jtable
+    {
+      table-layout:fixed;
+      border:none !important;
+      
+        tr
+        {
+          background:none !important;
+          
+            td
+            {
+              padding:0 !important;
+              border:none !important;
+              
+                ul,ol
+                {
+                  margin:0;
+                  overflow:hidden;
+                }
+                
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------------------------- */
+
+    .aside_box-upload
+    {
+      border:solid 1px @colore-bordi-navigazione-secondo-livello;
+      padding:10px;
+      margin-bottom:20px;
+      text-align:left;
+      overflow-x:hidden;  //Serve per evitare che in Responsive la scritta di default "Nessun file selezionato" sbordi
+      
+      .rounded_corners();
+      .sfondo_navigazione-primo-livello();
+       
+        .btn
+        {
+          display:block;
+          //width:70px;
+          margin:0 auto;
+        }    
+    }  
+}

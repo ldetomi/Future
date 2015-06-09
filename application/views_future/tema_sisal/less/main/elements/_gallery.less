@@ -1,0 +1,194 @@
+.aui .gallery
+{  
+    .block
+    { 
+      padding:10px;
+      
+        @media screen and (min-width: @screen-xs) 
+        {
+          width:50%;
+          
+            &:nth-of-type(n)
+            {
+              clear:none;
+            }
+            
+            &:nth-of-type(2n + 1)
+            {
+              clear:left;
+            }
+        }
+        
+        @media screen and (min-width: @screen-md) 
+        {
+          width:33%;
+          
+            &:nth-of-type(n)
+            {
+              clear:none;
+            }
+            
+            &:nth-of-type(3n + 1)
+            {
+              clear:left;
+            }
+        }
+      
+        figure
+        {
+          margin:0;
+          
+          background:@colore-sfondo-thumbnail;
+          padding:5px;
+          
+          .rounded_corners();
+          .transizione_generica();
+          
+          /*&:nth-child(2n + 1)
+          {
+            clear:left;
+          }*/
+          
+            &:hover
+            {
+              background:@colore-sfondo-thumbnail-hover;
+            } 
+          
+            div
+            {
+              background:@bianco;
+              box-shadow:0 0 75px @colore-sfondo-thumbnail inset;
+              padding:10px;
+              
+                a
+                {
+                  display:block;
+                  text-align:center;
+                }
+              
+                img
+                {
+                  margin:0 auto;
+                }
+            }
+            
+            figcaption
+            {
+              padding:3px;
+              text-align:center;
+            }
+        }
+    }        
+}
+
+.aui .griglia-loghi
+{ 
+    .block
+    {
+      border:solid 1px @grigio-intermedio;
+      margin-left:-1px;
+      margin-top:-1px;
+      width:50%;
+        
+        @media screen and (min-width: @screen-xs) 
+        {
+          width:33%;
+        }
+        
+        @media screen and (min-width: @screen-md) 
+        {
+          width:25%;
+        }
+      
+        figure
+        {
+          margin:0;
+          
+          background:@grigio-chiaro;
+          padding:5px;
+          
+          .transizione_generica();
+          
+            &:hover
+            {
+              background:@grigio-intermedio;
+              
+              .transizione_generica();
+            }
+          
+            div
+            {
+              //background:@grigio-chiaro;
+              
+                img
+                {
+                  margin:10px auto;
+                  display:block;
+                  //width:130px;
+                  height:95px;                  
+                }
+            }
+            
+            figcaption
+            {
+              font-family:@font-intestazioni-oggetti;
+              text-align:center;
+              height:20px;
+              overflow:hidden;
+            }
+        }
+    }         
+}
+
+.aui .griglia-links
+{ 
+  //Dato che i blocchi possono avere il testo su più righe, l'allineamento verticale non può essere gestito 
+  //con il tradizionale line-height ma si deve ricorrere alla tecnica del "display:table-cell"
+  
+    .block
+    {
+      border:solid 1px @grigio-intermedio;
+      display:table;
+      margin-left:-1px;
+      margin-top:-1px;
+      width:50%;
+      padding:5px;
+      background:@grigio-chiaro;
+      
+      .transizione_generica();
+      
+        &:hover
+        {
+          background:@grigio-intermedio;
+          
+          .transizione_generica();
+        }
+        
+        @media screen and (min-width: @screen-xs) 
+        {
+          width:33%;
+        }
+        
+        @media screen and (min-width: @screen-md) 
+        {
+          width:25%;
+        }
+        
+        a
+        {
+          font-family:@font-intestazioni-oggetti;
+          font-size:14px;
+          display:table-cell;
+          vertical-align:middle;
+          height:80px;
+          text-align:center;
+        }
+    }         
+}
+
+.aui #anteprime_icone
+{
+  padding:0;
+}
+
+

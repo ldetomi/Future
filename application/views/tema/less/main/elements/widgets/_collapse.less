@@ -1,0 +1,37 @@
+// =======================================================================================================================================
+// --- COLLAPSE (Box a scomparsa) --------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.jq-trigger-button_container
+{
+    [class^="icomoon-"], [class*=" icomoon-"]
+    {
+      display:inline-block;
+      margin-right:5px;
+      
+      .transizione_generica();
+    }   
+    
+    &.open
+    {      
+      [class^="icomoon-"], [class*=" icomoon-"]
+      {        
+        .rotate(90deg);
+      }
+    }
+}
+
+.jq-collapse
+{
+  max-height:0;
+  overflow:hidden;
+  
+  .transizione_generica(1s);    //Funziona solo se la Height: viene impostata su un valore fisso, non su "auto"
+  //transition: max-height 0.15s ease-out;
+             
+    &.opened
+    {
+      max-height:500px;   //"Trucco" per poter usare le Transition CSS anche su oggetti di questo tipo. "height:auto" non funziona perché non sa a priori quanto deve essere alto
+      //transition: max-height 0.25s ease-in;
+    }
+}

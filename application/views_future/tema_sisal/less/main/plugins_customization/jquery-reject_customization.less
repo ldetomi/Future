@@ -1,0 +1,42 @@
+#jr_wrap
+{
+    #jr_inner
+    {
+        #jr_header 
+        {
+          font-family:@font-titoli;
+          color:@colore-titoli;
+          font-weight:normal;
+          text-align:center;
+          font-size:24px;
+          padding:0;
+        }
+        
+        ul
+        {
+          margin-top:10px;
+        }
+        
+        #jr_close 
+        {
+          text-align:center;
+          
+            a
+            {
+              font-family:@font-titoli;
+              font-size:20px;
+              display:inline-block;    
+              color:@colore-links;
+              border-bottom:dotted 1px @colore-links;
+              text-decoration:none !important;
+              margin:15px auto;
+              
+                &:hover
+                {
+                  color:@colore-links_hover;
+                  border-bottom-style:solid;
+                } 
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.aui .dataTables_wrapper
+{
+    .dataTables_length,
+    .dataTables_filter
+    {
+      font-family:@font-intestazioni-oggetti;
+      
+        label
+        {
+          font-size:13px;
+        }
+    } 
+    
+    .dataTables_length
+    {
+        select
+        {
+          width:55px;
+          height:auto;
+          padding:2px;
+        }
+    }
+
+    .dataTable
+    {
+      border-collapse:collapse !important;
+      width:99% !important; //Inserito per ovviare a un difetto che fa comparire la barra di scorrimento orizzontale
+      
+        &.no-footer
+        {
+          border-bottom:none;
+        }
+
+        th,
+        td 
+        {
+          border:1px solid @colore-bordi-tabella !important;
+          line-height:20px;
+          padding:8px;
+        }
+        
+        th
+        {
+          background-color:@colore-sfondo-intestazione_liv-1_tabella !important;
+          color:@colore-testo-intestazione_tabella;
+          font-family:@font-intestazioni-oggetti;
+          font-weight:bold;
+          font-size:17px;
+          text-align:center;
+          //width:auto !important;
+          
+            &.sorting
+            {
+              padding-right:18px !important;
+            } 
+        }
+        
+        td
+        {
+          text-align:left;
+        }
+        
+        tr:nth-of-type(2) th
+        {
+          background-color:@colore-sfondo-intestazione_liv-2_tabella !important;
+        }
+        
+        tr:nth-child(even)
+        {
+          background:@colore-sfondo-righe-pari_tabella;
+        }
+    }
+    
+    .dataTables_info,
+    .dataTables_paginate
+    {
+      background:@colore-sfondo-intestazione_liv-1_tabella;
+      color:@colore-testo-intestazione_tabella !important;
+      font-family:@font-intestazioni-oggetti;
+      border-color:@colore-bordi-tabella;
+      padding:4px 10px;
+      height:32px;
+      margin-top:0;
+      
+        @media screen and (min-width: @screen-sm) 
+        {
+          width:50%;
+        }
+    }
+    
+    .dataTables_info
+    {
+      padding-top:5px;
+    }
+    
+    .dataTables_paginate.paging_simple_numbers .paginate_button
+    {
+      background:@verde-chiaro;
+      color:@bianco !important;
+      padding:1px;
+      
+        &.current
+        {
+          background:@verde-chiaro_SOPRA;
+          color:@bianco !important;
+          
+            &:hover
+            {
+              background:@verde-chiaro_SOPRA;
+            }
+        }
+      
+        &:hover
+        {
+          background:@verde-chiaro_SOPRA;
+        }
+    }   
+}
+

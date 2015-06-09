@@ -1,0 +1,156 @@
+.aui #first-level-navigation_container
+{    
+    @media screen and (max-width: @screen-sm) 
+    {
+      margin-top:50px;
+    }
+    
+    .breadcrumb
+    {
+      background:none;
+      clear:both;
+      padding-top:0;
+      padding-bottom:0;
+      margin-bottom:10px;
+      
+        @media screen and (max-width: @screen-md) 
+        {
+          font-size:12px;
+        }
+      
+        @media screen and (max-width: @screen-sm) 
+        {
+          font-size:11px;
+        }
+            
+        .first:before
+        {
+          content:'\e600';
+          font-family:'icomoon';
+          margin-right:2px;
+          color:@grigio-scuro;
+        }
+      
+        :not(.active) a
+        {
+          border-bottom:dotted 1px @colore-links;
+          text-decoration:none;
+          
+            &:hover
+            {
+              color:@colore-links_hover;
+              border-bottom-style:solid;
+            } 
+        }
+    }
+    
+    #breadcrumb_home
+    {
+      display:none;
+    }
+    
+}
+
+// Questi stili sono da lasciare fuori dal "Container" perché devono essere applicati anche in mobile, in cui via JS il div viene spostato nella colonna laterale offcanvas
+.aui #first-level-navigation 
+{
+  padding:10px 0;
+  width:100%;
+  
+    //@media screen and (max-width: @screen-sm) 
+    //{
+      //Serve in unione alle 3 righe scritte più avanti, per avere tutti i links della stessa altezza
+      display:table;
+    //}
+  
+    .mega-link
+    {
+      width:25%;
+      border:solid 1px @colore-bordi_navigazione-primo-livello;
+      text-transform:uppercase;
+      padding:0;
+      
+      //.sfondo_navigazione-primo-livello;
+      .sfondo_navigazione-primo-livello_con-animazione();
+      background-size:100% 200%;
+      
+      .transizione_generica();
+      
+        //@media screen and (max-width: @screen-sm) 
+        //{
+          //Le 3 righe seguenti servono a sostituire il normale comportamento di PocketGrid e a fare in modo che links prendano l'altezza del Link più alto (quello che va a capo)
+          display:table-cell;
+          vertical-align:middle;
+          float:none;
+        //}
+      
+        &:not(:first-of-type)
+        {
+          border-left:0;
+        }       
+        
+        &:hover
+        {
+          //.sfondo-link-hover_navigazione-primo-livello;
+          background-position:center bottom 30%;
+        }
+      
+        a
+        {
+          color:@colore-testo_navigazione-primo-livello;
+          text-decoration:none;
+          padding:10px;
+          display:inline-block;
+          text-align:center;
+          width:100%;
+          
+            @media screen and (max-width: @screen-md) 
+            {
+              padding:10px 5px;
+              font-size:13px;
+            }
+          
+            @media screen and (max-width: @screen-sm) 
+            {
+              padding:5px;
+              font-size:12px;
+              margin-left:0;
+              line-height:16px;
+            }
+            
+            @media screen and (max-width: @screen-xs) 
+            {
+              font-size:9px;
+              line-height:12px;
+              
+              .sillabazione-testo(auto);
+            }
+
+            &:hover
+            {
+              color:@colore-testo-hover_navigazione-primo-livello;
+            }
+        }
+        
+        &.active
+        {         
+          .sfondo-link-attivo_navigazione-primo-livello;
+
+            a
+            {
+              color:#A1100F;
+              //text-shadow:0 -1px 0 @colore-ombra_testo_pulsanti_main-navigation;
+            } 
+        }
+        
+        &:first-of-type
+        {
+          .rounded_corners(5px, left);
+        }
+        
+        &:last-of-type
+        {
+          .rounded_corners(5px, right);
+        } 
+    }
+}

@@ -1,0 +1,43 @@
+@import "navigations/_main-navigation.less";
+@import "navigations/_first-level-navigation.less";
+@import "navigations/_second-level-navigation.less";
+
+//.container {
+//	@media screen and (min-width: @screen-sm) {
+//	}
+//	@media screen and (min-width: @screen-md) {
+//	}
+//	@media screen and (min-width: @screen-lg) {
+//	}
+//	@media screen and (min-resolution: 2dppx) {
+//	}
+//}
+
+.aui nav
+{
+  font-family:@font-pulsanti;
+  font-size:15px;
+  text-align:left;
+  
+    ul 
+    {
+      list-style-image:none;
+    }
+  
+    li,a
+    {
+      .transizione_generica;
+    }
+}
+
+.aui .list-group li
+{
+  list-style-type:none;
+  
+    ul
+    {
+      margin-left:1em;
+    }
+}
+
+

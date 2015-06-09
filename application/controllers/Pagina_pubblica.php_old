@@ -1,0 +1,18 @@
+<?php
+
+  class Pagina_pubblica extends Mediagate_Controller 
+  {    
+    private $_local_view_data;
+    
+    function __construct()
+    {
+      parent::__construct();
+      $this->_local_view_data=$this->_view_data;
+    }
+     
+    function index()
+    {            
+      $this->load->view('pagine/pagina_pubblica/view_pagina_pubblica',$this->_local_view_data); // nome del file di view, vedi esempi in controller gia' esistenti
+    }
+  }
+?> 

@@ -1,0 +1,66 @@
+// =======================================================================================================================================
+// --- TABS ------------------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.jq-tabs
+{
+  margin-bottom:20px;
+  
+    .ui-tabs-nav
+    {
+      margin:-4px -4px 0;
+
+        @media screen and (max-width: @screen-sm) 
+        {
+          font-size:15px !important;
+          
+            a
+            {
+              padding-left:7px;
+              padding-right:7px;
+            }
+            
+        } 
+    }
+    
+    .ui-tabs-active a
+    {
+      color:@colore-testo-intestazione-attiva_accordion;
+    }  
+    
+    &.simple
+    {
+        &.ui-widget-content
+        {
+          border-top:0;
+               
+            .ui-tabs-nav
+            {
+              border-top:0;
+              border-left:0;
+              border-right:0;
+              background:white;
+              
+              .rounded_corners(0px);
+            }
+        }
+    } 
+    
+    &.sm
+    {
+        .ui-widget-header
+        {
+          font-size:15px !important;
+        
+            .ui-tabs-anchor
+            {
+              padding:0 0.4em;
+            }
+        }
+        
+        .ui-tabs-panel
+        {
+          padding:7px;
+        }
+    }   
+}

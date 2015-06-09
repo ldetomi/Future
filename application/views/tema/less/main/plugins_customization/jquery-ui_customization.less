@@ -1,0 +1,45 @@
+// =======================================================================================================================================
+// --- JQUERY UI (personalizzazione default css) -----------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.ui-widget,
+.ui-helper-reset
+{
+  font-family:@font-principale;
+  font-size:@font-size-base;
+  line-height:@line-height-base;
+}
+
+.ui-widget-header
+{
+  font-family:@font-titoli !important;
+  font-size:18px !important;
+}
+
+.ui-widget-content
+{
+  //background:@bianco !important;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-state-focus,
+{
+  border-color:@colore-bordi-intestazione_accordion !important;
+}
+
+.ui-state-default
+{ 
+  .transizione_generica();
+}
+
+.ui-state-hover
+{
+  border-color:@colore-bordi_hover-intestazione_accordion !important;
+  
+  .transizione_generica();
+}
+
+
+

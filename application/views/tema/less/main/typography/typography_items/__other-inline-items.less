@@ -1,0 +1,68 @@
+// =======================================================================================================================================
+// --- ELEMENTI INLINE POCO FREQUENTI ----------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+pre, code, kbd, samp, var, output 
+{
+  font-size: 90%;
+  font-style: normal;
+  font-family:@font-codice-macchina;
+}
+
+code, samp, kbd 
+{
+  padding: 3px 6px 2px;
+  display: inline-block;
+  line-height: 1;
+  
+  .rounded_corners();
+}
+
+abbr,
+dfn
+{
+  &[title] 
+  {
+    //border-bottom: 1px dotted rgb(15, 15, 15);
+    cursor: help;
+  }
+}
+
+cite 
+{
+  color: rgba(0, 0, 0, 0.4);
+  //font-style: italic;
+}
+
+code 
+{
+  background: none repeat scroll 0% 0% rgb(244, 244, 244);
+  border: 1px solid rgb(212, 212, 212);
+}
+
+samp 
+{
+  background: none repeat scroll 0% 0% rgb(211, 227, 251);
+  border: 1px solid rgb(178, 206, 248);
+}
+
+var 
+{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+kbd 
+{
+  background: none repeat scroll 0% 0% rgb(15, 15, 15);
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+mark 
+{
+  background-color: rgb(255, 200, 0);
+  padding:0 2px;
+  //text-decoration: none;
+  
+  .rounded_corners(2px);
+}

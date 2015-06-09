@@ -1,0 +1,36 @@
+// Se mobile, il menù di navigazione diventa offcanvas
+
+@media screen and (max-width:@screen-sm) 
+{
+    .aui body 
+    {
+      overflow-x:hidden; /* Prevent scroll on narrow devices */
+    }
+    
+    .aui #multi-level-navigation_container
+    {
+      position:absolute;
+      width:72% !important;
+      top:10px;
+      left:-72%;
+      padding-left:5px !important;
+      padding-right:10px !important;
+    }
+    
+    .aui #main-content
+    {
+      position:relative;
+      left:0;
+      margin-top:85px;
+      padding-top:20px;
+      
+      .transizione_generica(1s);
+    
+        &.menu-opened
+        {
+          left:72%;
+          
+          .transizione_generica(1s);
+        }
+    }
+}

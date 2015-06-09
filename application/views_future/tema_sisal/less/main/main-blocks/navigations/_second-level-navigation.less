@@ -1,0 +1,125 @@
+.aui #second-level-navigation
+{
+  width:100%;
+  
+    ul
+    {
+      margin-left:0;
+      margin-bottom:20px;
+    }
+    
+    //Bootstrap's default value override!!!
+    .list-group-item
+    {
+      color:@colore-testo-navigazione-secondo-livello_1;
+      background-color:@bianco;
+      border: 1px solid @colore-bordi-navigazione-secondo-livello;
+      display: block;
+      margin-bottom: -1px;
+      padding: 10px 15px !important;
+      position: relative;
+      
+      .rounded_corners(0);
+      
+        &:hover,
+        &:focus
+        {
+          color:@colore-testo-hover-navigazione-secondo-livello_1;
+          background-color:@colore-sfondo-hover-navigazione-secondo-livello_2;
+          text-decoration:none;
+        }
+        
+        [class*='icon-']
+        {
+          margin-top:3px;
+        }
+               
+        @media screen and (max-width: @screen-md) 
+        {
+          font-size:13px;
+          padding:10px;
+        }
+        
+        @media screen and (max-width: @screen-sm) 
+        {
+          font-size:15px;
+          padding:10px 15px;
+        }
+    }
+    
+    li:not(:last-of-type) .list-group-item
+    {
+      border-bottom:0;
+    }
+    
+    .list-group-item.active
+    {
+      background-color:@colore-sfondo-link-attivo_secondo-livello_1;
+      color:@colore-testo-link-attivo_secondo-livello_1;
+      border:none;
+      
+        & + .list-group
+        {
+          margin:0;
+          font-family:@font-links_secondari;
+          
+          .list-group-item
+          {
+            background-color:@colore-testo-navigazione-secondo-livello_2;
+            color:@colore-testo-link-attivo_secondo-livello_2;
+            
+            &.active
+            {
+              background-color:@colore-sfondo-link-attivo_secondo-livello_2;
+            }
+          }
+        }
+    }
+}
+
+
+/* ----------------------------------------------------------------------------- */
+
+.aui #help-center-block
+{
+  border:solid 1px @colore-bordi-navigazione-secondo-livello;
+  padding:10px;
+  margin-bottom:20px;
+  text-align:left;
+  
+  .rounded_corners();
+  .sfondo_navigazione-primo-livello();
+  
+    .title
+    {
+      font-family:@font-titoli;
+      color:@colore-titoli;
+      font-size:17px;
+      margin-bottom:5px;
+    }
+  
+    textarea
+    {
+      width:100%;
+      min-height:70px;
+      margin:7px auto !important;
+    }
+    
+    .btn
+    {
+      display:block;
+      width:70px;
+      margin:0 auto;
+    }
+    
+
+    @media screen and (max-width: @screen-md) 
+    {
+      font-size:11px;
+    }
+
+    @media screen and (max-width: @screen-sm) 
+    {
+      font-size:13px;
+    }    
+}

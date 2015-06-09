@@ -1,0 +1,105 @@
+// =======================================================================================================================================
+// --- LIST ORDINATE E NON ORDINATE ------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+ul 
+{
+  //list-style-image:url("../images/list-image-square-green.png");  
+}
+
+article
+{
+    ul,
+    ol
+    {
+        &:not([class*="ui-"])
+        {
+          overflow:hidden; //Serve per affiancare una lista a un'immagine FLOAT:LEFT
+          margin-left:0;
+          padding-left:0;
+        }
+    }
+    
+    ul:not([class*="ui-"]) li
+    {
+      position:relative;
+      padding-left:18px;
+      margin-left:13px;
+      list-style:none;
+      
+        &:before
+        {
+          content:"";
+          width:10px;
+          height:10px;
+          background:red;
+          position:absolute;
+          left:0;
+          top:7px;
+          
+          .transizione_generica(0.4s);
+        }
+        
+        li 
+        {
+            &:before
+            {
+              background:green;
+            }
+            
+            li 
+            {
+              &:before
+              {
+                background:blue;
+              }
+            }
+        }
+        
+        &:hover:before
+        {
+          //.rotate(45deg);
+          .rounded_corners();
+        }
+        
+    }
+    
+    ol:not([class*="ui-"]) li
+    {
+      font-family:@font-intestazioni-oggetti;
+      color:@verde-scuro;
+      font-size:18px;
+      margin-left:30px;
+      
+        li 
+        {
+          list-style-type:lower-alpha;
+            
+            li 
+            {
+              list-style-type:lower-roman;
+            }
+        }
+      
+        .ol-content
+        {
+          font-family:@font-principale;
+          color:@colore-font-base;
+          font-size:@font-size-base;
+          //line-height:17px;
+        }
+    }
+}
+
+dl
+{
+  dt
+  {
+    font-weight:bold;
+  }
+  
+  dd 
+  {
+    margin-left:20px;
+  }
+}

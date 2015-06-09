@@ -1,0 +1,23 @@
+<?php
+
+  class Pagina_interna extends Mediagate_Controller 
+  {    
+    private $_local_view_data;
+    
+    function __construct()
+    {
+      parent::__construct();
+      $this->_local_view_data=$this->_view_data;
+    }
+     
+    function index()
+    {
+      $navigation=['main_navigation'=>$this->_local_view_data['main_navigation'],
+                   'first_level_navigation'=>$this->_local_view_data['first_level_navigation']];
+      
+      $this->_local_view_data['header']=$this->loadHeader('header_pagina_interna',$navigation); // sovrascrive il default (macro-blocchi/headers/header.php)
+             
+      $this->load->view('pagine/pagina_interna/view_pagina_interna',$this->_local_view_data); // nome del file di view, vedi esempi in controller gia' esistenti
+    }
+  }
+?> 

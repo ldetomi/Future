@@ -1,0 +1,168 @@
+@import "_input.less";
+@import "_textarea.less";
+@import "_select.less";
+@import "_button.less";
+@import "_checkbox.less";
+//@import "_radio-button.less";
+
+.aui form
+{
+  margin:0;
+}
+
+.aui .control-group
+{
+  margin-bottom:15px;
+  
+    .form-control-static 
+    {
+      margin-bottom:0;
+      padding-top:7px;
+    }
+    
+    .control-label
+    {
+      font-family:@font-links_secondari;
+      font-size:13px;
+      font-weight:bold; 
+    }
+    
+    //Testo piccolo con ulteriori dettagli per la LABEL
+    .dettagli-label
+    {
+      display:block;
+      font-size:11px;
+      font-style:italic;
+      font-weight:normal;
+      line-height:15px;
+    }
+    
+    //Campi della form
+    .form-control 
+    {
+      height:34px;
+      line-height:1.42857;
+      padding:6px 12px;
+      font-size:14px;
+      width:100%;
+    }
+}
+
+.form-horizontal .control-group
+{
+  width:100%;
+  margin-bottom:15px !important;
+  
+    .control-label
+    {
+      width:25% !important;
+      
+        .MEDIAQUERY(@only-media:false, @min-max:max, @size:sm,
+          { 
+            width:100% !important;
+            text-align:left;
+          }
+        );
+      
+        /*@media screen and (max-width: @screen-sm) 
+        {
+          width:100% !important;
+          text-align:left;
+        } */
+    }
+    
+    .fields
+    {
+      width:75%;
+      padding:0 15px;
+      
+        .MEDIAQUERY(@only-media:false, @min-max:max, @size:sm,
+          { 
+            width:100% !important;
+            padding: 0;
+          }
+        );
+      
+        /*@media screen and (max-width: @screen-sm) 
+        {
+          width:100% !important;
+          padding: 0;
+        }*/
+        
+        .dettagli-label
+        {
+          padding-right:20px;
+          font-size:10px;
+        } 
+    }
+    
+    .form-buttons_container
+    {
+        @media screen and (min-width: @screen-sm) 
+        {
+          margin-left:25%;
+        }
+    }
+}
+
+.aui .form-inline
+{
+    .control-group
+    {
+      width:33%;
+      margin-bottom:15px !important;
+      padding-right:15px;
+            
+        &:nth-child(3n + 1)
+        {
+          clear:left;
+        }
+      
+        @media screen and (max-width: @screen-md) 
+        {
+          width:50%;
+          
+            &:nth-child(n)
+            {
+              clear:none;
+            }
+            
+            &:nth-child(2n + 1)
+            {
+              clear:left;
+            }
+        }
+        
+        @media screen and (max-width: @screen-xs) 
+        {
+          width:100%;
+        }
+    }
+    
+    .form-buttons_container
+    {
+      //Servono per allineare orizzontalmente i pulsanti della form ai campi
+      padding-top:26px;
+      padding-bottom:1px;
+    }
+}
+
+.input-append
+{
+    //Campi della form
+    .form-control 
+    {
+      height:34px !important;
+      line-height:1.42857 !important;
+      padding:6px 12px !important;
+      font-size:14px !important;
+      width:100% !important;
+    }
+    
+    button
+    {
+      height:34px;
+    }
+    
+}
+

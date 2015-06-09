@@ -1,0 +1,224 @@
+/* Personalizzazione tags relativi al testo */
+
+@font-face 
+{
+    font-family: "OmnesRegularRoman";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/omnes/omnesregular-roman-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/omnes/omnesregular-roman-webfont.woff") format("woff"),
+         url("../fonts/omnes/omnesregular-roman-webfont.ttf") format("truetype"),
+         url("../fonts/omnes/omnesregular-roman-webfont.svg#omnes_regularroman") format("svg");
+}
+
+@font-face 
+{
+    font-family: "OmnesSemiboldRoman"; 
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/omnes/omnessemibold-roman-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/omnes/omnessemibold-roman-webfont.woff") format("woff"),
+         url("../fonts/omnes/omnessemibold-roman-webfont.ttf") format("truetype"),
+         url("../fonts/omnes/omnessemibold-roman-webfont.svg#omnes_semiboldroman") format("svg");
+}
+
+@font-face 
+{
+    font-family: "OmnesMediumRoman";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/omnes/omnesmedium-roman-webfont.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/omnes/omnesmedium-roman-webfont.woff") format("woff"),
+         url("../fonts/omnes/omnesmedium-roman-webfont.ttf") format("truetype"),
+         url("../fonts/omnes/omnesmedium-roman-webfont.svg#omnes_mediumroman") format("svg");
+}
+
+.aui
+{
+    h1, h2, h3, h4
+    {
+      font-family:@font-titoli;
+      color:@colore-titoli;
+      font-weight:normal;
+      text-align:left;
+      line-height:1.1em;
+      margin-bottom:0.4em;
+      margin-top:0.6em;
+    }
+    
+    h1
+    {
+      font-size:38px;
+      line-height:38px;
+      margin:10px 0 30px;
+    }
+    
+    h2
+    {
+      font-size:24px;
+    }
+    
+    h3
+    {
+      font-size:20px;
+    }
+    
+    h4
+    {
+      font-size:16px;
+    }   
+}
+
+
+/* --- Aspetto dei links --- */
+
+.aui a
+{
+  color:@colore-links;
+  
+  .transizione_generica;
+  
+    &:hover,
+    &:focus
+    {
+      color:@colore-links_hover;
+      text-decoration:none;
+    } 
+}
+
+.aui article .journal-content-article a,
+.aui article aside a,
+.aui article [id*='p_p_id_sisalapis'] a,
+#help-center-block a:not(.btn),
+.aui .dataTable td a
+{
+  color:@colore-links;
+  border-bottom:dotted 1px @colore-links;
+  text-decoration:none !important;
+  
+    &:hover
+    {
+      color:@colore-links_hover;
+      border-bottom-style:solid;
+    } 
+}
+
+.centra
+{
+  text-align:center !important;
+}
+
+.centra-blocco /* Centra gli oggetti ORIZZONTALMENTE nella pagina */
+{
+  display:block;
+  margin:0 auto;
+}
+
+.icomoon-checkmark-circle
+{
+  color:@verde-scuro;
+}
+
+
+/*
+
+em
+{
+  font-family:@font-enfasi;
+  font-size:15px;
+}
+*/
+
+
+/* ------------------------------------------------------------------------------ */
+
+/* --- Personalizzazione tags relativi ai paragrafi --- */
+
+/* p
+{
+  margin:5px auto 20px auto;
+}
+
+ul
+{
+  margin-left:0;
+
+    li /* Tutti gli elenchi puntati delle pagine */
+/*    {
+      list-style-type:none;
+      background:url('../immagini/icone/list_item.png') no-repeat 0 0;
+      padding-left:40px;
+
+        &:hover /* Tutti gli elenchi puntati delle pagine */
+ /*       {
+          background-position:-990px 0; /* Usata perche' i 2 stati dell'immagine sono molto lontani tra loro*/
+ /*       }
+    }
+}
+
+cite,blockquote
+{
+  font-style:italic;
+  font-family:@font-citazioni;
+  font-size:17px;
+  letter-spacing:1px;
+  color:brown;
+}
+
+blockquote
+{
+  margin:0 40px;
+}
+
+small
+{
+  font-size:70%;
+}
+
+big
+{
+  font-size:120%;
+} */
+
+
+/* ------------------------------------------------------------------------------ */
+
+/* --- Aspetto dei links --- */
+
+/*
+a
+{
+  color:@colore-links;
+  cursor:pointer;
+  text-decoration:none;
+  border-bottom:dotted 1px;
+
+    &:hover
+    {
+      color:@colore-links_hover;
+      border-bottom:solid 1px;
+    }
+    
+    &:not(.ui-spinner-button):active
+    {
+      position:relative;
+      top:1px;
+    }
+    
+    &:focus
+    {
+      outline:none;
+    }
+  
+  .transizione_links ();
+}
+
+header, aside
+{
+    a,& a:hover
+    {
+      border:none;
+    }
+}
+*/
+

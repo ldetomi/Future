@@ -1,0 +1,31 @@
+@import "homepages/_hp-pubblica.less";
+@import "homepages/_hp-privata.less";
+
+.aui .homepage
+{
+  background:none; 
+}
+
+.aui #contenuto-centrale
+{
+  background:@colore-sfondo_contenuto-centrale;
+  padding-bottom:30px;
+  
+    h1
+    {
+      text-align:center;
+      font-size:28px;
+    }
+    
+    @media screen and (max-width: @screen-xs) 
+    {
+        //Servono per superare il limite orizzontale di larghezza dato dal padding laterale di 80px applicato al contenitore,
+       //allo scopo di conservare l'allineamento verticale con i box del carosello.
+        h1,
+        .maggiori_indicazioni
+        {
+          width:140%;
+          margin-left:-20%;
+        }
+    }
+}

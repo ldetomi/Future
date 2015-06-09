@@ -1,0 +1,48 @@
+// =======================================================================================================================================
+// --- ELEMENTI BLOCK POCO FREQUENTI -----------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+pre 
+{
+  margin-top: 1.65em;
+  font-size: 100%;
+  line-height: 1.5;
+  color: rgb(34, 34, 34);
+  //overflow: auto;
+}
+
+blockquote 
+{
+  font-style:italic;
+  font-size:ceil((@font-size-base * 1.1));
+  margin-left:20px;
+  padding-left:10px;
+  border-left:solid 5px @colore-bordo-citazione;
+  font-family:@font-enfasi;
+  
+  .rounded_corners(5px);
+  
+    &.citazione-storica
+    {
+      font-family:@font-citazioni-storiche;
+      color:@colore-citazione-storica;
+      font-size:ceil((@font-size-base * 1.25));
+      letter-spacing:1px;
+    }
+  
+    small
+    {
+      color:@colore-autore-citazione;
+      font-style:italic;
+    }
+    
+    cite 
+    {
+      font-size:12px;
+      line-height:1;
+    }
+}
+
+
+
+

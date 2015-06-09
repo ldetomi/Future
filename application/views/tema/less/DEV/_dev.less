@@ -1,0 +1,59 @@
+// =======================================================================================================================================
+// --- STILI UTILI SOLAMENTE PER LE DEMO IN DEV ------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+#centra-tutto_container
+{
+  border:solid 1px red;
+  width:50%;
+  height:150px;
+  
+    #centra-tutto
+    {
+      width:40px;
+      height:40px;
+      background:blue;
+      
+        .centra-blocco();
+        .vertical-align();
+    }
+}
+
+#blur
+{
+  width:100px;
+  
+  .blur(3px);
+  .transizione_generica();
+  
+    &:hover
+    {
+      .blur(0px);
+    }
+}
+
+#placeholder
+{
+  width:50%;
+  
+  .placeholder(red);
+}
+
+#colonne_container
+{
+  border:solid 1px red;
+
+    #colonne
+    {
+      .colonne(20%; 4; 30px);
+    }
+}
+
+#ellipsis
+{
+  border:solid 1px red;
+  display:inline-block;
+  max-width:200px;
+  
+  .text-overflow();
+}

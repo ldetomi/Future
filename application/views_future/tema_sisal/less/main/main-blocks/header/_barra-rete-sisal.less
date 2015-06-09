@@ -1,0 +1,57 @@
+#barra_rete-sisal
+{
+  background:@colore-sfondo_contenuto-centrale;
+  text-transform:uppercase;
+  overflow:hidden;
+  
+    h1
+    {
+      font-size:26px;
+      float:left;
+      margin:20px 0;
+      
+        @media screen and (max-width: @screen-md)
+        {
+          font-size:19px;
+        }
+    }
+    
+    a:hover,
+    a:focus
+    {
+      text-decoration:none;
+    }
+    
+    button
+    {
+      margin-top:20px;
+      float:right;
+    }  
+
+    @media screen and (min-width: @screen-lg)
+    {
+        .main-container
+        {
+          padding:0 80px;
+        }
+    }
+    
+    @media screen and (max-width: @screen-sm)
+    {
+      margin-top:45px;
+      
+        h1,
+        button
+        {
+          float:none;
+          text-align:center;
+          margin-bottom:10px;
+        }
+               
+        button
+        {
+          margin:0 auto 20px;
+          display:block;
+        }
+    }
+}

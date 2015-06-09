@@ -1,0 +1,159 @@
+// =======================================================================================================================================
+// --- TABELLE ---------------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+div.table-responsive 
+{
+  margin-bottom:15px;
+  width:100%;
+  
+    > table 
+    {
+      background-color:@bianco;
+      margin-bottom:0;
+      width:100%;
+    }
+}
+
+.invisible-grid-table
+{
+  width:100%;
+  
+    td 
+    {
+      border:none;
+      line-height:20px;
+      padding:5px;
+      text-align:left;
+    }
+}
+
+.theme-table
+{
+    th,
+    td 
+    {
+      border:1px solid @colore-bordi-tabella;
+      line-height:20px;
+      padding:8px;
+    }
+    
+    th
+    {
+      background:@colore-sfondo-intestazione_liv-1_tabella !important;
+      color:@colore-testo-intestazione_tabella;
+      font-family:@font-intestazioni-oggetti;
+      font-weight:bold;
+      font-size:@font-size-lg;
+      text-align:center; 
+    }
+    
+    :not('.centra'),
+    :not('.destra')
+    {
+        td
+        {
+          text-align:left;
+        }
+    }
+        
+    tr:not(:nth-of-type(1)) th
+    {
+      background:@colore-sfondo-intestazione_liv-2_tabella !important;
+      
+      text-shadow:0 -1px 0 @colore-ombra_testo_pulsanti_main-navigation;
+    }
+}
+
+.horizontal-striped
+{
+    tr:nth-child(even)
+    {
+      background:@transparent-black-10;
+    }
+}
+
+.vertical-striped
+{
+    td:nth-child(even)
+    {
+      background:@transparent-black-10;
+    }
+}
+
+colgroup
+{
+    &:nth-child(even)
+    {
+      background:@transparent-black-40;
+    }
+}
+
+.row-hover tr:hover td 
+{
+  background-color:fade(yellow,70%);
+  
+  .transizione_generica();
+}
+
+
+@cell_className:cell;
+[class*=@{cell_className}]
+{
+  font-weight:bold;
+  font-size:ceil((@font-size-base * 1.10));
+}
+
+.@{cell_className}
+{
+  &-primary { .aspetto_cell(@type-primary); }
+  &-success { .aspetto_cell(@type-success); }
+  &-info    { .aspetto_cell(@type-info); }
+  &-default { .aspetto_cell(@type-default); }
+  &-warning { .aspetto_cell(@type-warning); }
+  &-danger  { .aspetto_cell(@type-danger); }
+}
+
+
+//MIXIN PRINCIPALE
+.aspetto_cell(@colore)
+{
+  @stop-1:~"@{colore}_SOPRA";
+  @stop-2:~"@{colore}_SOTTO";
+
+  &:not(.outline)
+  {
+    background-color:@@stop-1;
+    
+    //Dati 2 valori possibili come colore del testo dei pulsanti, sceglie quello che crea maggior contrasto (tenendo conto della soglia espressa in %) con il colore di sfondo del pulsante attualmente visualizzato
+    @colore-testo_cell:        contrast( @@stop-2, @colore-testo_pulsanti-scuro, @colore-testo_pulsanti-chiaro, 60%);
+    
+    color:@colore-testo_cell;
+  }
+  
+  &.outline
+  {
+    color:@@stop-2;
+    border:solid 2px @@stop-2;
+  }
+}
+
+
+
+
+
+
+
+.gruppo_2
+{
+  background:@transparent-black-20 !important;
+}
+
+.gruppo_3
+{
+  background:@transparent-black-30 !important;
+}
+
+
+
+

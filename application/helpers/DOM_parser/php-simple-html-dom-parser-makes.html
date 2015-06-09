@@ -1,0 +1,1321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<meta content="web,developer,php,css,html,class,function" name="keywords">
+<meta content="Web Development Tips &amp; Tricks" name="description">
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<meta content="GmnHXoqsWkP8dHO96gxIU6CvaKoGeps5Ldl7TEmdIAU" name="google-site-verification">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script async="" src="php-simple-html-dom-parser-makes_files/cbgapi_002.js"></script><script async="" src="php-simple-html-dom-parser-makes_files/cbgapi.js"></script><script type="text/javascript">(function() { var a=window,b="jstiming",d="tick";var e=function(c){this.t={};this.tick=function(c,p,h){h=void 0!=h?h:(new Date).getTime();this.t[c]=[h,p]};this[d]("start",null,c)},f=new e;a.jstiming={Timer:e,load:f};if(a.performance&&a.performance.timing){var g=a.performance.timing,j=a[b].load,k=g.navigationStart,l=g.responseStart;0<k&&l>=k&&(j[d]("_wtsrt",void 0,k),j[d]("wtsrt_","_wtsrt",l),j[d]("tbsd_","wtsrt_"))}
+try{var m=null;a.chrome&&a.chrome.csi&&(m=Math.floor(a.chrome.csi().pageT),j&&0<k&&(j[d]("_tbnd",void 0,a.chrome.csi().startE),j[d]("tbnd_","_tbnd",k)));null==m&&a.gtbExternal&&(m=a.gtbExternal.pageT());null==m&&a.external&&(m=a.external.pageT,j&&0<k&&(j[d]("_tbnd",void 0,a.external.startE),j[d]("tbnd_","_tbnd",k)));m&&(a[b].pt=m)}catch(n){};a.tickAboveFold=function(c){var i=0;if(c.offsetParent){do i+=c.offsetTop;while(c=c.offsetParent)}c=i;750>=c&&a[b].load[d]("aft")};var q=!1;function r(){q||(q=!0,a[b].load[d]("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",r,!1):a.attachEvent("onscroll",r);
+ })();</script>
+<meta content="true" name="MSSmartTagsPreventParsing">
+<meta content="blogger" name="generator">
+<link href="http://web-developer-thing.blogspot.it/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Web Developer Thing - Atom" href="http://web-developer-thing.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Web Developer Thing - RSS" href="http://web-developer-thing.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Web Developer Thing - Atom" href="http://www.blogger.com/feeds/410882264693841212/posts/default">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=410882264693841212">
+<link rel="alternate" type="application/atom+xml" title="Web Developer Thing - Atom" href="http://web-developer-thing.blogspot.com/feeds/5686262192993933551/comments/default">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>PHP Simple HTML DOM Parser makes developers life esier</title>
+<link type="text/css" rel="stylesheet" href="php-simple-html-dom-parser-makes_files/1937454905-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="php-simple-html-dom-parser-makes_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+*************************************
+Blogger Template Style
+Name :    Condition
+Description: A two-column, fixed-width design for 1024x768 screen resolutions.
+Designer : TeknoMobi
+URL 1:      http://www.teknomobi.net
+URL 2:      http://www.bloggergallery.com/
+Bloggerized Date : 19 September 2009
+Original Template Style
+Designer : Free CSS Templates
+URL:       http://www.freecsstemplates.org
+Licence : Released for free under a Creative Commons Attribution 2.5 License
+Version    : 1.0
+Released   : 03.01.2010
+************************************ */
+#navbar{display:none; height:0; visibility:hidden;}
+body {
+margin: 0;
+padding: 0;
+background: url(http://3.bp.blogspot.com/_qJEkQRe5y8U/S0OctFWJ9EI/AAAAAAAABfA/JdLsW2mB2CE/s1600/img01.jpg) repeat-x left top;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #66665E;
+}
+h1, h2, h3 {
+margin: 0;
+margin-top:30px;
+text-transform: uppercase;
+font-family: "Trebuchet MS", Georgia, "Times New Roman", Times, serif;
+font-weight: normal;
+color: #0C95C9;
+}
+h1 { font-size: 28px; }
+h2 { font-size: 18px; }
+h3 { }
+p, ul, ol {
+margin-top: 0;
+line-height: 240%;
+text-align: justify;
+}
+ul, ol { }
+blockquote { }
+a { color: #0C95C9; }
+a:hover { text-decoration: none; }
+a img {
+border: none;
+}
+img.left {
+float: left;
+margin: 7px 30px 0 0;
+}
+img.right {
+float: right;
+margin: 7px 0 0 30px;
+}
+hr { display: none; }
+.list1 {
+}
+.list1 li {
+float: left;
+line-height: normal;
+}
+.list1 li img {
+margin: 0 30px 30px 0;
+}
+.list1 li.alt img {
+margin-right: 0;
+}
+#outer-wrapper {
+}
+/* Header */
+#header-wrapper {
+}
+#header {
+width: 920px;
+height: 45px;
+margin: 0 auto;
+}
+/* Menu */
+#menu {
+float: left;
+width: 540px;
+height: 45px;
+}
+#menu ul {
+margin: 0;
+padding: 10px 0px 0px 5px;
+list-style: none;
+line-height: normal;
+}
+#menu li {
+display: block;
+float: left;
+}
+#menu a {
+display: block;
+float: left;
+margin-right: 3px;
+padding: 3px 25px 2px 25px;
+text-decoration: none;
+text-transform: capitalize;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+color: #FFFFFF;
+}
+#menu a:hover { text-decoration: underline; }
+#menu .current_page_item a {
+height: 20px;
+background: #FEC200 url(http://1.bp.blogspot.com/_qJEkQRe5y8U/S0OctX4mPJI/AAAAAAAABfE/5MgqMVsf-DU/s1600/img02.jpg) repeat-x left top;
+color: #FFFFFF;
+}
+#menu .first {
+background: none;
+}
+/* Search */
+#search {
+float: right;
+width: 305px;
+height: 45px;
+}
+#search form {
+float: right;
+margin: 0;
+padding: 12px 30px 0 0;
+}
+#search fieldset {
+margin: 0;
+padding: 0;
+border: none;
+}
+#search input {
+float: left;
+font: 12px Georgia, "Times New Roman", Times, serif;
+border: none;
+}
+#search-text {
+width: 135px;
+height: 18px;
+padding: 3px 0 0 5px;
+border: 1px solid #333333;
+background: #ECF9E4;
+color: #000000;
+}
+#search-submit {
+height: 21px;
+margin-left: 10px;
+padding: 0px 5px;
+background: #000000;
+color: #FFFFFF;
+}
+/* Page */
+#content-wrapper {
+width: 920px;
+margin: 0 auto;
+}
+#page-bgtop {
+padding-top: 30px;
+}
+/** LOGO */
+#logo {
+width: 860px;
+height: 134px;
+margin: 0 auto;
+background: url(http://1.bp.blogspot.com/_qJEkQRe5y8U/S0OctS2ikEI/AAAAAAAABfM/HkYfDIGltho/s1600/img04.jpg) no-repeat right top;
+}
+#logo h1, #logo p {
+margin: 0px;
+line-height: normal;
+text-transform: lowercase;
+font-weight: normal;
+color: #FFFFFF;
+}
+#logo p {
+text-transform: lowercase;
+font-size: 10px;
+}
+#logo h1 {
+padding-top: 54px;
+font-size: 34px;
+}
+#logo a {
+text-decoration: none;
+color: #FFFFFF;
+}
+/* Content */
+#main-wrapper {
+float: right;
+width: 658px;
+padding-top: 10px;
+padding-right: 30px;
+}
+/* Post */
+.post {
+background: url(http://1.bp.blogspot.com/_qJEkQRe5y8U/S0Octgs9WjI/AAAAAAAABfQ/fxrmPdRd2Tg/s1600/img07.jpg) repeat-x left bottom;
+margin-bottom: 25px;
+}
+.post h3 {
+height: 30px;
+color: #549900;
+font-size: 18px;
+text-transform: uppercase;
+font-family: "Trebuchet MS", Georgia, "Times New Roman", Times, serif;
+font-weight: normal;
+}
+.post h3 a {
+text-decoration: none;
+color: #585D60;
+}
+.post-body {
+padding: 10px 0;
+}
+#jump-link a {
+font-size:15px;
+text-decoration:none;
+}
+.post-comment-link {
+}
+.post-labels {
+padding-left: 0px;
+}
+/* Comments */
+#comments h4 {
+margin:1em 0;
+font-weight: bold;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color: #000000;
+}
+#comments-block {
+margin:1em 0 1.5em;
+line-height:1.6em;
+}
+#comments-block .comment-author {
+margin:.5em 0;
+}
+#comments-block .comment-body {
+margin:.25em 0 0;
+}
+#comments-block .comment-footer {
+margin:-.25em 0 2em;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+#comments-block .comment-body p {
+margin:0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+/* Sidebar */
+#sidebar-wrapper {
+float: left;
+width: 177px;
+padding-left: 22px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+color: #585D60;
+}
+.sidebar ul {
+margin: 0;
+padding: 0;
+list-style: none;
+line-height: normal;
+}
+.sidebar li {
+margin: 0;
+padding: 7px 10px 10px 7px;
+background: url(http://1.bp.blogspot.com/_qJEkQRe5y8U/S0Octgs9WjI/AAAAAAAABfQ/fxrmPdRd2Tg/s1600/img07.jpg) repeat-x left bottom;
+}
+.sidebar p {
+margin: 0;
+padding: 0px 10px;
+line-height: 200%;
+}
+.sidebar h2 {
+height: 26px;
+margin: 0 0 10px 0px;
+padding: 12px 0 2px 7px;
+text-transform: capitalize;
+font-size: 18px;
+font-weight: normal;
+color: #464F54;
+}
+.sidebar a {
+text-align: left;
+text-decoration: none;
+font-weight: normal;
+color: #585D60;
+}
+.sidebar .widget, .main .widget {
+margin:0px;
+padding:0px;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+/* Footer */
+#footer {
+width: 920px;
+height: 49px;
+margin: 0 auto;
+padding-top: 50px;
+}
+#footer-bgcontent {
+margin: 0px;
+padding: 0px;
+height: 99px;
+background: #394144;
+}
+#footer p {
+margin: 0;
+text-align: center;
+line-height: normal;
+text-transform: uppercase;
+font-size: 10px;
+color: #FFFFFF;
+}
+#footer a {
+color: #E5FFC4;
+}
+.post-title a { text-decoration:none; font-weight:bold; }
+.post-footer { margin-bottom:10px; padding-bottom:10px; }
+.fs7 { font-size:7pt; }
+
+--></style>
+<style>
+#code, .output { font-size:10pt; font-family:"Courier New", Courier, monospace; margin-top:0px; padding:5px; border:1px solid #E9E9E9; background-color:#F5F5F5; display:block; width:600px; overflow:auto; white-space:nowrap; }
+.output { border:1px solid #D8E4EB; background-color:#E6EEF2; }
+#table td { font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; background-color:#E6EEF2; border:1px solid #FFFFFF; }
+#table .cap { font-weight:bold; background-color:#D8E4EB; }
+</style>
+<!--[if lt IE 7]> <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'> <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div> <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'> <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div> <div style='width: 275px; float: left; font-family: Arial, sans-serif;'> <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div> <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div> </div> <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div> <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div> <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div> <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div> </div> </div> <![endif]-->
+<script type="text/javascript">var a=navigator,b="userAgent",c="indexOf",f="&m=1",g="(^|&)m=",h="?",i="?m=1";function j(){var d=window.location.href,e=d.split(h);switch(e.length){case 1:return d+i;case 2:return 0<=e[1].search(g)?null:d+f;default:return null}}if(-1!=a[b][c]("Mobile")&&-1!=a[b][c]("WebKit")&&-1==a[b][c]("iPad")||-1!=a[b][c]("Opera Mini")||-1!=a[b][c]("IEMobile")){var k=j();k&&window.location.replace(k)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script><script src="php-simple-html-dom-parser-makes_files/google_top_exp.js" type="text/javascript"></script><style>.gc-bubbleDefault{text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style><script src="php-simple-html-dom-parser-makes_files/get_custom_js" type="text/javascript"></script><script src="php-simple-html-dom-parser-makes_files/show_widget" type="text/javascript"></script></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe src="php-simple-html-dom-parser-makes_files/navbar.html" name="navbar-iframe" id="navbar-iframe" vspace="0" tabindex="0" style="" marginwidth="0" marginheight="0" hspace="0" allowtransparency="true" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script gapi_processed="true" type="text/javascript" src="navbar_data/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("iframes-styles-bubble", function() {
+          if (window.iframes && iframes.open) {
+            iframes.open(
+                '//www.blogger.com/navbar.g?targetBlogID\075410882264693841212\46blogName\75Web+Developer+Thing\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75BLUE\46layoutType\75LAYOUTS\46searchRoot\75http://web-developer-thing.blogspot.com/search\46blogLocale\75en\46v\0752\46homepageUrl\75http://web-developer-thing.blogspot.com/\46targetPostID\0755686262192993933551\46blogPostOrPageUrl\75http://web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html\46vt\75-4189892890475075229',
+                {
+                  container: "navbar-iframe-container",
+                  id: "navbar-iframe"
+                },
+                {
+                });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="outer-wrapper"><div id="wrap2">
+<!-- skip links for text browsers -->
+<span id="skiplinks" style="display:none;">
+<a href="#main">skip to main </a> |
+      <a href="#sidebar">skip to sidebar</a>
+</span>
+<div class="logo section" id="logo"><div class="widget Header" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://web-developer-thing.blogspot.it/">Web Developer Thing</a>
+</h1>
+</div>
+<p><em>
+</em></p><div class="descriptionwrapper"><em>
+<p class="description"><span>
+</span></p>
+</em></div><em>
+</em><p></p>
+</div>
+</div></div>
+<hr>
+<!-- end #logo -->
+<div id="header">
+<div id="menu">
+<ul>
+<li class="current_page_item"><a href="http://web-developer-thing.blogspot.it/" title="Home">Home</a></li>
+<li><a href="http://web-developer-thing.blogspot.it/feeds/posts/default" title="Posts RSS">Posts RSS</a></li>
+<li><a href="http://web-developer-thing.blogspot.it/feeds/comments/default" title="Comments RSS">Comments RSS</a></li>
+<li><a href="#" title="Edit this link">Edit</a></li>
+</ul>
+</div>
+<!-- end #menu -->
+<div id="search">
+<form action="http://web-developer-thing.blogspot.it/search/" method="get">
+<fieldset>
+<input id="search-text" name="q" size="15" type="text">
+<input id="search-submit" value="GO" type="submit">
+</fieldset>
+</form>
+</div>
+<!-- end #search -->
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<div id="content-wrapper">
+<div id="page-bgtop">
+<div id="main-wrapper">
+<div class="main section" id="main"><div class="widget Blog" id="Blog1">
+<div class="blog-posts hfeed">
+<!-- google_ad_section_start(name=default) -->
+<div class="post hentry uncustomized-post-template">
+<a name="5686262192993933551"></a>
+<table border="0" cellpadding="2" cellspacing="0" width="100%"><tbody><tr><td valign="top" width="100%">
+<h1 class="post-title entry-title">
+<a href="http://web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html">PHP Simple HTML DOM Parser makes developers life esier</a>
+</h1>
+</td><td valign="top">
+<script type="text/javascript">
+tweetmeme_url = 'http://web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html';
+tweetmeme_source = 'WebDevThing';
+</script>
+<script src="php-simple-html-dom-parser-makes_files/button.js" type="text/javascript"></script><iframe src="php-simple-html-dom-parser-makes_files/button.html" frameborder="0" height="61" scrolling="no" width="50"></iframe>
+</td></tr></tbody></table>
+<div class="post-header-line-1"></div>
+<div class="fs7">
+<span class="post-author vcard">
+Posted by
+<span class="fn">Dalius</span>
+</span>  |  
+
+<span class="post-comment-link">
+</span>  |  
+
+      <span class="post-timestamp">
+3:33 AM
+</span>
+<span class="post-labels">
+Labels:
+<a href="http://web-developer-thing.blogspot.it/search/label/DOM" rel="tag">DOM</a>,
+<a href="http://web-developer-thing.blogspot.it/search/label/PHP" rel="tag">PHP</a>
+</span>
+</div>
+<br>
+<br>
+<div class="post-body entry-content">
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://www.sxc.hu/pic/m/s/sv/svilen001/1083340_computer_abbreviations_4.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img src="php-simple-html-dom-parser-makes_files/1083340_computer_abbreviations_4.jpg" height="150" border="0" width="200"></a></div>
+Today I'm gonna talk about PHP Simple HTML DOM Parser, wich is big time saver for me.<br>
+<br>
+<br>
+<cite>A simple PHP HTML DOM parser written in PHP5+, supports invalid HTML, and provides a very easy way to handle HTML elements.</cite><br>
+<br>
+This is a library written in PHP that gives you dictator like control 
+over HTML. It's the best HTML DOM Parser class on PHP I've ever used.<br>
+<br>
+<a name="more"></a><br>
+<br>
+<h2>
+
+
+
+
+Quick start</h2>
+First thing that you want to do is to download <b>Simple HTML DOM Parser</b> from <a href="http://sourceforge.net/projects/simplehtmldom/" target="_blank">SourceForge</a>. It's freely available under MIT License.<br>
+<h3>
+
+
+
+
+How to Get HTML Elements</h3>
+Let's say we want to work with HTML code from Google.com.  To do this, we need to create a DOM object:<br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">file_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'http://www.google.com/'</span><span style="color: #007700;">);</span></span></span></div>
+</blockquote>
+Next, let's find all images and print their src values with this easy way:  <br>
+<blockquote>
+<div id="code">
+ <p style="color: black;"><span><span style="color: #007700;">foreach(</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'img'</span><span style="color: #007700;">)&nbsp;as&nbsp;</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">)<br>&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">src&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #dd0000;">'&lt;br&gt;'</span><span style="color: #007700;">;</span></span></p>
+ </div>
+</blockquote>
+We can do the same with links and any other elements:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span><span style="color: #007700;">foreach(</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a'</span><span style="color: #007700;">)&nbsp;as&nbsp;</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">)<br>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">href&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #dd0000;">'&lt;br&gt;'</span><span style="color: #007700;">;</span></span></span></div>
+</blockquote>
+Easy right ? :)<br>
+<h3>
+
+
+
+
+How to modify HTML elements</h3>
+Let's say we have html code wich needs a bit of modification, for 
+example we have two divs with id assinget to them and we want to change 
+first div content to <i>foo</i>, and set class of <i>bar</i> to the second div.   With Simple HTML DOM Parser it's easy to do so:   <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">str_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'&lt;div&nbsp;id="hello"&gt;Hello&lt;/div&gt;&lt;div&nbsp;id="world"&gt;World&lt;/div&gt;'</span><span style="color: #007700;">);</span><span style="color: #0000bb;"><br>
+$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div[id=hello]'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">innertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">'foo'</span><span style="color: #007700;">;&nbsp;<span class="Apple-converted-space">&nbsp;</span>  <br>
+<span><span style="color: #0000bb;">$html</span>-&gt;<span style="color: #0000bb;">find</span>(<span style="color: #dd0000;">'div'</span>,&nbsp;<span style="color: #0000bb;">1</span>)-&gt;<span style="color: #0000bb;">class&nbsp;</span>=&nbsp;<span style="color: #dd0000;">'bar'</span>;&nbsp;<span class="Apple-converted-space">&nbsp;</span>  <br>
+<span style="color: #0000bb;"></span></span>echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">;</span></span></span></div>
+</blockquote>
+Output would be:<br>
+<blockquote>
+<div class="output">
+&lt;div id="hello"&gt;foo&lt;/div&gt;&lt;div id="world" class="bar"&gt;World&lt;/div&gt;</div>
+</blockquote>
+<h3>
+
+
+
+
+Extract Contents from HTML</h3>
+Imagine that you have highly formated html code with text in different 
+font sizes, colors, styles, etc... And you want to remove any html tags 
+and leave plain text only.  How to do this...? Simple!  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">file_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'http://www.google.com/'</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;</span></span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Scraping Slashdot!</h3>
+Very good example of how to extract article blocks from Slashdot!:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">file_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'http://slashdot.org/'</span><span style="color: #007700;">);<span class="Apple-converted-space">&nbsp;</span>        </span><span style="color: #ff8000;"><br>
+<br>
+//&nbsp;Find&nbsp;all&nbsp;article&nbsp;blocks<span class="Apple-converted-space">&nbsp;</span>  <br>
+</span><span style="color: #007700;">foreach(</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div.article'</span><span style="color: #007700;">)&nbsp;as&nbsp;</span><span style="color: #0000bb;">$article</span><span style="color: #007700;">)&nbsp;{<span class="Apple-converted-space">&nbsp;</span>  &nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000bb;">$item</span><span style="color: #007700;">[</span><span style="color: #dd0000;">'title'</span><span style="color: #007700;">] =&nbsp;</span><span style="color: #0000bb;">$article</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div.title'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;<span class="Apple-converted-space">&nbsp;</span>  &nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000bb;">$item</span><span style="color: #007700;">[</span><span style="color: #dd0000;">'intro'</span><span style="color: #007700;">]&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;</span><span style="color: #0000bb;">$article</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div.intro'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;<span class="Apple-converted-space">&nbsp;</span>  &nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000bb;">$item</span><span style="color: #007700;">[</span><span style="color: #dd0000;">'details'</span><span style="color: #007700;">]&nbsp;=&nbsp;</span><span style="color: #0000bb;">$article</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div.details'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;<span class="Apple-converted-space">&nbsp;</span>  &nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000bb;">$articles</span><span style="color: #007700;">[]&nbsp;=&nbsp;</span><span style="color: #0000bb;">$item</span><span style="color: #007700;">;<span class="Apple-converted-space">&nbsp;</span>  <br>
+}<span class="Apple-converted-space">&nbsp;</span>    <br>
+<br>
+</span><span style="color: #0000bb;">print_r</span><span style="color: #007700;">(</span><span style="color: #0000bb;">$articles</span><span style="color: #007700;">);</span></span></span></div>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to create HTML DOM object</h2>
+<h3>
+
+
+
+
+Quick way</h3>
+Three easy ways to create HTML DOM object:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Create&nbsp;a&nbsp;DOM&nbsp;object&nbsp;from&nbsp;a&nbsp;string&nbsp;   <br>
+</span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">str_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'&lt;html&gt;&lt;body&gt;Hello!&lt;/body&gt;&lt;/html&gt;'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Create&nbsp;a&nbsp;DOM&nbsp;object&nbsp;from&nbsp;a&nbsp;URL&nbsp;  <br>
+</span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">file_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'http://www.google.com/'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Create&nbsp;a&nbsp;DOM&nbsp;object&nbsp;from&nbsp;a&nbsp;HTML&nbsp;file&nbsp;  <br>
+</span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">file_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'test.htm'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Object-oriented way</h3>
+Four ways to create object-oriented HTML DOM:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Create&nbsp;a&nbsp;DOM&nbsp;object   <br>
+</span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;new&nbsp;</span><span style="color: #0000bb;">simple_html_dom</span><span style="color: #007700;">();    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Load&nbsp;HTML&nbsp;from&nbsp;a&nbsp;string  <br>
+</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">load</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'&lt;html&gt;&lt;body&gt;Hello!&lt;/body&gt;&lt;/html&gt;'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Load&nbsp;HTML&nbsp;from&nbsp;a&nbsp;URL&nbsp;  <br>
+</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">load_file</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'http://www.google.com/'</span><span style="color: #007700;">);    </span><span style="color: #ff8000;"><br>
+<br>
+//&nbsp;Load&nbsp;HTML&nbsp;from&nbsp;a&nbsp;HTML&nbsp;file&nbsp;  <br>
+</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">load_file</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'test.htm'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to find HTML elements?</h2>
+<h3>
+
+
+
+
+Basics</h3>
+Five basic ways to find html elements:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;anchors,&nbsp;returns&nbsp;a&nbsp;array&nbsp;of&nbsp;element&nbsp;objects   <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;(N)th&nbsp;anchor,&nbsp;returns&nbsp;element&nbsp;object&nbsp;or&nbsp;null&nbsp;if&nbsp;not&nbsp;found&nbsp;(zero&nbsp;based)
+  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;lastest&nbsp;anchor,&nbsp;returns&nbsp;element&nbsp;object&nbsp;or&nbsp;null&nbsp;if&nbsp;not&nbsp;found&nbsp;(zero&nbsp;based)
+  </span><span style="color: #0000bb;"><br>
+$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a'</span><span style="color: #007700;">,&nbsp;-</span><span style="color: #0000bb;">1</span><span style="color: #007700;">);&nbsp;<br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;&lt;div&gt;&nbsp;with&nbsp;the&nbsp;id&nbsp;attribute  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div[id]'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;&lt;div&gt;&nbsp;which&nbsp;attribute&nbsp;id=foo  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div[id=foo]'</span><span style="color: #007700;">);&nbsp;</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Advanced</h3>
+Five advanced ways to find html elements:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;element&nbsp;which&nbsp;id=foo   <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'#foo'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;element&nbsp;which&nbsp;class=foo  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'.foo'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;element&nbsp;has&nbsp;attribute&nbsp;id  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'*[id]'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;anchors&nbsp;and&nbsp;images&nbsp;  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a,&nbsp;img'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;anchors&nbsp;and&nbsp;images&nbsp;with&nbsp;the&nbsp;"title"&nbsp;attribute  <br>
+</span><span style="color: #0000bb;">$ret&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'a[title],&nbsp;img[title]'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Descendant Selectors</h3>
+Four ways to do decendant selectors:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;&lt;li&gt;&nbsp;in&nbsp;&lt;ul&gt;&nbsp;&nbsp;   <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'ul&nbsp;li'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;Nested&nbsp;&lt;div&gt;&nbsp;tags&nbsp;  <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'div&nbsp;div&nbsp;div'</span><span style="color: #007700;">);&nbsp;&nbsp;    <br>
+</span><span style="color: #ff8000;"><br>
+//&nbsp;Find&nbsp;all&nbsp;&lt;td&gt;&nbsp;in&nbsp;&lt;table&gt;&nbsp;which&nbsp;class=hello&nbsp;&nbsp;  <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'table.hello&nbsp;td'</span><span style="color: #007700;">);&nbsp;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;td&nbsp;tags&nbsp;with&nbsp;attribite&nbsp;align=center&nbsp;in&nbsp;table&nbsp;tags&nbsp;&nbsp;  <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'table&nbsp;td[align=center]'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Nested Selectors</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;&lt;li&gt;&nbsp;in&nbsp;&lt;ul&gt;&nbsp;   <br>
+</span><span style="color: #007700;">foreach(</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'ul'</span><span style="color: #007700;">)&nbsp;as&nbsp;</span><span style="color: #0000bb;">$ul</span><span style="color: #007700;">) {  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;foreach(</span><span style="color: #0000bb;">$ul</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'li'</span><span style="color: #007700;">)&nbsp;as&nbsp;</span><span style="color: #0000bb;">$li</span><span style="color: #007700;">) {  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #ff8000;">//&nbsp;do&nbsp;something...  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700;">}  <br>
+}    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Find&nbsp;first&nbsp;&lt;li&gt;&nbsp;in&nbsp;first&nbsp;&lt;ul&gt;&nbsp;  <br>
+</span><span style="color: #0000bb;">$e&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'ul'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'li'</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Attribute Filters</h3>
+Parser also supports these operators in attribute selectors: <br>
+<blockquote>
+<table id="table" border="0" cellpadding="4" cellspacing="0"><tbody>
+<tr><td class="cap">Filter</td><td class="cap">Description</td></tr>
+<tr><td valign="top">[attribute]</td><td>Matches elements that have the specified attribute.</td></tr>
+<tr><td valign="top">[!attribute]</td><td>Matches elements that don't have the specified attribute.</td></tr>
+<tr><td valign="top">[attribute=value]</td><td>Matches elements that have the specified attribute with a certain value.</td></tr>
+<tr><td valign="top">[attribute!=value]</td><td>Matches elements that don't have the specified attribute with a certain value.</td></tr>
+<tr><td valign="top">[attribute^=value]</td><td>Matches elements that have the specified attribute and it starts with a certain value.</td></tr>
+<tr><td valign="top">[attribute$=value]</td><td>Matches elements that have the specified attribute and it ends with a certain value.</td></tr>
+<tr><td valign="top">[attribute*=value]</td><td>Matches elements that have the specified attribute and it contains a certain value.</td></tr>
+</tbody></table>
+</blockquote>
+<h3>
+
+
+
+
+Text and Comments</h3>
+You can even find html comments:  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Find&nbsp;all&nbsp;text&nbsp;blocks&nbsp;   <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'text'</span><span style="color: #007700;">);    </span><span style="color: #ff8000;"><br>
+<br>
+//&nbsp;Find&nbsp;all&nbsp;comment&nbsp;(&lt;!--...--&gt;)&nbsp;blocks&nbsp;  <br>
+</span><span style="color: #0000bb;">$es&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'comment'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to access the HTML element's attributes</h2>
+<h3>
+
+
+
+
+Get, Set and Remove attributes</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Get&nbsp;a&nbsp;attribute&nbsp;(&nbsp;If&nbsp;the&nbsp;attribute&nbsp;is&nbsp;non-value&nbsp;attribute&nbsp;(eg.&nbsp;checked,&nbsp;selected...),&nbsp;it&nbsp;will&nbsp;returns&nbsp;true&nbsp;or&nbsp;false)
+   <br>
+</span><span style="color: #0000bb;">$value&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">href</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Set&nbsp;a&nbsp;attribute(If&nbsp;the&nbsp;attribute&nbsp;is&nbsp;non-value&nbsp;attribute&nbsp;(eg.&nbsp;checked,&nbsp;selected...),&nbsp;set&nbsp;it's&nbsp;value&nbsp;as&nbsp;true&nbsp;or&nbsp;false)
+  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">href&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">'my&nbsp;link'</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Remove&nbsp;a&nbsp;attribute,&nbsp;set&nbsp;it's&nbsp;value&nbsp;as&nbsp;null!&nbsp;  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">href&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">null</span><span style="color: #007700;">;    </span><span style="color: #ff8000;"><br>
+<br>
+//&nbsp;Determine&nbsp;whether&nbsp;a&nbsp;attribute&nbsp;exist?&nbsp;  <br>
+</span><span style="color: #007700;">if(isset(</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">href</span><span style="color: #007700;">))&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #dd0000;">'href&nbsp;exist!'</span><span style="color: #007700;">;</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Magic attributes</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Example   <br>
+</span><span style="color: #0000bb;">$html&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">str_get_html</span><span style="color: #007700;">(</span><span style="color: #dd0000;">"&lt;div&gt;foo&nbsp;&lt;b&gt;bar&lt;/b&gt;&lt;/div&gt;"</span><span style="color: #007700;">);&nbsp;  <br>
+</span><span style="color: #0000bb;">$e&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">"div"</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">);    <br>
+<br>
+echo&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">tag</span><span style="color: #007700;">;&nbsp;</span><span style="color: #ff8000;">//&nbsp;Returns:&nbsp;"&nbsp;div"  <br>
+</span><span style="color: #007700;"><br>
+echo&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext</span><span style="color: #007700;">;&nbsp;</span><span style="color: #ff8000;">//&nbsp;Returns:&nbsp;"&nbsp;&lt;div&gt;foo&nbsp;&lt;b&gt;bar&lt;/b&gt;&lt;/div&gt;"  <br>
+</span><span style="color: #007700;"><br>
+echo&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">innertext</span><span style="color: #007700;">;&nbsp;</span><span style="color: #ff8000;">//&nbsp;Returns:&nbsp;"&nbsp;foo&nbsp;&lt;b&gt;bar&lt;/b&gt;"<br>
+</span><span style="color: #007700;"><br>
+echo&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;&nbsp;</span><span style="color: #ff8000;">//&nbsp;Returns:&nbsp;"&nbsp;foo&nbsp;bar"</span></span></div>
+<table id="table" border="0" cellpadding="4" cellspacing="0"><tbody>
+<tr><td class="cap">Attribute Name</td><td class="cap">Usage</td></tr>
+<tr><td valign="top">$e-&gt;tag</td><td>Read or write the tag name of element.</td></tr>
+<tr><td valign="top">$e-&gt;outertext</td><td>Read or write the outer HTML text of element.</td></tr>
+<tr><td valign="top">$e-&gt;innertext</td><td>Read or write the inner HTML text of element.</td></tr>
+<tr><td valign="top">$e-&gt;plaintext</td><td>Read or write the plain text of element.</td></tr>
+</tbody></table>
+</blockquote>
+<h3>
+
+
+
+
+Tips</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Extract&nbsp;contents&nbsp;from&nbsp;HTML&nbsp;   <br>
+</span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">plaintext</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Wrap&nbsp;a&nbsp;element  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">'&lt;div&nbsp;class="wrap"&gt;'&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #dd0000;">'&lt;div&gt;'</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Remove&nbsp;a&nbsp;element,&nbsp;set&nbsp;it's&nbsp;outertext&nbsp;as&nbsp;an&nbsp;empty&nbsp;string&nbsp;  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">''</span><span style="color: #007700;">;    <br>
+</span><span style="color: #ff8000;"><br>
+//&nbsp;Append&nbsp;a&nbsp;element  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #dd0000;">'&lt;div&gt;foo&lt;div&gt;'</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Insert&nbsp;a&nbsp;element  <br>
+</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">'&lt;div&gt;foo&lt;div&gt;'&nbsp;</span><span style="color: #007700;">.&nbsp;</span><span style="color: #0000bb;">$e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext</span><span style="color: #007700;">;</span></span></div>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to traverse the DOM tree</h2>
+<h3>
+
+
+
+
+Background knowledge</h3>
+If you are not so familiar with HTML DOM, check this <a href="http://php.net/manual/en/book.dom.php" target="_blank">link</a> to learn more...  <br>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Example   <br>
+</span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">find</span><span style="color: #007700;">(</span><span style="color: #dd0000;">"#div1"</span><span style="color: #007700;">,&nbsp;</span><span style="color: #0000bb;">0</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">children</span><span style="color: #007700;">(</span><span style="color: #0000bb;">1</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">children</span><span style="color: #007700;">(</span><span style="color: #0000bb;">1</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">children</span><span style="color: #007700;">(</span><span style="color: #0000bb;">2</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">id</span><span style="color: #007700;">;  <br>
+</span><span style="color: #ff8000;"><br>
+//&nbsp;or&nbsp;  <br>
+</span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">getElementById</span><span style="color: #007700;">(</span><span style="color: #dd0000;">"div1"</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">childNodes</span><span style="color: #007700;">(</span><span style="color: #0000bb;">1</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">childNodes</span><span style="color: #007700;">(</span><span style="color: #0000bb;">1</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">childNodes</span><span style="color: #007700;">(</span><span style="color: #0000bb;">2</span><span style="color: #007700;">)-&gt;</span><span style="color: #0000bb;">getAttribute</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'id'</span><span style="color: #007700;">);</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Traverse the DOM tree</h3>
+<blockquote>
+<table id="table" border="0" cellpadding="4" cellspacing="0"><tbody>
+<tr><td class="cap">Method</td><td class="cap">Description</td></tr>
+<tr><td valign="top" nowrap="nowrap">mixed <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">children&nbsp;</span><span style="color: #007700;">(&nbsp;[</span><span style="color: #0000bb;">int&nbsp;$index</span><span style="color: #007700;">]&nbsp;)</span></span></td><td>Returns the Nth child object if index is set, otherwise return an array of children.</td></tr>
+<tr><td valign="top">element <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">parent&nbsp;</span><span style="color: #007700;">()</span></span></td><td>Returns the parent of element.</td></tr>
+<tr><td valign="top">element <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">first_child&nbsp;</span><span style="color: #007700;">()</span></span></td><td>Returns the first child of element, or null if not found.</td></tr>
+<tr><td valign="top">element <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">last_child&nbsp;</span><span style="color: #007700;">()</span></span></td><td>Returns the last child of element, or null if not found.</td></tr>
+<tr><td valign="top">element <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">next_sibling&nbsp;</span><span style="color: #007700;">()</span></span></td><td>Returns the next sibling of element, or null if not found.</td></tr>
+<tr><td valign="top">element <span style="color: black;"> <span style="color: #0000bb;"> $e</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">prev_sibling&nbsp;</span><span style="color: #007700;">()</span></span></td><td>Returns the previous sibling of element, or null if not found.</td></tr>
+</tbody></table>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to dump contents of DOM object</h2>
+<h3>
+
+
+
+
+Quick way</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Dumps&nbsp;the&nbsp;internal&nbsp;DOM&nbsp;tree&nbsp;back&nbsp;into&nbsp;string&nbsp;   <br>
+</span><span style="color: #0000bb;">$str&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">;    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Print&nbsp;it!  <br>
+</span><span style="color: #007700;">echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">;&nbsp;</span></span></div>
+</blockquote>
+<h3>
+
+
+
+
+Object-oriented way</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Dumps&nbsp;the&nbsp;internal&nbsp;DOM&nbsp;tree&nbsp;back&nbsp;into&nbsp;string&nbsp;   <br>
+</span><span style="color: #0000bb;">$str&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">save</span><span style="color: #007700;">();    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Dumps&nbsp;the&nbsp;internal&nbsp;DOM&nbsp;tree&nbsp;back&nbsp;into&nbsp;a&nbsp;file&nbsp;  </span><span style="color: #0000bb;"><br>
+$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">save</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'result.htm'</span><span style="color: #007700;">);</span></span> </div>
+</blockquote>
+<br>
+<h2>
+
+
+
+
+How to customize the parsing behavior</h2>
+<br>
+<h3>
+
+
+
+
+Callback function</h3>
+<blockquote>
+<div id="code">
+<span style="color: black;"><span style="color: #ff8000;">//&nbsp;Write&nbsp;a&nbsp;function&nbsp;with&nbsp;parameter&nbsp;"$element"   <br>
+</span><span style="color: #007700;">function&nbsp;</span><span style="color: #0000bb;">my_callback</span><span style="color: #007700;">(</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">)&nbsp;{  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</span><span style="color: #ff8000;">&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Hide&nbsp;all&nbsp;&lt;b&gt;&nbsp;tags&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700;">if&nbsp;(</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">tag</span><span style="color: #007700;">==</span><span style="color: #dd0000;">'b'</span><span style="color: #007700;">)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000bb;">$element</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">outertext&nbsp;</span><span style="color: #007700;">=&nbsp;</span><span style="color: #dd0000;">''</span><span style="color: #007700;">;  <br>
+}&nbsp;    <br>
+</span><span style="color: #ff8000;"><br>
+//&nbsp;Register&nbsp;the&nbsp;callback&nbsp;function&nbsp;with&nbsp;it's&nbsp;function&nbsp;name  </span><span style="color: #0000bb;"><br>
+$html</span><span style="color: #007700;">-&gt;</span><span style="color: #0000bb;">set_callback</span><span style="color: #007700;">(</span><span style="color: #dd0000;">'my_callback'</span><span style="color: #007700;">);    <br>
+<br>
+</span><span style="color: #ff8000;">//&nbsp;Callback&nbsp;function&nbsp;will&nbsp;be&nbsp;invoked&nbsp;while&nbsp;dumping  </span><span style="color: #007700;"><br>
+echo&nbsp;</span><span style="color: #0000bb;">$html</span><span style="color: #007700;">;</span></span></div>
+</blockquote>
+As you can see, Simple HTML DOM Parser is very usefull in many situations when parsing HTML.
+<div style="clear: both;"></div>
+<div id="lws_0"><div class="linkwithin_outer" style="margin: 0; border: 0; padding: 0; clear: both; ">
+<div class="linkwithin_inner" style="
+    margin: 0;
+    border: 0;
+    padding: 0;
+    
+    
+    ">
+    <div class="linkwithin_text" id="linkwithin_text_0" style="
+        margin: 0;
+        border: 0;
+        padding: 20px 0 5px;
+        text-align: left;
+        font-weight: bold;
+        ">
+        You might also like:
+    </div>
+
+    <div class="linkwithin_posts" style="margin: 0; border: 0; padding: 0">
+        
+    <ul class="linkwithin_textlist" style="padding: 0; margin: 0 0 0 15px;">
+
+<li style="list-style: disc outside none; line-height: 1.2em; background: none; padding: 0; margin: 0; text-align: left;">
+<a href="http://web-developer-thing.blogspot.com/2010/02/google-adwords-api-tutorial.html" onmousedown="this.href='http://widget6.linkwithin.com/redirect?url=http%3A//web-developer-thing.blogspot.com/2010/02/google-adwords-api-tutorial.html&amp;vars=%5B%22http%3A//web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html%22%2C%20153979%2C%200%2C%20%22http%3A//web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html%22%2C%2022434532%2C%200%2C%2022629555%5D&amp;ts=' + (new Date()).getTime(); return true;">Google AdWords API Tutorial</a>
+</li>
+
+
+<li style="list-style: disc outside none; line-height: 1.2em; background: none; padding: 0; margin: 0; text-align: left;">
+<a href="http://web-developer-thing.blogspot.com/2010/02/60-professional-blogger-templates.html" onmousedown="this.href='http://widget6.linkwithin.com/redirect?url=http%3A//web-developer-thing.blogspot.com/2010/02/60-professional-blogger-templates.html&amp;vars=%5B%22http%3A//web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html%22%2C%20153979%2C%200%2C%20%22http%3A//web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html%22%2C%2022434532%2C%201%2C%2022434525%5D&amp;ts=' + (new Date()).getTime(); return true;">60 Professional Blogger Templates</a>
+</li>
+
+
+<li style="list-style: disc outside none; line-height: 1.2em; background: none; padding: 0; margin: 0; text-align: left;">
+<a href="http://web-developer-thing.blogspot.com/2010/02/google-analytics-structure-your-account.html" onmousedown="this.href='http://widget6.linkwithin.com/redirect?url=http%3A//web-developer-thing.blogspot.com/2010/02/google-analytics-structure-your-account.html&amp;vars=%5B%22http%3A//web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html%22%2C%20153979%2C%200%2C%20%22http%3A//web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html%22%2C%2022434532%2C%202%2C%2023068501%5D&amp;ts=' + (new Date()).getTime(); return true;">Google Analytics: Structure Your Account With Roll Up Reporting And More</a>
+</li>
+
+
+</ul>
+
+    </div>
+
+    <div id="linkwithin_logo_0" style="
+        clear: both;
+        margin: 0 0 20px 0;
+        border: 0;
+        padding: 5px 6px 0 0;
+        text-align: right;
+        ">
+        <a id="linkwithin_logolink_0" href="http://www.linkwithin.com/learn?ref=widget" style="font: 10px arial; color: rgb(187, 187, 187); text-decoration: none; border-bottom: medium none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" target="_blank"><b>LinkWithin</b></a>
+    </div>
+</div>
+</div></div></div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="reaction-buttons">
+</span>
+<span class="star-ratings">
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-2070556485">
+<a href="http://www.blogger.com/post-edit.g?blogID=410882264693841212&amp;postID=5686262192993933551&amp;from=pencil" title="Edit Post">
+<img alt="" class="icon-action" src="php-simple-html-dom-parser-makes_files/icon18_edit_allbkg.gif" height="18" width="18">
+</a>
+</span>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-2">
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>No comments:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+</dl>
+</div>
+<p class="comment-footer">
+</p><div class="comment-form">
+<a name="comment-form"></a>
+<h4 id="comment-post-message">Post a Comment</h4>
+<p>
+</p>
+<a href="http://www.blogger.com/comment-iframe.g?blogID=410882264693841212&amp;postID=5686262192993933551&amp;blogspotRpcToken=3067128" id="comment-editor-src"></a>
+<iframe allowtransparency="true" class="blogger-iframe-colorize blogger-comment-from-post" id="comment-editor" name="comment-editor" src="php-simple-html-dom-parser-makes_files/comment-iframe.html" frameborder="0" height="238px" width="100%"></iframe>
+<script type="text/javascript" src="php-simple-html-dom-parser-makes_files/848709640-comment_from_post_iframe.js"></script>
+<script type="text/javascript">
+      BLOG_CMT_createIframe('http://www.blogger.com/rpc_relay.html', '07950851352874932344');
+    </script>
+</div>
+<p></p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container"><a name="links"></a><h4>Links to this post</h4>
+<p class="comment-footer">
+<a class="comment-link" href="http://www.blogger.com/blog-this.g" id="Blog1_backlinks-create-link" target="_blank">Create a Link</a>
+</p>
+</div>
+</div>
+</div>
+<!-- google_ad_section_end -->
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://web-developer-thing.blogspot.it/2010/02/60-professional-blogger-templates.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<a class="home-link" href="http://web-developer-thing.blogspot.it/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="http://web-developer-thing.blogspot.com/feeds/5686262192993933551/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+</div><div class="widget HTML" id="HTML2"><!-- LinkWithin -->
+<script>
+var linkwithin_site_id = 153979;
+</script>
+<script src="php-simple-html-dom-parser-makes_files/widget.js"></script>
+<a href="http://www.linkwithin.com/"><img src="php-simple-html-dom-parser-makes_files/pixel.png" alt="Related Posts with Thumbnails" style="border: 0pt none;"></a>
+
+<!-- Page NAV -->
+<style type="text/css">.showpageArea a {text-decoration:underline;}.showpageNum a {text-decoration:none;border: 1px solid #cccccc;margin:0 3px;padding:3px;}.showpageNum a:hover {border: 1px solid #cccccc;background-color:#cccccc;}.showpagePoint {color:#333;text-decoration:none;border: 1px solid #cccccc;background: #cccccc;margin:0 3px;padding:3px;}.showpageOf {text-decoration:none;padding:3px;margin: 0 3px 0 0;}.showpage a {text-decoration:none;border: 1px solid #cccccc;padding:3px;}.showpage a:hover {text-decoration:none;}.showpageNum a:link,.showpage a:link {text-decoration:none;color:#333333;}</style><script style="">var pageCount=5;var displayPageNum=5;var upPageWord="Previous";var downPageWord="Next";</script><script style="" src="php-simple-html-dom-parser-makes_files/blogger-page-nav-v2.html"></script></div></div>
+</div>
+<!-- end #content -->
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar"><div class="widget Label" id="Label1">
+<h2>Labels</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/API">API</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/Blogger%20Templates">Blogger Templates</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/DOM">DOM</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/Google%20AdWords">Google AdWords</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/Google%20Analytics">Google Analytics</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://web-developer-thing.blogspot.it/search/label/PHP">PHP</a>
+<span dir="ltr">(1)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=410882264693841212&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Edit">
+<img alt="" src="php-simple-html-dom-parser-makes_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogArchive" id="BlogArchive1">
+<h2>What's New?</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://web-developer-thing.blogspot.it/search?updated-min=2010-01-01T00:00:00-08:00&amp;updated-max=2011-01-01T00:00:00-08:00&amp;max-results=4">2010</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">▼&nbsp;</span>
+</a>
+<a class="post-count-link" href="http://web-developer-thing.blogspot.it/2010_02_01_archive.html">February</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="posts">
+<li><a href="http://web-developer-thing.blogspot.it/2010/02/google-analytics-structure-your-account.html">Google Analytics: Structure Your Account With Roll...</a></li>
+<li><a href="http://web-developer-thing.blogspot.it/2010/02/google-adwords-api-tutorial.html">Google AdWords API Tutorial</a></li>
+<li><a href="http://web-developer-thing.blogspot.it/2010/02/60-professional-blogger-templates.html">60 Professional Blogger Templates</a></li>
+<li><a href="http://web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html">PHP Simple HTML DOM Parser makes developers life e...</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=410882264693841212&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Edit">
+<img alt="" src="php-simple-html-dom-parser-makes_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" id="HTML1">
+<h2 class="title">Useful Links</h2>
+<div class="widget-content">
+<ul>
+
+<li><b>ADO</b></li>
+<li>
+<a href="http://www.w3schools.com/ado/" target="_blank">W3 ADO Tutorial</a>
+</li>
+
+<li><b>AJAX</b></li>
+<li>
+<a href="http://www.w3schools.com/ajax/" target="_blank">W3 AJAX Tutorial</a>
+</li>
+
+<li><b>ASP / ASP.NET</b></li>
+<li>
+<a href="http://www.w3schools.com/asp/" target="_blank">W3 ASP Tutorial</a><br>
+<a href="http://www.w3schools.com/aspnet/" target="_blank">W3 ASP.NET Tutorial</a><br>
+</li>
+
+<li><b>CSS</b></li>
+<li>
+<a href="http://www.w3schools.com/css/" target="_blank">W3 CSS Tutorial</a><br>
+<a href="http://dezwozhere.com/links.html" target="_blank">Huge CSS Reference</a>
+</li>
+
+<li><b>HTML / XHTML</b></li>
+<li>
+<a href="http://www.w3schools.com/html/" target="_blank">W3 HTML Tutorial</a><br>
+<a href="http://www.w3schools.com/dhtml/" target="_blank">W3 DHTML Tutorial</a><br>
+<a href="http://www.w3schools.com/xhtml/" target="_blank">W3 XHTML Tutorial</a><br>
+<a href="http://www.w3schools.com/htmldom/" target="_blank">W3 HTML DOM Tutorial</a><br>
+</li>
+
+<li><b>JavaScript</b></li>
+<li>
+<a href="http://www.w3schools.com/js/" target="_blank">W3 JavaScript Tutorial</a><br>
+<a href="http://www.w3schools.com/jquery/" target="_blank">W3 jQuery Tutorial</a><br>
+<a href="http://www.w3schools.com/e4x/" target="_blank">W3 E4X Tutorial</a><br>
+</li>
+
+
+<li><b>PHP</b></li>
+<li>
+<a href="http://php.net/" target="_blank">PHP.net</a><br>
+<a href="http://en.wikipedia.org/wiki/PHP" target="_blank">Wikipedia</a><br>
+<a href="http://www.w3schools.com/php/" target="_blank">W3 PHP Tutorial</a><br>
+<a href="http://phplens.com/lens/php-book/optimizing-debugging-php.php" target="_blank">Optimizing PHP</a>
+</li>
+
+<li><b>Security</b></li>
+<li>
+<a href="http://www.securityfocus.com/archive/1" target="_blank">Security Focus Updates</a>
+</li>
+
+<li><b>XML</b></li>
+<li>
+<a href="http://www.w3schools.com/xml/" target="_blank">W3 XML Tutorial</a><br>
+<a href="http://www.w3schools.com/dom/" target="_blank">W3 XML DOM Tutorial</a><br>
+<a href="http://www.w3schools.com/dtd/" target="_blank">W3 DTD Tutorial</a><br>
+</li>
+
+
+</ul>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=410882264693841212&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target="configHTML1" title="Edit">
+<img alt="" src="php-simple-html-dom-parser-makes_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget HTML" id="HTML3">
+<h2 class="title">Subscribe</h2>
+<div class="widget-content">
+<form style="border:1px solid #ccc;padding:3px;text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=WebDeveloperThing', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input style="width: 140px;" name="email" type="text"></p><input value="WebDeveloperThing" name="uri" type="hidden"><input name="loc" value="en_US" type="hidden"><input value="Subscribe" type="submit"><p>Delivered by <a href="http://feedburner.google.com/" target="_blank">FeedBurner</a></p></form>
+
+<br> <br>
+
+<center>
+<a href="http://feeds.feedburner.com/WebDeveloperThing" target="_blank" title="Get Updates via RSS!"><img src="php-simple-html-dom-parser-makes_files/feed-icon32x32.png" alt="" border="0"></a>
+
+<a href="http://twitter.com/webdevthing" target="_blank" title="Follow me on Twitter!"><img src="php-simple-html-dom-parser-makes_files/29vgy38.png" alt="" border="0"></a>
+
+<a href="http://www.youtube.com/webdeveloperthing" target="_blank" title="Web Developer Thing on Youtube!"><img src="php-simple-html-dom-parser-makes_files/22nwwh.png" alt="" border="0"></a>
+
+</center>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=410882264693841212&amp;widgetType=HTML&amp;widgetId=HTML3&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target="configHTML3" title="Edit">
+<img alt="" src="php-simple-html-dom-parser-makes_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+<!-- end #sidebar -->
+<div style="clear: both;"></div>
+</div>
+</div>
+<div id="footer-bgcontent">
+<div id="footer">
+<p>Copyright (c) 2010 <a href="http://web-developer-thing.blogspot.it/">Web Developer Thing</a>. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>  | <a href="http://www.bloggergallery.com/" title="Blogger Templates Gallery">Blogger Templates</a> by <a href="http://www.teknomobi.net/" title="TeknoMobi">TeknoMobi</a>.</p>
+</div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<!-- / -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="comment-iframe_data/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-13087738-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- H -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="comment-iframe_data/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-13087780-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="php-simple-html-dom-parser-makes_files/2000000996-widgets.js"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '410882264693841212';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d410882264693841212','//web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html','410882264693841212');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '410882264693841212', 'bloggerUrl': 'http://www.blogger.com', 'title': 'Web Developer Thing', 'pageType': 'item', 'url': 'http://web-developer-thing.blogspot.it/2010/02/php-simple-html-dom-parser-makes.html', 'canonicalUrl': 'http://web-developer-thing.blogspot.com/2010/02/php-simple-html-dom-parser-makes.html', 'canonicalHomepageUrl': 'http://web-developer-thing.blogspot.com/', 'homepageUrl': 'http://web-developer-thing.blogspot.it/', 'blogspotFaviconUrl': 'http://web-developer-thing.blogspot.it/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'disableAdSenseWidget': false, 'analyticsAccountNumber': '', 'searchLabel': '', 'searchQuery': '', 'pageName': 'PHP Simple HTML DOM Parser makes developers life esier', 'pageTitle': 'Web Developer Thing: PHP Simple HTML DOM Parser makes developers life esier', 'encoding': 'UTF-8', 'locale': 'en', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Web Developer Thing - Atom\42 href\75\42http://web-developer-thing.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Web Developer Thing - RSS\42 href\75\42http://web-developer-thing.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Web Developer Thing - Atom\42 href\75\42http://www.blogger.com/feeds/410882264693841212/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\075410882264693841212\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Web Developer Thing - Atom\42 href\75\42http://web-developer-thing.blogspot.com/feeds/5686262192993933551/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window,b\75\42jstiming\42,d\75\42tick\42;var e\75function(c){this.t\75{};this.tick\75function(c,p,h){h\75void 0!\75h?h:(new Date).getTime();this.t[c]\75[h,p]};this[d](\42start\42,null,c)},f\75new e;a.jstiming\75{Timer:e,load:f};if(a.performance\46\46a.performance.timing){var g\75a.performance.timing,j\75a[b].load,k\75g.navigationStart,l\75g.responseStart;0\74k\46\46l\76\75k\46\46(j[d](\42_wtsrt\42,void 0,k),j[d](\42wtsrt_\42,\42_wtsrt\42,l),j[d](\42tbsd_\42,\42wtsrt_\42))}\ntry{var m\75null;a.chrome\46\46a.chrome.csi\46\46(m\75Math.floor(a.chrome.csi().pageT),j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.chrome.csi().startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));null\75\75m\46\46a.gtbExternal\46\46(m\75a.gtbExternal.pageT());null\75\75m\46\46a.external\46\46(m\75a.external.pageT,j\46\0460\74k\46\46(j[d](\42_tbnd\42,void 0,a.external.startE),j[d](\42tbnd_\42,\42_tbnd\42,k)));m\46\46(a[b].pt\75m)}catch(n){};a.tickAboveFold\75function(c){var i\0750;if(c.offsetParent){do i+\75c.offsetTop;while(c\75c.offsetParent)}c\75i;750\76\75c\46\46a[b].load[d](\42aft\42)};var q\75!1;function r(){q||(q\75!0,a[b].load[d](\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,r,!1):a.attachEvent(\42onscroll\42,r);\n })();\74/script\076', 'mobileHeadScript': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/7728d91bbda5af3c'}}, {'name': 'skin', 'data': {'vars': {}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '/?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '/?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '/?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '/?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '/?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '/?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '/?view\75timeslide'}}}]);
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'logo', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '5686262192993933551', 'lightboxEnabled': true, 'lightboxModuleUrl': '//www.blogger.com/static/v1/jsbin/3339358681-lbx.js', 'lightboxCssUrl': '//www.blogger.com/static/v1/v-css/228702327-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'main', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+</script>
+
+<link href="php-simple-html-dom-parser-makes_files/228702327-lightbox_bundle.css" rel="stylesheet" type="text/css"><script src="php-simple-html-dom-parser-makes_files/3339358681-lbx.js" type="text/javascript"></script></body></html>

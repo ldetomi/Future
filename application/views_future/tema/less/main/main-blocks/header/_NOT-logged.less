@@ -1,0 +1,80 @@
+//Oggetti visibili sulle pagine senza autenticazione
+.aui header #logo-login_container #login-box_container.not-logged
+{
+  width:320px;
+  padding:0;
+  margin-top:0;
+  background:none;
+  border:none;
+  font-family:@font-principale;
+  font-size:11px;
+  color:@grigio-scuro;
+  
+    form
+    {
+      margin:0;
+        
+        .control-group
+        {
+          display:inline-block;
+          margin:0;
+          padding:0;
+        }   
+      
+        label
+        {
+          font-weight:normal;
+          font-size:13px; 
+          margin-right:10px;
+        }
+        
+        .input-small
+        {
+          width:125px;
+        }
+            
+        input[type='text'],
+        input[type='password'],
+        button,
+        .btn
+        {
+          height:24px;
+          line-height:1;
+          padding:3px 6px;
+          font-size:13px;
+          margin-bottom:10px !important;
+        }
+        
+        .btn
+        {
+          .ombra_main-navigation();
+        }
+        
+        .remember_me
+        {
+          margin:0;
+          padding:0;
+        }
+        
+        
+        ::-webkit-input-placeholder 
+        {
+          font-size:10px;
+        }
+
+        :-moz-placeholder 
+        { /* Firefox 18- */
+          font-size:10px; 
+        }
+
+        ::-moz-placeholder 
+        {  /* Firefox 19+ */
+          font-size:10px;
+        }
+
+        :-ms-input-placeholder 
+        {  
+          font-size:10px;
+        }
+    }
+}

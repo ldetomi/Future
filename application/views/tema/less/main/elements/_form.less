@@ -1,0 +1,277 @@
+// =======================================================================================================================================
+// --- FORMS -----------------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+@import "form/__input.less";
+@import "form/__textarea.less";
+@import "form/__select.less";
+@import "form/__button.less";
+@import "form/__checkbox.less"; 
+//@import "form/__radio-button.less";
+
+.form-group
+{ 
+    .form-control-static 
+    {
+      margin:0;
+      padding-top:7px;
+    }
+   
+    //Testo piccolo con ulteriori dettagli per la LABEL
+    .dettagli-label
+    {
+      display:block;
+      font-size:11px;
+      font-style:italic;
+      font-weight:normal;
+      line-height:15px;
+    }
+}
+
+label 
+{
+  display:block;
+  font-family:@font-links_secondari;
+  font-size:13px;
+  font-weight:bold; 
+  padding-top:5px;
+  cursor:pointer;
+  color:rgb(85, 85, 85);
+}
+    
+//Campi della form
+.form-control 
+{
+  //height:34px;
+  //line-height:1.42857;        //Sembrano sostanzialmente superflue entrambe, dovrebbe bastare solo il padding. Verificare nei vari browsers.
+  padding:6px 12px;
+  font-family:@font-principale;
+  font-size:14px;
+  width:100%;
+  
+  color: rgb(85, 85, 85);
+  border: 1px solid rgb(204, 204, 204);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+  transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+  
+    &[disabled],
+    &[readonly]
+    {
+      cursor:not-allowed;
+    }
+  
+    &:focus
+    {
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px fade(@verde-scuro,60%);
+      border-color: rgba(96,149,19, 0.8);
+    }
+    
+    &.input_error
+    {
+      color:@rosso;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px fade(@rosso,60%);
+      border-color:@rosso;
+    }
+}
+
+// Form con LABEL a fianco dei relativi campi
+.form-horizontal .form-group
+{
+  width:100%;
+  margin-bottom:15px !important;
+  
+    label
+    {
+      width:25%;
+      text-align:right;
+        
+        &.required:before
+        {
+          content:"*";
+          color:@rosso;
+          padding:0 3px;
+        }
+      
+        /*.MEDIAQUERY(@only-media:false, @min-max:max, @size:sm,
+          { 
+            width:100%;
+            text-align:left;
+            margin-bottom:5px;
+          }
+        );*/
+      
+        @media screen and (max-width: @screen-sm) 
+        {
+          width:100%;
+          text-align:left;
+          margin-bottom:5px;
+          
+            &.required:before
+            {
+              display:none;
+            }
+          
+            &.required:after
+            {
+              content:"*";
+              color:@rosso;
+              padding:0 3px;
+            }
+        }
+    }
+    
+    .fields
+    {
+      width:75%;
+      padding:0 15px;
+      
+        /*.MEDIAQUERY(@only-media:false, @min-max:max, @size:sm,
+          { 
+            width:100%;
+            padding:0;
+          }
+        );*/
+      
+        @media screen and (max-width: @screen-sm) 
+        {
+          width:100%;
+          padding:0;
+        }
+        
+        .dettagli-label
+        {
+          padding-right:20px;
+          font-size:10px;
+        } 
+    }
+    
+    .form-buttons_container
+    {
+        @media screen and (min-width: @screen-sm) 
+        {
+          margin-left:25%;
+        }
+    }
+}
+
+
+// Form in linea (campi su più colonne)
+.form-inline
+{
+    .form-group
+    {
+      width:33%;
+      margin-bottom:15px !important;
+      padding-right:15px;
+            
+        &:nth-child(3n + 1)
+        {
+          clear:left;
+        }
+      
+        @media screen and (max-width: @screen-md) 
+        {
+          width:50%;
+          
+            &:nth-child(n)
+            {
+              clear:none;
+            }
+            
+            &:nth-child(2n + 1)
+            {
+              clear:left;
+            }
+        }
+        
+        @media screen and (max-width: @screen-xs) 
+        {
+          width:100%;
+        }
+        
+        label
+        {
+          margin-bottom:5px;
+          
+            &.required:after
+            {
+              content:"*";
+              color:@rosso;
+              padding:0 3px;
+            }
+        }
+    }
+    
+    .form-buttons_container .btn
+    {
+      //Servono per allineare orizzontalmente i pulsanti della form ai campi
+      margin-top:28px;
+    }
+    
+    &.form-sm
+    {
+      .form-buttons_container .btn
+      {
+        //Servono per allineare orizzontalmente i pulsanti della form ai campi
+        margin-top:24px;
+      }
+    }
+}
+
+.form-sm
+{
+    .form-group
+    {
+      margin-bottom:10px !important;
+    
+        label
+        {
+          padding-top:0;
+        }
+        
+        .form-control
+        {
+          padding:3px 8px;
+          font-size:12px;
+        }
+        
+        .form-control-static 
+        {
+          padding-top:0;
+        }
+    }
+}
+
+
+//Campi con pulsante incorporato
+.input-append, .input-prepend 
+{
+  display:inline-block;
+  margin-bottom:10px;
+  vertical-align:middle;
+  font-size:0px;
+  white-space:nowrap;
+}
+
+.input-append input
+{
+  vertical-align:top;
+  margin-bottom:0px;
+  position:relative;
+  
+  .rounded_corners(4px, right);
+}
+
+.input-append
+{
+    button
+    {
+      height:34px;
+      
+      vertical-align:top;
+      margin-left:-1px;
+      
+      .rounded_corners(4px, left);
+    }
+}
+

@@ -1,0 +1,19 @@
+.aui ul 
+{
+  list-style-image:url("../images/list-image-square-green.png");  
+}
+
+.aui article
+{
+    ul:not([class*="ui-"]),
+    ol:not([class*="ui-"])
+    {
+      overflow:auto; //Serve per affiancare una lista a un'immagine FLOAT:LEFT
+      margin-left:0;
+      
+        li
+        {
+          margin-left:25px;
+        } 
+    }
+}

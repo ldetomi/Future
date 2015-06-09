@@ -1,0 +1,183 @@
+.aui body 
+{
+  color:@nero !important;
+  font-weight:normal;
+}
+
+#first-level-navigation .portlet-body, 
+#first-level-navigation .portlet-borderless-container, 
+#first-level-navigation .portlet-navigation 
+{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: table;
+}
+
+.aui .portlet, .aui .portlet-borderless-container 
+{
+  background: none;
+}
+
+.article-form-edit 
+{
+  padding:10px;
+  
+    *
+    {
+      -webkit-box-sizing:content-box;
+         -moz-box-sizing:content-box;
+              box-sizing:content-box;
+    }
+    
+    textarea
+    {
+      min-height:0;
+    }
+}
+
+.aui .dockbar-split .dockbar .navbar-inner .nav-account-controls 
+{
+  margin-right:25% !important;
+}  
+
+@media screen and (max-width: @screen-md)
+{
+  .aui .portlet-dockbar
+  {
+    display:none !important;
+  }
+}
+
+.aui .portlet-asset-publisher .asset-content,
+.aui .portlet-asset-publisher .asset-summary,
+.aui .portlet-asset-publisher .asset-title,
+.aui .portlet-asset-publisher .header-title,
+.aui .portlet-asset-publisher li.title-list,
+.aui .portlet-blogs .entry-body,
+.aui .portlet-blogs .entry-title,
+.aui .portlet-blogs .header-title,
+.aui .portlet-journal-content .journal-content-article,
+.aui .portlet-message-boards .header-title,
+.aui .portlet-message-boards .thread-body
+{
+  word-break:normal;
+  
+  @media screen and (min-width: @screen-xs)
+  {   
+    .sillabazione-testo(none);
+  }
+  
+  @media screen and (max-width: @screen-xs)
+  {   
+    .sillabazione-testo(auto);
+  }
+
+}
+
+.aui .portlet,
+.aui .portlet-borderless-container 
+{
+  background:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  min-height:0 !important;
+}
+
+#hp-privata_main_carousel 
+{
+    .owl-stage-outer,
+    .portlet-dropzone.empty 
+    {
+      min-height:70px;
+    }
+}
+
+.aui li 
+{
+  line-height:20px !important;
+}
+
+.aui input,
+.aui select,
+.aui textarea
+{
+  font-size:100%;
+
+  .rounded_corners(4px) !important;
+}
+
+.aui .btn
+{
+    @media screen and (max-width: @screen-sm) 
+    {
+      display:inline-block;
+    }
+}
+
+.aui input[type="submit"]
+{
+  margin:0;
+}
+
+.aui input[type="color"],
+.aui input[type="date"],
+.aui input[type="datetime"],
+.aui input[type="datetime-local"],
+.aui input[type="email"],
+.aui input[type="month"],
+.aui input[type="number"],
+.aui input[type="password"],
+.aui input[type="search"],
+.aui input[type="tel"],
+.aui input[type="text"],
+.aui input[type="time"],
+.aui input[type="url"],
+.aui input[type="week"],
+.aui select,
+.aui textarea,
+.aui .uneditable-input
+{
+  margin-bottom:0 !important;
+}
+
+.aui input[type="color"]:focus, .aui input[type="date"]:focus, .aui input[type="datetime"]:focus, .aui input[type="datetime-local"]:focus, .aui input[type="month"]:focus, .aui input[type="number"]:focus, .aui input[type="password"]:focus, .aui input[type="text"]:focus, .aui input[type="time"]:focus, .aui input[type="week"]:focus, .aui input[type="email"]:focus, .aui input[type="url"]:focus, .aui input[type="search"]:focus, .aui input[type="tel"]:focus, .aui textarea:focus, .aui .uneditable-input:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0,125,73, 0.6);
+}
+.aui input[type="color"]:focus, .aui input[type="date"]:focus, .aui input[type="datetime"]:focus, .aui input[type="datetime-local"]:focus, .aui input[type="email"]:focus, .aui input[type="month"]:focus, .aui input[type="number"]:focus, .aui input[type="password"]:focus, .aui input[type="search"]:focus, .aui input[type="tel"]:focus, .aui input[type="text"]:focus, .aui input[type="time"]:focus, .aui input[type="url"]:focus, .aui input[type="week"]:focus, .aui select:focus, .aui textarea:focus, .aui .uneditable-input:focus {
+    border-color: rgba(96,149,19, 0.8);
+}
+
+.aui .pager li
+{
+  margin-left:0 !important;
+  
+    > a,
+    span
+    {    
+      .rounded_corners(6px);
+    }
+}
+
+
+
+
+
+
+/* Solo in mobile */
+
+@media screen and (max-width: @screen-sm)
+{
+  .aui body 
+  {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  
+  .aui .btn 
+  {
+    //display: block;
+    margin-top:0;
+    width:auto !important;
+  }
+}

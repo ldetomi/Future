@@ -1,0 +1,28 @@
+.editableElement_container
+{
+  position:relative;
+  padding-top:25px;
+  
+    .toggle-edit
+    {
+      position:absolute;
+      top:0;
+      right:0;
+    }
+
+    [contenteditable="true"]
+    { 
+      border:1px dotted orange;
+      box-shadow: inset 0px 0px 30px 0px @grigio-intermedio;
+  
+        &:hover 
+        { 
+          border-color:red;
+        }
+
+        &:focus 
+        { 
+          border-style:solid;
+        }      
+    }
+}

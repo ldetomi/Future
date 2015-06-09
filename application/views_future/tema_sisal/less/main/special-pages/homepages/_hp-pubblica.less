@@ -1,0 +1,205 @@
+#hp-pubblica_main_carousel
+{
+  background:@colore-sfondo_contenuto-centrale;
+}
+
+.aui #contenuto-centrale
+{
+    #blocchi_canale
+    {
+      text-align:center;
+
+        .block
+        {
+          width:25%;
+        
+            .box
+            {
+              border:solid 1px @colore-bordi_box-my-homepage;
+              display:block;  //Se .box sono dei links, è necessario
+              position:relative;
+              
+              .rounded_corners();
+              
+                &:hover
+                {
+                  text-decoration:none;
+                }
+              
+                .logo_canale
+                {
+                  background:@colore-sfondo_blocchi-canale;
+                  height:100px;
+                  position:relative;
+                  
+                  .rounded_corners(5px 5px 0 0);
+                  
+                    &:before 
+                    {
+                      content:"";
+                      width:28px;
+                      height:28px;
+                      position:absolute;
+                      bottom:-14px;
+                      left:80%;
+                      margin-left:-25px;
+                      z-index:6;
+                      background:white;
+                      border-right:solid 1px @colore-bordo_blocchi-canale;
+                      
+                      .rotate();
+                    }
+                    
+                    &:after 
+                    {
+                      content:"";
+                      width:76%;
+                      height:20px;
+                      position:absolute;
+                      bottom:-20px;
+                      left:0;
+                      z-index:5;
+                      background:white;
+                      border-bottom:solid 1px @colore-bordo_blocchi-canale;
+                      border-right:solid 1px @colore-bordo_blocchi-canale;
+                    }
+                  
+                    img
+                    {
+                      position:relative;
+                      top:25%;
+                    }
+                }
+              
+                .contenuto
+                {
+                  height:250px;
+                  text-align:left;
+                  padding:35px 15px 20px;
+                  border-top:solid 1px @colore-bordo_blocchi-canale;
+                  position:relative;
+                  color:black;
+                 
+                  .rounded_corners(0 0 5px 5px);
+                  .sfondo_navigazione-primo-livello(90deg);
+                  .transizione_generica();
+                  
+                    &:after 
+                    {
+                      content:'\e60c\e60c\e60c';
+                      font-family: 'icomoon';
+                      font-size:17px;
+                      letter-spacing:-6px;
+                      speak:none;
+                      position:absolute;
+                      top:0;
+                      right:11px;
+                      color:@verde-scuro;
+                      font-weight:bold;
+                    }
+                     
+                    .testo
+                    {
+                      height:100%;
+                      overflow:hidden;
+                    
+                        h3
+                        {
+                          margin-top:0;
+                          margin-bottom:20px;
+                          font-size:15px;
+                        }
+                    }
+                    
+                }           
+            }
+                           
+            &:hover .contenuto
+            {
+              box-shadow:0 0 100px fade(@grigio-intermedio, 75%) inset;
+            }
+        }
+    }
+    
+    #box_info-utili
+    {
+      width:100%;
+      margin:20px 0 0;
+      
+        img
+        {
+          .transizione_generica(0.3s);
+          
+            &:hover
+            {
+              .scale(1.005);
+            }
+        }
+      
+        @media screen and (max-width: @screen-sm)
+        {
+          padding-left:15px;
+          padding-right:15px;
+        }
+    }
+    
+}
+
+.aui #contenuto-centrale
+{
+    #blocchi_canale
+    {
+      margin:0 -15px 20px;
+          
+        .block
+        {
+          padding:15px;
+        }
+          
+        @media screen and (max-width: @screen-lg)
+        {
+          margin-left:-10px;
+          margin-right:-10px;
+          
+            .block
+            {
+              padding-left:10px;
+              padding-right:10px;
+            }
+        }
+        
+        @media screen and (max-width: @screen-md)
+        {
+          margin-left:-30px;
+          margin-right:-30px;
+          
+            .block
+            {
+              width:50%;
+              padding-left:30px;
+              padding-right:30px;
+            }
+        }
+        
+        @media screen and (max-width: @screen-sm)
+        {
+          margin-left:0;
+          margin-right:0;
+          
+            .block
+            {
+              padding-left:15px;
+              padding-right:15px;
+            }
+        }
+        
+        @media screen and (max-width: @screen-xs)
+        {          
+            .block
+            {
+              width:100%;
+            }
+        }
+
+    }
+}

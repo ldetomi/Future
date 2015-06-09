@@ -1,0 +1,45 @@
+.background--light 
+{
+  .background-check_combinations( @colore-carousel_buttons_dark,
+                                  40%,
+                                  @colore-carousel_buttons_light
+                                );
+}
+
+.background--dark 
+{
+  .background-check_combinations( @colore-carousel_buttons_light,
+                                  70%,
+                                  @colore-carousel_buttons_dark
+                                );
+}
+
+.background--light.background--complex 
+{
+  .background-check_combinations( @colore-carousel_buttons_dark,
+                                  20%,
+                                  @colore-carousel_buttons_light
+                                );
+}
+
+.background--dark.background--complex 
+{
+  .background-check_combinations( @colore-carousel_buttons_light,
+                                  90%,
+                                  @colore-carousel_buttons_dark
+                                );
+}
+
+
+//Mixin che genera le diverse combinazioni secondo i parametri che vengono passati
+.background-check_combinations(@colore-sfondo, @trasparenza-sfondo, @colore-freccia)
+{
+  background:fade( @colore-sfondo, @trasparenza-sfondo) !important;
+  color:@colore-freccia !important;
+
+    &:hover
+    {
+      background:fade( @colore-sfondo, 100%) !important;
+    }
+}
+

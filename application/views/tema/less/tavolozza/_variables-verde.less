@@ -1,0 +1,163 @@
+// =======================================================================================================================================
+// --- DEFINIZIONE DELLE VARIABILI LESS --------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+/* --- Breakpoints --- */ 
+@screen-xs:                   480px;
+@screen-sm:                   768px;
+@screen-md:                   992px;
+@screen-lg:                   1200px;
+
+/* --- Fonts --- */
+
+@font-principale:                        @font-family-sans-serif_modern;
+@font-titoli:                            @font-family-sans-serif_fat-bold;
+@font-intestazioni-oggetti:              @font-family-sans-serif_fat-bold;
+@font-pulsanti:                          @font-family-sans-serif_fat-bold;
+@font-links_secondari:                   @font-family-sans-serif_fat-regular;
+
+@font-enfasi:                            @font-family-serif;
+@font-citazioni-storiche:                @font-hand-type;
+@font-codice-macchina:                   @font-family-monospace;
+
+
+/* ----------------- SCHEMA COLORI EFFETTIVAMENTE USATI NEL SITO ------------------ */
+
+/* --- Tipi --- */
+@type-primary:                'verde-scuro';
+@type-success:                'verde-chiaro';
+@type-info:                   'blu';
+@type-default:                'grigio';
+@type-warning:                'arancione';
+@type-danger:                 'rosso';
+
+/* --- Colori --- */
+@colore-font-base:                                      @nero;
+@colore-sfondo_body:                                    @grigio-chiaro;
+@colore-titoli:                                         @verde-scuro;
+
+@colore-sfondo_header:                                  @bianco;
+@colore-sfondo_main_content:                            @bianco;
+
+@colore-sfondo_footer:                                  @grigio-scuro;
+@colore-titoli_footer:                                  @verde-chiaro;
+@colore-sfondo_footer-federato:                         @grigio-intermedio;
+@colore-bordi-separatori_footer-social:                 @grigio-intermedio;
+@colore-bordi-interni-separatori_footer:                @grigio-intermedio;
+
+@colore-bordo-separatore_aside:                         @grigio-intermedio;
+
+
+// Colori vari menù di navigazione
+
+@colore-bordi_main-navigation:                          @verde-chiaro;
+@colore-testo_main-navigation:                          @bianco;
+@colore-testo-hover_main-navigation:                    @verde-scuro;
+@colore-ombra_interna_pulsanti_main-navigation:         @grigio-chiaro;
+@colore-ombra_testo_pulsanti_main-navigation:           @verde-chiaro_SOPRA;
+
+@colore-sfondo-link-attivo_main-navigation:             @verde-scuro;
+@colore-bordi-link-attivo_main-navigation:              @verde-scuro;
+
+@colore-sfondo_megamenu:                                @bianco;
+@colore-bordi_megamenu:                                 @grigio-chiaro;
+@colore-bordi-interni-separatori_megamenu:              @grigio-chiaro;
+@colore-links_megamenu:                                 @grigio-molto_scuro;
+
+@colore-bordi_navigazione-primo-livello:                @grigio-chiaro;
+@colore-testo_navigazione-primo-livello:                @verde-scuro;
+@colore-testo-hover_navigazione-primo-livello:          @verde-scuro_SOTTO;
+
+@colore-bordi-navigazione-secondo-livello:              @grigio-chiaro;
+@colore-testo-navigazione-secondo-livello_1:            @verde-scuro;
+@colore-testo-hover-navigazione-secondo-livello_1:      @grigio-molto_scuro;
+@colore-sfondo-link-attivo_secondo-livello_1:           @verde-scuro;
+@colore-testo-link-attivo_secondo-livello_1:            @bianco;
+
+@colore-testo-navigazione-secondo-livello_2:            @grigio-chiaro;
+@colore-testo-hover-navigazione-secondo-livello_2:      @grigio-molto_scuro;
+@colore-sfondo-hover-navigazione-secondo-livello_2:     @grigio-molto-chiaro;
+@colore-sfondo-link-attivo_secondo-livello_2:           @grigio-chiaro;
+@colore-testo-link-attivo_secondo-livello_2:            @grigio-scuro;
+
+
+// Colori Elementi principali (tabelle, accordion)
+
+@colore-sfondo-toggle_nav:                              @verde-scuro;
+
+@colore-links:                                          @verde-scuro;
+@colore-links_hover:                                    @verde-scuro_SOTTO;
+
+@colore-links_footer:                                   @bianco;
+@colore-links_hover_footer:                             @grigio-intermedio;
+
+@colore-testo_pulsanti-chiaro:                          @bianco;
+@colore-testo_pulsanti-scuro:                           @grigio-molto_scuro;
+
+@colore-sfondo-intestazione_liv-1_tabella:              @verde-scuro;
+@colore-sfondo-intestazione_liv-2_tabella:              @verde-chiaro;
+@colore-testo-intestazione_tabella:                     @bianco;
+@colore-bordi-tabella:                                  @grigio-chiaro;
+@colore-sfondo-righe-pari_tabella:                      @grigio-molto-chiaro;
+
+@colore-sfondo-intestazione_accordion:                  @grigio-chiaro;
+@colore-testo-intestazione_accordion:                   @nero;
+@colore-testo-intestazione-hover_accordion:             @verde-scuro;
+@colore-testo-intestazione-attiva_accordion:            @verde-scuro;
+@colore-bordi-intestazione_accordion:                   @grigio-intermedio;
+@colore-bordi_hover-intestazione_accordion:             @grigio-scuro;
+
+@colore-sfondo-thumbnail:                               @grigio-molto-chiaro;
+@colore-sfondo-thumbnail-hover:                         @grigio-chiaro;
+
+
+//Colori per Homepages
+@colore-sfondo_contenuto-centrale:                      @grigio-chiaro;
+
+@colore-sfondo_blocchi-canale:                          @bianco;
+@colore-bordo_blocchi-canale:                           @grigio-intermedio;
+
+@colore-bordi_box-my-homepage:                          @grigio-intermedio;
+@colore-bordi_megaicona_box-my-homepage:                @grigio-scuro;
+@colore-titolo_box-my-homepage:                         @verde-chiaro;
+
+
+//Personalizzazione OWL-Carousel
+/*
+@colore-puntini_owl-carousel:                           @verde-chiaro;
+@colore-puntino_hover_owl-carousel:                     @verde-scuro;
+@colore-puntino_active_owl-carousel:                    @verde-scuro;
+@colore-sfondo-carousel_buttons_owl-carousel_light:     @nero;
+@colore-sfondo-carousel_buttons_owl-carousel_dark:      @bianco;
+@colore-freccia-carousel_buttons_owl-carousel_light:    @bianco;
+@colore-freccia-carousel_buttons_owl-carousel_dark:     @nero;
+@colore-bordi_owl-carousel:                             @grigio-intermedio;
+*/
+
+//Colori per Centro Messaggi
+@colore-sfondo_numero-messaggi:                         @rosso;
+@colore-oggetto_messaggio:                              @nero;
+
+//Colori per Box NOTA BENE
+@colore-sfondo-intestazione_box-nota-bene:              @arancione_SOTTO;
+@colore-testo-intestazione_box-nota-bene:               @bianco;
+@colore-bordi_box-nota-bene:                            @arancione_SOTTO;
+
+//@colore-testo_descrizione_principale:         @verde;
+//@colore-testo_label:                          @blu;
+
+//@colore-bordi_campi_form:                     @grigio_intermedio;
+//@colore-bordi_campi_form_hover:               @grigio_scuro;
+//@colore-sfondo_campi_form:                    @panna;
+//@colore-testo_campi_form:                     @blu;
+
+//@colore-sfondo_input_error:                   @rosa;
+//@colore-bordi_input_ok:                       @verde;
+
+
+// Colori Elementi secondari (elementi tipografici, ecc.)
+
+@colore-bordo-citazione:                        @grigio-chiaro;
+@colore-autore-citazione:                       @grigio-intermedio;
+@colore-citazione-storica:                      brown;
+

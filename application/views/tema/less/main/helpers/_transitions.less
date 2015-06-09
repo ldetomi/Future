@@ -1,0 +1,44 @@
+// =======================================================================================================================================
+// --- TRANSIZIONI -----------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.transizione_generica (@durata:0.6s)
+{
+  -webkit-transition:all @durata;
+     -moz-transition:all @durata;
+      -ms-transition:all @durata;
+       -o-transition:all @durata;
+          transition:all @durata;
+}
+
+.transizione_pulsanti (@durata-shadow:1s; @durata-border:0.3s)
+{
+  -webkit-transition:-webkit-box-shadow @durata-shadow, -webkit-border @durata-border;
+     -moz-transition:-moz-box-shadow @durata-shadow, -moz-border @durata-border;
+      -ms-transition:-ms-box-shadow @durata-shadow, -ms-border @durata-border;
+       -o-transition:-o-box-shadow @durata-shadow, -o-border @durata-border;
+          transition:box-shadow @durata-shadow, border @durata-border;
+}
+
+/*
+.transizione_links (@colore-durata:~"color 1s, border-color 1s")
+{
+  -webkit-transition:@colore-durata;
+     -moz-transition:@colore-durata;
+      -ms-transition:@colore-durata;
+       -o-transition:@colore-durata;
+          transition:@colore-durata;
+}
+
+
+
+
+.transizione_campi_form (@durata:1s)
+{
+  -webkit-transition:all @durata;
+     -moz-transition:all @durata;
+      -ms-transition:all @durata;
+       -o-transition:all @durata;
+          transition:all @durata;
+}
+*/

@@ -1,0 +1,52 @@
+#logged-user_dropdown,
+#login-user_dropdown
+{
+  display:none;
+}
+
+@media screen and (max-width: @screen-sm)
+{
+  #logged-user_dropdown,
+  #login-user_dropdown
+  {
+    position:absolute;
+    top:44px;
+    right:33px;
+    z-index:998;
+
+      #login-box_container
+      {
+        display:block !important;
+        margin-top:0 !important;
+      }
+  }
+}
+
+@media screen and (max-width: @screen-xs)
+{
+  #logged-user_dropdown,
+  #login-user_dropdown
+  {
+    right:3px;
+  }
+}
+
+
+// Box quando NON si è loggati
+.signed-out .portlet-borderless-container
+{
+  position:static;
+}
+
+#login-user_dropdown
+{
+  border:solid 1px @colore-bordi_megamenu;
+  background:@colore-sfondo_megamenu;
+  box-shadow:0 -2px 10px 2px rgba(1, 1, 1, 0.2);
+  padding:10px 0 0 10px;
+      
+  .rounded_corners(0 0 4px 4px);
+}
+
+     
+

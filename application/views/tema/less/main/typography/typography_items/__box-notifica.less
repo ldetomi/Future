@@ -1,0 +1,71 @@
+// =======================================================================================================================================
+// --- NOTIFICHE IN PAGINA ---------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+@notifica_className:notifica;
+[class*=@{notifica_className}]
+{
+  padding:15px;
+  margin-bottom:20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position:relative;
+  
+    &.dismissible .close-notifica
+    {
+      content:"X";
+      float:right;
+      margin:-5px -5px 0 5px; 
+    }
+    
+    &.sm
+    {
+      padding:1px 5px;
+      margin-bottom:10px;
+      
+        .close-notifica
+        {
+          margin:-1px 0 0 5px; 
+        }
+    }
+    
+    &.fixed
+    {
+      position:fixed;
+      top:10px;
+      right:10px;
+      width:300px;
+    }
+}
+
+.@{notifica_className}
+{
+  &-primary { .aspetto_notifica(@type-primary); }
+  &-success { .aspetto_notifica(@type-success); }
+  &-info    { .aspetto_notifica(@type-info); }
+  &-default { .aspetto_notifica(@type-default); }
+  &-warning { .aspetto_notifica(@type-warning); }
+  &-danger  { .aspetto_notifica(@type-danger); }
+}
+
+
+//MIXIN PRINCIPALE
+.aspetto_notifica(@colore)
+{
+  @stop-1:~"@{colore}_SOPRA";
+  @stop-2:~"@{colore}_SOTTO";
+    
+  border-color:@@stop-2;
+
+  &:not(.outline)
+  {
+    background-color:@@stop-1;
+    color:darken( @@stop-2, 20%);
+  }
+  
+  &.outline
+  {
+    color:@@stop-2;
+  } 
+}
+

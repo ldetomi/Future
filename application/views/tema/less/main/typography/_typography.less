@@ -1,0 +1,178 @@
+// =======================================================================================================================================
+// --- REGOLE TIPOGRAFICHE ---------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+@import "__font-faces.less";
+
+@import "typography_items/__links.less";
+@import "typography_items/__text-context.less";
+@import "typography_items/__mini-labels.less";
+@import "typography_items/__box-notifica.less";
+@import "typography_items/__other-inline-items.less";
+@import "typography_items/__other-block-items.less";
+
+
+@font-family-sans-serif_traditional:     Helvetica,Verdana,Tahoma,Arial,'Arial Black','Century Gothic','Lucida Sans Unicode',Impact,sans-serif;
+@font-family-sans-serif_modern:          "ProximaNova","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+@font-family-sans-serif_fat-bold:        "OmnesSemiboldRoman",Arial,Verdana,Tahoma,'Arial Black',Helvetica,'Century Gothic','Lucida Sans Unicode',Impact,sans-serif;
+@font-family-sans-serif_fat-regular:     "OmnesRegularRoman",Arial,Verdana,Tahoma,'Arial Black',Helvetica,'Century Gothic','Lucida Sans Unicode',Impact,sans-serif;
+
+@font-family-serif:                      Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:                  Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-hand-type:                         'Monotype Corsiva','French Script MT','Bell MT',Georgia,'Bookman Old Style',Garamond,'Times New Roman',serif;
+
+
+@font-size-base:          14px;
+@font-size-xs:            ceil((@font-size-base * 0.7)); // ~10px
+@font-size-sm:            ceil((@font-size-base * 0.85)); // ~12px
+@font-size-lg:            ceil((@font-size-base * 1.20)); // ~18px
+
+@line-height-base:        1.618em;
+
+@font-size-h1:            floor((@font-size-base * 2.8)); // ~36px
+@font-size-h2:            floor((@font-size-base * 1.9)); // ~24px
+@font-size-h3:            ceil((@font-size-base * 1.5));  // ~20px
+@font-size-h4:            ceil((@font-size-base * 1.2));  // ~16px
+
+
+
+h1, h2, h3, h4
+{
+  font-family:@font-titoli;
+  color:@colore-titoli;
+  font-weight:normal;
+  text-align:left;
+  line-height:110%;
+  margin-bottom:0.4em;
+  margin-top:0.6em;
+}
+
+h1
+{
+  font-size:@font-size-h1;
+}
+
+h2
+{
+  font-size:@font-size-h2;
+}
+
+h3
+{
+  font-size:@font-size-h3;
+}
+
+h4
+{
+  font-size:@font-size-h4;
+}   
+
+p
+{
+  margin:0px 0px 10px;
+}
+
+small
+{
+  font-size:@font-size-sm;
+  line-height:150%;
+}
+
+big
+{
+  font-size:@font-size-lg;
+  line-height:160%;
+}
+
+.lead
+{
+  font-size:1.3125em;
+  line-height: 1.5;
+  margin-bottom: 1.1em;
+}
+
+em
+{
+  font-family:@font-enfasi;
+}
+
+
+@blink_className:blink;
+.@{blink_className}
+{
+  &-primary { .animazione_colore-testo(@type-primary); }
+  &-success { .animazione_colore-testo(@type-success); }
+  &-info    { .animazione_colore-testo(@type-info); }
+  &-default { .animazione_colore-testo(@type-default); }
+  &-warning { .animazione_colore-testo(@type-warning); }
+  &-danger  { .animazione_colore-testo(@type-danger); }
+}
+
+
+.animated-zoom
+{
+  display:inline-block;
+  
+  .animazione_zoom(1.05);
+}
+
+
+.@{blink_className}
+{
+  &-primary 
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-primary);
+      .animated-zoom;
+    }
+  }
+  
+  &-success 
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-success);
+      .animated-zoom;
+    }
+  }
+  
+  &-info
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-info);
+      .animated-zoom;
+    }
+  }
+  
+  &-default
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-default);
+      .animated-zoom;
+    }
+  }
+  
+  &-warning
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-warning);
+      .animated-zoom;
+    }
+  }
+  
+  &-danger
+  { 
+    &.animated-zoom
+    {  
+      .animazione_colore-testo(@type-danger);
+      .animated-zoom;
+    }
+  }
+}
+
+

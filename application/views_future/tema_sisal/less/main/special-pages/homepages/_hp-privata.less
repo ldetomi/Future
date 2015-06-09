@@ -1,0 +1,374 @@
+@import "_hp-privata_main-carousel.less";
+
+.aui #main-carousel_container
+{
+  margin-top:30px;
+  
+    @media screen and (max-width: @screen-sm) 
+    {
+      display:none;
+    }
+
+    #links_laterali
+    {
+      width:25%;
+      font-family:@font-pulsanti;
+      font-size:17px;
+      
+        .item-link_laterale
+        {
+          border:solid 1px @colore-bordi_navigazione-primo-livello;
+          
+          .sfondo_navigazione-primo-livello;
+          
+            &:not(:first-of-type)
+            {
+              border-top:0;
+            }
+          
+            &:hover
+            {
+              .sfondo-link-hover_navigazione-primo-livello;
+            }
+          
+            span
+            {
+              color:@colore-testo_navigazione-primo-livello;
+              text-decoration:none;
+              padding:13px 0;
+              display:inline-block;
+              text-align:center;
+              width:100%;
+              cursor:pointer;
+              
+                &:hover
+                {
+                  color:@colore-testo-hover_navigazione-primo-livello;
+                }
+                
+                @media screen and (max-width: @screen-lg) 
+                {
+                  padding:9px 0;
+                }
+                
+                @media screen and (max-width: @screen-md) 
+                {
+                  padding: 4px 0 5px;
+                  font-size:15px;
+                }
+            }
+            
+            &.active
+            {           
+              .sfondo-link-attivo_navigazione-primo-livello;
+
+                span
+                {
+                  color:#A1100F;
+                  //text-shadow:0 -1px 0 @colore-ombra_testo_pulsanti_main-navigation;
+                } 
+            }
+            
+            &:first-of-type
+            {
+              .rounded_corners(5px 0 0 0);
+            }
+            
+            &:last-of-type
+            {
+              .rounded_corners(0 0 0 5px);
+            } 
+        }
+        
+    }
+
+    #contenitore_carosello
+    {
+      width:75%;
+      
+        .owl-stage-outer
+        {
+          border:solid 1px @colore-bordi_owl-carousel;
+          background:@bianco;
+          border-left:none;
+        
+          .rounded_corners(0 5px 5px 0);
+
+            .owl-item img
+            {
+              border:none; 
+              
+              .rounded_corners(0 5px 5px 0);
+            }
+        }
+        
+        .owl-controls
+        {
+          margin:0;
+          
+            .owl-nav
+            {
+              display:none;
+            }
+        }     
+    }
+}
+
+.aui #hp-privata #contenuto-centrale
+{
+  margin-top:30px;
+  
+    @media screen and (max-width: @screen-sm) 
+    {
+      margin-top:60px;
+    }
+}
+
+#contenuto-centrale
+{
+    #iniziative-e-novita_container
+    {
+      text-align:center;
+      margin:0 auto; 
+      padding:0 80px;
+      
+        .owl-prev
+        {
+          left:-80px;
+        }
+        
+        .owl-next
+        {
+          right:-80px;
+        }
+    }
+    
+    #my-homepages_container
+    {
+      margin-top:10px;
+      overflow:hidden; //Per nascondere la parte sporgente della MegaIcona generata
+        
+        #my-homepages
+        {
+          text-align:center;
+          padding:0 65px 20px;
+          border:solid 1px @colore-bordi_box-my-homepage;
+          min-height:300px;
+          position:relative;
+        
+          .rounded_corners();
+          .sfondo_navigazione-primo-livello();
+          
+            @media screen and (max-width: @screen-xs) 
+            {
+              padding-left:0;
+              padding-right:0;
+            }
+        
+            .block
+            {
+              width:25%;
+              padding:15px;
+            
+                .box
+                {
+                  height:170px;
+                  display:block;  //Se .box sono dei links, è necessario
+                  border:solid 1px @colore-bordi_box-my-homepage;
+                  position:relative;
+                                    
+                  .rounded_corners();
+                  .sfondo_navigazione-primo-livello(90deg);
+                  
+                    &:hover
+                    {
+                      text-decoration:none;
+                      box-shadow:0 0 75px fade(@grigio-intermedio, 75%) inset;
+                    }
+                  
+                    &:before 
+                    {
+                      content:"";
+                      position:absolute;
+                      width:37px;
+                      height:86px;
+                      background:url("../images/my-homepage_label-on.svg");
+                      background-size:35px auto;
+                      background-repeat:no-repeat;
+                      top:-6px;
+                      left:5px;
+                      z-index:5;
+                    }
+                    
+                    .box_look-and-feel
+                    {
+                      height:100%;
+                      padding-top:25px;
+                      //background-image:url('../images/look&feel_hp-privata_sisal.png');
+                      //background-repeat:no-repeat;
+                      //background-size:130% auto;
+                      //background-position:bottom right;
+                      //image-rendering:optimizeQuality;
+                      //-ms-interpolation-mode:bicubic;
+                      
+                      .rounded_corners();
+                      
+                        /*.look-and-feel_sisal &
+                        {
+                          background-image:url('../images/look&feel_hp-privata_sisal.png');
+                        }
+                        
+                        .look-and-feel_matchpoint &
+                        {
+                          background-image:url('../images/look&feel_hp-privata_matchpoint.png');
+                        }
+                        
+                        .look-and-feel_wincity &
+                        {
+                          background-image:url('../images/look&feel_hp-privata_wincity.png');
+                        }
+                        
+                        .look-and-feel_nobrand &
+                        {
+                          background-image:url('../images/look&feel_hp-privata_nobrand.png');
+                        }*/
+                                        
+                        h3
+                        {
+                          margin:0 0 5px 45px;
+                          font-size:24px;
+                        }
+                        
+                        h4
+                        {
+                          margin-left:73px;
+                          margin-top:0;
+                          font-size:18px;
+                          color:@colore-titolo_box-my-homepage;
+                          position:relative;
+                          
+                            &:before
+                            {
+                              content:'\e60e';
+                              font-family: 'icomoon';
+                              speak:none;
+                              position:absolute;
+                              top:0;
+                              left:-20px;
+                            }
+                        }
+                        
+                        p
+                        {
+                          position:absolute;
+                          top:85px;
+                          left:0;
+                          text-align:left;
+                          padding:0 10px;
+                        }
+                        
+                        button
+                        {
+                          position:absolute;
+                          top:3px;
+                          right:3px;
+                          padding:0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aui #contenuto-centrale
+{
+    #my-homepages_container #my-homepages 
+    {
+        &:before //MegaIcona generata
+        {
+          content:'\e600';
+          font-family: 'icomoon';
+          font-size:320px;
+          line-height:320px;
+          color:@colore-sfondo_contenuto-centrale;
+          text-shadow:0 0 1px @colore-bordi_megaicona_box-my-homepage;
+          speak:none;
+          position:absolute;
+          top:-70px;
+          right:-45px;
+          
+          .rotate(30deg);
+          
+            @media screen and (max-width: @screen-lg) 
+            {
+              font-size:255px;
+              line-height:260px;
+              top:-60px;
+              right:-35px;
+            }
+            
+            @media screen and (max-width: @screen-md) 
+            {
+              font-size:225px;
+              line-height:230px;
+              top:-48px;
+              right:-32px;
+            }
+            
+            @media screen and (max-width: @screen-sm) 
+            {
+              font-size:180px;
+              line-height:185px;
+              top:-40px;
+              right:-25px;
+            }
+        }
+        
+        > h1,
+        > p
+        {
+          position:relative; //Per evitare che la megaicona vada dietro al titolo al testo introduttivo
+        }
+            
+        .block
+        {
+            @media screen and (max-width: @screen-lg) 
+            {
+              width:33%;
+            }
+            
+            @media screen and (max-width: @screen-md) 
+            {
+              width:50%;
+            }
+            
+            @media screen and (min-width: 601px) and (max-width: @screen-sm) 
+            {
+              width:50%;
+              
+                h3
+                {
+                  font-size:20px !important;
+                }
+                
+                h4
+                {
+                  font-size:15px !important;
+                }
+                
+            }
+            
+            //Questo è un breakpoint aggiuntivo per allineare questi blocchi al carosello soprastante, non è comune al resto del sito
+            @media screen and (max-width: 600px) 
+            {
+              width:100%;
+            }
+        }
+    }
+}
+
+
+
+
+

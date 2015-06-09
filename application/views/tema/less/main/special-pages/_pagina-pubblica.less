@@ -1,0 +1,38 @@
+// =======================================================================================================================================
+// --- PAGINA-PUBBLICA (Stili specifici) -------------------------------------------------------------------------------------------------
+// =======================================================================================================================================
+
+.pagina-pubblica
+{
+    @media screen and (max-width:@screen-sm) 
+    {
+        &.signed-out #barra_rete-sisal
+        {
+          margin-top:77px;
+        }
+    }
+    
+    @media screen and (min-width:@screen-sm) 
+    {
+        &.signed-out #first-level-navigation_container
+        {
+          position:relative;
+          top:80px;
+        }
+
+        &.signed-out #barra_rete-sisal
+        {
+          position:relative;
+          top:-32px;
+        }
+    }
+    
+    #help-center-block
+    {
+      //Dovrebbe essere quello giusto, ma finché non si vede l'alberatura laterale, se non si mostra, la colonna laterale collassa.
+      //Compenso al momento con il visibility
+      //display:none;
+      visibility:hidden;
+    }
+    
+}

@@ -1,0 +1,45 @@
+
+.aui .help-center_main-blocks
+{
+  margin-bottom:20px;
+
+    .block
+    {
+      width:50%;
+      padding:5px;
+      
+        @media screen and (max-width: @screen-md) 
+        {
+          width:100%;
+        }
+    
+        .box
+        {
+          height:140px;
+          display:block;  //Se .box sono dei links, è necessario
+          border:solid 1px @colore-bordi_box-my-homepage;
+          position:relative;
+          
+          .rounded_corners();
+          .sfondo_navigazione-primo-livello(90deg);
+          
+            &:hover
+            {
+              text-decoration:none;
+            }
+            
+            h3
+            {
+              margin-bottom:20px;
+              text-align:center;
+            }
+            
+            p
+            {
+              text-align:left;
+              padding:0 10px;
+            }
+        }
+    }
+}
+
